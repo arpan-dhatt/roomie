@@ -31,9 +31,9 @@ async fn main() -> std::io::Result<()> {
             .service(handlers::get_student)
             .service(handlers::post_student)
             .service(handlers::auth_user)
-            .service(fs::Files::new("/", "./web-app/public").show_files_listing().index_file("index.html"))
+            .service(fs::Files::new("/", env::var("PUBLIC_DIR").expect("missing PUBLIC_DIR environment variable")).show_files_listing().index_file("index.html"))
     })
-    .bind("127.0.0.1:8080")?
+    .bind(env::var("BIND_ADDRESS").expect("missing BIND_ADDRESS environment variable"))?
     .run()
     .await
 }
