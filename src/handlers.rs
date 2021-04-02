@@ -85,8 +85,3 @@ pub async fn auth_user(auth_request: web::Json<AuthRequest>) -> impl Responder {
         Err(e) => AuthResponse::error(e.to_string()),
     }
 }
-
-#[get("/")]
-pub async fn index() -> impl Responder {
-    NamedFile::open("./web-app/public/index.html")
-}

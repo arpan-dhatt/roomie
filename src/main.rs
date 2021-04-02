@@ -31,8 +31,7 @@ async fn main() -> std::io::Result<()> {
             .service(handlers::get_student)
             .service(handlers::post_student)
             .service(handlers::auth_user)
-            .service(fs::Files::new("/", "./web-app/public"))
-            .service(handlers::index)
+            .service(fs::Files::new("/", "./web-app/public").show_files_listing().index_file("index.html"))
     })
     .bind("127.0.0.1:8080")?
     .run()
