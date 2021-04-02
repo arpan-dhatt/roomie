@@ -1,3 +1,8 @@
 /target
 /web-app/node_modules
 /web-app/package-lock.json
+.env
+/web-app/public/build
+.vscode
+.DS_Store
+/web-app/.DS_Store

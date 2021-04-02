@@ -1,5 +1,7 @@
 <script>
-    export var profileData
+    export var profileData;
+    export var whenDone;
+    export var sessionToken;
 </script>
 
 <main>
@@ -23,13 +25,23 @@
                         <label class="form-label" for="first-name"
                             >Enter Your Preferred First Name</label
                         >
-                        <input type="text" class="form-input" id="first-name" bind:value={profileData.first_name} />
+                        <input
+                            type="text"
+                            class="form-input"
+                            id="first-name"
+                            bind:value={profileData.first_name}
+                        />
                     </div>
                     <div class="column col-6 col-md-12">
                         <label class="form-label" for="last-name"
                             >Enter Your Last Name</label
                         >
-                        <input type="text" class="form-input" id="last-name" bind:value={profileData.last_name} />
+                        <input
+                            type="text"
+                            class="form-input"
+                            id="last-name"
+                            bind:value={profileData.last_name}
+                        />
                     </div>
                 </div>
                 <div class="columns" style="margin-top: 20px;">
@@ -169,63 +181,120 @@
                     <div class="column col-12">
                         <p>
                             Select all options you are comfortable with and have
-                            available to you. If you change your mind about
-                            anything later, you can edit it here. If you have
-                            specific preferences, such as 1st choice, 2nd
-                            choice, you can add them in the additional details
-                            section later.
+                            available to you. This doesn't mean you have the
+                            actual room already. This is just to tell others
+                            what you are okay living in and can live in. If you
+                            change your mind about anything later, you can edit
+                            it here. If you have specific preferences, such as
+                            1st choice, 2nd choice, you can add them in the
+                            additional details section later.
                         </p>
                     </div>
                     <div class="column col-4 col-md-12 text-left">
                         <h5>Honors Housing</h5>
                         <label class="form-checkbox">
-                            <input type="checkbox" name="honors" value={"Honors"} bind:group={profileData.honors} />
+                            <input
+                                type="checkbox"
+                                name="honors"
+                                value={"Honors"}
+                                bind:group={profileData.honors}
+                            />
                             <i class="form-icon" /> Honors
                         </label>
                         <label class="form-checkbox">
-                            <input type="checkbox" name="honors" value={"Non-Honors"} bind:group={profileData.honors} />
+                            <input
+                                type="checkbox"
+                                name="honors"
+                                value={"Non-Honors"}
+                                bind:group={profileData.honors}
+                            />
                             <i class="form-icon" /> Non-Honors
                         </label>
                         <label class="form-checkbox">
-                            <input type="checkbox" name="honors" value={"Not Applicable"} bind:group={profileData.honors} />
+                            <input
+                                type="checkbox"
+                                name="honors"
+                                value={"Not Applicable"}
+                                bind:group={profileData.honors}
+                            />
                             <i class="form-icon" /> Not Applicable
                         </label>
                     </div>
                     <div class="column col-4 col-md-12 text-left">
                         <h5>Location</h5>
                         <label class="form-checkbox">
-                            <input type="checkbox" name="location" value={"On-Campus"} bind:group={profileData.location} />
+                            <input
+                                type="checkbox"
+                                name="location"
+                                value={"On-Campus"}
+                                bind:group={profileData.location}
+                            />
                             <i class="form-icon" /> On-Campus
                         </label>
                         <label class="form-checkbox">
-                            <input type="checkbox" name="location" value={"Off-Campus"} bind:group={profileData.location} />
+                            <input
+                                type="checkbox"
+                                name="location"
+                                value={"Off-Campus"}
+                                bind:group={profileData.location}
+                            />
                             <i class="form-icon" /> Off-Campus
                         </label>
                         <label class="form-checkbox">
-                            <input type="checkbox" name="location" value={"Not Applicable"} bind:group={profileData.location} />
+                            <input
+                                type="checkbox"
+                                name="location"
+                                value={"Not Applicable"}
+                                bind:group={profileData.location}
+                            />
                             <i class="form-icon" /> Not Applicable
                         </label>
                     </div>
                     <div class="column col-4 col-md-12 text-left">
                         <h5>Room Floorplan</h5>
                         <label class="form-checkbox">
-                            <input type="checkbox" name="floorplan" value={"Shared Room and Bathroom"} bind:group={profileData.floorplan} />
+                            <input
+                                type="checkbox"
+                                name="floorplan"
+                                value={"Shared Room and Bathroom"}
+                                bind:group={profileData.floorplan}
+                            />
                             <i class="form-icon" /> Shared Room and Bathroom
                         </label>
                         <label class="form-checkbox">
-                            <input type="checkbox" name="floorplan" value={"Connected Bathroom"} bind:group={profileData.floorplan} />
+                            <input
+                                type="checkbox"
+                                name="floorplan"
+                                value={"Connected Bathroom"}
+                                bind:group={profileData.floorplan}
+                            />
                             <i class="form-icon" /> Connected Bathroom
                         </label>
                         <label class="form-checkbox">
-                            <input type="checkbox" name="floorplan" value={"Communal Bathroom"} bind:group={profileData.floorplan} />
+                            <input
+                                type="checkbox"
+                                name="floorplan"
+                                value={"Communal Bathroom"}
+                                bind:group={profileData.floorplan}
+                            />
                             <i class="form-icon" /> Communal Bathroom
                         </label>
                         <label class="form-checkbox">
-                            <input type="checkbox" name="floorplan" value={"Private Bathrooms"} bind:group={profileData.floorplan} />
+                            <input
+                                type="checkbox"
+                                name="floorplan"
+                                value={"Private Bathrooms"}
+                                bind:group={profileData.floorplan}
+                            />
                             <i class="form-icon" /> Private Bathrooms
                         </label>
                         <label class="form-checkbox">
-                            <input type="checkbox" name="floorplan" value={"Not Applicable"} bind:group={profileData.floorplan} />
+                            <input
+                                type="checkbox"
+                                name="floorplan"
+                                value={"Not Applicable"}
+                                bind:group={profileData.floorplan}
+                            />
                             <i class="form-icon" /> Not Applicable
                         </label>
                     </div>
@@ -260,7 +329,12 @@
                 </div>
                 <div class="columns" style="margin-top: 20px">
                     <div class="column col-12">
-                        Press "Search" on the top right to save this information and look for other students
+                        <button
+                            class="btn btn-primary"
+                            on:click={() => {
+                                whenDone(sessionToken, profileData);
+                            }}>Save</button
+                        >
                     </div>
                 </div>
             </div>

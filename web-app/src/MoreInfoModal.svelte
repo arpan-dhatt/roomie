@@ -34,14 +34,14 @@
                         <h6>{modalData.college_name}</h6>
                         <h5>Contact Information</h5>
                         <ul>
-                            <li>{"Discord: " + modalData.discord}</li>
-                            <li>{"LinkedIn: " + modalData.linkedin}</li>
-                            <li>{"SnapChat: " + modalData.snapchat}</li>
-                            <li>{"Instagram: " + modalData.instagram}</li>
-                            <li>{"Facebook: " + modalData.facebook}</li>
-                            <li>{"Twitter: " + modalData.twitter}</li>
-                            <li>{"Email: " + modalData.email}</li>
-                            <li>{"Phone: " + modalData.phone}</li>
+                            {#if modalData.discord != undefined }<li>{"Discord: " + modalData.discord}</li>{/if}
+                            {#if modalData.linkedin != undefined }<li>{"LinkedIn: " + modalData.linkedin}</li>{/if}
+                            {#if modalData.snapchat != undefined }<li>{"SnapChat: " + modalData.snapchat}</li>{/if}
+                            {#if modalData.instagram != undefined }<li>{"Instagram: " + modalData.instagram}</li>{/if}
+                            {#if modalData.facebook != undefined }<li>{"Facebook: " + modalData.facebook}</li>{/if}
+                            {#if modalData.twitter != undefined }<li>{"Twitter: " + modalData.twitter}</li>{/if}
+                            {#if modalData.email != undefined }<li>{"Email: " + modalData.email}</li>{/if}
+                            {#if modalData.phone != undefined }<li>{"Phone: " + modalData.phone}</li>{/if}
                         </ul>
                         <h4>Room Information</h4>
                         <div class="container">
@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="column col-3">
                                     <h6>Locations</h6>
-                                    {#each modalData.locations ? modalData.locations : [] as honor}
+                                    {#each modalData.location ? modalData.location : [] as honor}
                                         <span class={"chip " + colorMap[honor]}
                                             >{honor}</span
                                         >
@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="column col-3">
                                     <h6>Floorplans</h6>
-                                    {#each modalData.floorplans ? modalData.floorplans : [] as honor}
+                                    {#each modalData.floorplan ? modalData.floorplan : [] as honor}
                                         <span class={"chip " + colorMap[honor]}
                                             >{honor}</span
                                         >

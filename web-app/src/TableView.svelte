@@ -34,6 +34,7 @@ var modalData={}
                     </tr>
                 </thead>
                 <tbody>
+                    {#if studentData != null}
                     {#each studentData.students as student}
                     <tr>
                         <td class="tooltip" data-tooltip={student.first_name+" "+student.last_name}>{student.first_name.slice(0,27)+(student.first_name.length > 27 ? "... " : " ")+student.last_name.slice(0,27)+(student.last_name.length > 27 ? "... " : " ")}</td>
@@ -44,12 +45,12 @@ var modalData={}
                             {/each}
                         </td>
                         <td>
-                            {#each student.locations as location}
+                            {#each student.location as location}
                                 <span class={"chip "+colorMap[location]}>{location}</span>
                             {/each}
                         </td>
                         <td>
-                            {#each student.floorplans as floorplan}
+                            {#each student.floorplan as floorplan}
                                 <span class={"chip "+colorMap[floorplan]}>{floorplan}</span>
                             {/each}
                         </td>
@@ -58,6 +59,7 @@ var modalData={}
                         </td>
                     </tr>
                     {/each}
+                    {/if}
                 </tbody>
             </table>
         </div>

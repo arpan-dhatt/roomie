@@ -1,14 +1,13 @@
 <script>
-
-	import DataForm from './DataForm.svelte';
-	import Login from './Login.svelte';
-	import SignOut from './SignOut.svelte';
-	import TableView from './TableView.svelte';
+	import DataForm from "./DataForm.svelte";
+	import Login from "./Login.svelte";
+	import SignOut from "./SignOut.svelte";
+	import TableView from "./TableView.svelte";
 
 	let signedIn = null;
 	let sessionToken = "";
 	let page = "signin";
-	var template={
+	var template = {
 		first_name: "",
 		last_name: "",
 		college_name: "",
@@ -23,66 +22,105 @@
 		honors: [],
 		location: [],
 		floorplan: [],
-		additional: ""
-	}
-	
+		additional: "",
+	};
+
 	var profileData = template;
 	var studentData = {
 		students: [
-			{"first_name": "Barack", "last_name": "Obama", "college_name": "UT Austin, University of Texas Austin, University of Texas at Austin", "honors": ["Honors", "Non-Honors"], "locations": ["On-Campus"], "floorplans": ["Shared Room and Bathroom", "Connected Bathroom", "Private Bathrooms", "Communal Bathroom"]},
-			{"first_name": "Donaldino", "last_name": "Trumperino", "college_name": "A&M", "honors": ["Honors", "Non-Honors"], "locations": ["On-Campus"], "floorplans": ["Shared Room and Bathroom", "Connected Bathroom", "Private Bathrooms"]}
-		]
-	}
+			{
+				first_name: "Barack",
+				last_name: "Obama",
+				college_name:
+					"UT Austin, University of Texas Austin, University of Texas at Austin",
+				honors: ["Honors", "Non-Honors"],
+				location: ["On-Campus"],
+				floorplan: [
+					"Shared Room and Bathroom",
+					"Connected Bathroom",
+					"Private Bathrooms",
+					"Communal Bathroom",
+				],
+			},
+			{
+				first_name: "Donaldino",
+				last_name: "Trumperino",
+				college_name: "A&M",
+				honors: ["Honors", "Non-Honors"],
+				location: ["On-Campus"],
+				floorplan: [
+					"Shared Room and Bathroom",
+					"Connected Bathroom",
+					"Private Bathrooms",
+				],
+			},
+		],
+	};
 	$: {
 		if (page != "signin") {
-			localStorage.setItem("page", page)
+			localStorage.setItem("page", page);
 		}
 	}
 	window.onSignIn = (googleUser) => {
 		const profile = googleUser.getBasicProfile();
-		console.log('ID: ' + profile.getId());
-		console.log('Image URL: ' + profile.getImageUrl());
-		console.log('Email: ' + profile.getEmail());
-		console.log('ID Token: ' + googleUser.getAuthResponse().id_token);
-		signedIn = true
-		page = localStorage.getItem("page") ? localStorage.getItem("page") : "profile"
-		fetch("/auth/"+googleUser.getAuthResponse().id_token)
-			.then(response => response.json())
-			.then(data => {
-				sessionToken = data.session_token
-				profileData = data.profile_data ? data.profile_data : template
-				getNewTableData(sessionToken)
-			})
+		console.log("ID: " + profile.getId());
+		console.log("Image URL: " + profile.getImageUrl());
+		console.log("Email: " + profile.getEmail());
+		console.log("ID Token: " + googleUser.getAuthResponse().id_token);
+		signedIn = true;
+		page = localStorage.getItem("page")
+			? localStorage.getItem("page")
+			: "profile";
+		fetch("/auth", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				oauth_token_id: googleUser.getAuthResponse().id_token,
+			}),
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				sessionToken = data.jwt_token;
+				console.log(data);
+				window.getStudentData(sessionToken);
+			});
 	};
 	window.signOut = () => {
 		var auth2 = gapi.auth2.getAuthInstance();
 		auth2.signOut().then(function () {
-			console.log('User signed out.');
-			signedIn = false
-			page = "signin"
+			console.log("User signed out.");
+			signedIn = false;
+			page = "signin";
 		});
-	}
+	};
 
 	function updateProfileData(sessionToken, profileData) {
-		fetch("/updateProfile", {
+		console.log("sending updated data");
+		fetch("/student?token=" + sessionToken, {
 			method: "POST",
-			mode: "CORS",
-			cache: "no-cache",
-			credentials: "same-origin",
 			headers: {
-				'Content-Type': 'application/json'
+				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({session_token: sessionToken, profile_data: profileData})
+			body: JSON.stringify(profileData),
 		})
-		.then(response => response.json())
-		.then(data => console.log(data))
+			.then((response) => response.json())
+			.then((data) => console.log(data));
 	}
 
-	function getNewTableData(session_token) {
-		fetch("/getTable/"+session_token)
-		.then(response => response.json())
-		.then(data => studentData = data)
-	}
+	window.getStudentData = (session_token) => {
+		console.log(session_token);
+		fetch("/student?token=" + session_token)
+			.then((response) => response.json())
+			.then((data) => {
+				if (data != null) {
+					console.log(data)
+					studentData = data
+					profileData = data.current_student
+				}
+			});
+	};
 </script>
 
 <main>
@@ -91,16 +129,20 @@
 			<h1 class="column">Roomie</h1>
 		</div>
 		{#if page == "signin"}
-		<Login bind:signedIn={signedIn} />
+			<Login bind:signedIn />
 		{/if}
 		{#if page == "profile"}
-		<DataForm bind:profileData={profileData}/>
+			<DataForm
+				bind:profileData
+				whenDone={updateProfileData}
+				{sessionToken}
+			/>
 		{/if}
 		{#if page == "search"}
-		<TableView bind:studentData={studentData}/>
+			<TableView studentData={studentData} />
 		{/if}
 		{#if page != "signin"}
-		<SignOut bind:signedIn={signedIn} bind:page={page} />
+			<SignOut bind:signedIn bind:page />
 		{/if}
 	</div>
 </main>
@@ -120,7 +162,7 @@
 		font-weight: 100;
 	}
 
-	@media (min-width: 640px) {
+	@media (min-width: 10px) {
 		main {
 			max-width: none;
 		}
