@@ -71,7 +71,7 @@
 		page = localStorage.getItem("page")
 			? localStorage.getItem("page")
 			: "profile";
-		fetch("/auth", {
+		fetch("./auth", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -98,7 +98,7 @@
 
 	function updateProfileData(sessionToken, profileData) {
 		console.log("sending updated data");
-		fetch("/student?token=" + sessionToken, {
+		fetch("./student?token=" + sessionToken, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -111,7 +111,7 @@
 
 	window.getStudentData = (session_token) => {
 		console.log(session_token);
-		fetch("/student?token=" + session_token)
+		fetch("./student?token=" + session_token)
 			.then((response) => response.json())
 			.then((data) => {
 				if (data != null) {
