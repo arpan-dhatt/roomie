@@ -6,10 +6,10 @@
 
 <main>
     <div class="columns">
-        <div class="column col-8 col-mx-auto">
+        <div class="column col-8 col-md-12 col-mx-auto">
             <h1>Edit Your Profile</h1>
         </div>
-        <div class="column col-8 col-mx-auto">
+        <div class="column col-8 col-md-12 col-mx-auto">
             <p>
                 This is where you build the profile other students will see
                 after they sign in. You can modify it later by pressing the
@@ -18,7 +18,7 @@
                 information as soon as you can.
             </p>
         </div>
-        <div class="column col-8 col-mx-auto">
+        <div class="column col-8 col-md-12 col-mx-auto">
             <div class="form-group">
                 <div class="columns">
                     <div class="column col-6 col-md-12">

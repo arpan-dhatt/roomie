@@ -3,7 +3,6 @@ use crate::{
     auth::{get_sub, new_token, validate_token},
     model::{DBProfileEntry, GetStudentsResponse, Profile},
 };
-use actix_files::NamedFile;
 use actix_web::{get, post, web, HttpResponse, Responder};
 use bson::doc;
 use futures::StreamExt;
@@ -79,9 +78,9 @@ pub async fn auth_user(auth_request: web::Json<AuthRequest>) -> impl Responder {
     let sub = get_sub(&auth_request.oauth_token_id).await;
     match sub {
         Ok(sub) => match new_token(&sub) {
-            Ok(token) => AuthResponse::jwt_token(token),
-            Err(e) => AuthResponse::error(e.to_string()),
+            Ok(token) => AuthResponse::JwtToken(token),
+            Err(e) => AuthResponse::Error(e.to_string()),
         },
-        Err(e) => AuthResponse::error(e.to_string()),
+        Err(e) => AuthResponse::Error(e.to_string()),
     }
 }

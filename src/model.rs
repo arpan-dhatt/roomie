@@ -1,16 +1,18 @@
 use actix_web::{HttpRequest, HttpResponse, Responder};
-use futures::future::{Ready, ready};
-use serde::{Serialize, Deserialize};
+use futures::future::{ready, Ready};
+use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Debug)]
 pub struct AuthRequest {
-    pub oauth_token_id: String
+    pub oauth_token_id: String,
 }
 
 #[derive(Serialize, Debug)]
 pub enum AuthResponse {
-    jwt_token(String),
-    error(String)
+    #[serde(rename = "jwt_token")]
+    JwtToken(String),
+    #[serde(rename = "error")]
+    Error(String),
 }
 
 impl Responder for AuthResponse {
@@ -20,19 +22,23 @@ impl Responder for AuthResponse {
     fn respond_to(self, _req: &HttpRequest) -> Self::Future {
         let body = serde_json::to_string(&self).unwrap();
 
-        ready(Ok(HttpResponse::Ok().content_type("application.json").body(body)))
+        ready(Ok(HttpResponse::Ok()
+            .content_type("application.json")
+            .body(body)))
     }
 }
 
 #[derive(Deserialize, Debug)]
 pub enum InternalOAuthResult {
-    content { sub: String },
-    error (String)
+    #[serde(rename = "content")]
+    Content { sub: String },
+    #[serde(rename = "error")]
+    Error(String),
 }
 
 #[derive(Deserialize, Debug)]
 pub struct JWTAuth {
-    pub token: String
+    pub token: String,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
@@ -51,17 +57,17 @@ pub struct Profile {
     pub honors: Vec<String>,
     pub location: Vec<String>,
     pub floorplan: Vec<String>,
-    pub additional: String
+    pub additional: String,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct DBProfileEntry {
     pub sub: String,
-    pub profile: Profile
+    pub profile: Profile,
 }
 
 #[derive(Serialize, Debug)]
 pub struct GetStudentsResponse {
     pub current_student: Profile,
-    pub students: Vec<Profile>
+    pub students: Vec<Profile>,
 }

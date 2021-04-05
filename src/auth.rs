@@ -53,8 +53,8 @@ pub async fn get_sub(token: &str) -> Result<String, &'static str> {
     let result: InternalOAuthResult = serde_json::from_slice(&response)
         .map_err(|_| "failed to deserialize response from oauth server")?;
     match result {
-        InternalOAuthResult::content { sub } => Ok(sub),
-        InternalOAuthResult::error(details) => {
+        InternalOAuthResult::Content { sub } => Ok(sub),
+        InternalOAuthResult::Error(details) => {
             println!("{}", details);
             Err("oauth server failed to return subject")
         }
