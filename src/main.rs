@@ -1,4 +1,5 @@
 mod auth;
+mod eid;
 mod model;
 mod handlers;
 

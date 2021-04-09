@@ -71,3 +71,16 @@ pub struct GetStudentsResponse {
     pub current_student: Profile,
     pub students: Vec<Profile>,
 }
+
+#[derive(Serialize, Debug)]
+pub struct BackendEIDFormData {
+    #[serde(rename = "qwicap-page-id")]
+    pub page_id: String,
+    #[serde(rename = "qwicap-form-id")]
+    pub form_id: String,
+    pub eid: String,
+    #[serde(rename = "continue")]
+    pub cont1: String,
+    #[serde(rename = "continue")]
+    pub cont2: String
+}
