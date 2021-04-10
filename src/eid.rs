@@ -17,7 +17,6 @@ pub async fn check_eid(eid: &str) -> Result<bool, &'static str> {
         .to_vec();
     let body = String::from_utf8_lossy(&body);
     let form = get_form_data(&body, eid);
-    println!("{:?}", form);
     let cookies = response
         .cookies()
         .map_err(|_| "cookies could not be obtained")?
@@ -37,7 +36,6 @@ pub async fn check_eid(eid: &str) -> Result<bool, &'static str> {
         .bytes()
         .to_vec();
     let body = String::from_utf8_lossy(&body);
-    println!("{:?}", body);
     Ok(check_final_page(&body))
 }
 

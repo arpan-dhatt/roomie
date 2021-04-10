@@ -61,32 +61,6 @@
 			localStorage.setItem("page", page);
 		}
 	}
-	window.onSignIn = (googleUser) => {
-		const profile = googleUser.getBasicProfile();
-		console.log("ID: " + profile.getId());
-		console.log("Image URL: " + profile.getImageUrl());
-		console.log("Email: " + profile.getEmail());
-		console.log("ID Token: " + googleUser.getAuthResponse().id_token);
-		signedIn = true;
-		page = localStorage.getItem("page")
-			? localStorage.getItem("page")
-			: "profile";
-		fetch("./auth", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				oauth_token_id: googleUser.getAuthResponse().id_token,
-			}),
-		})
-			.then((response) => response.json())
-			.then((data) => {
-				sessionToken = data.jwt_token;
-				console.log(data);
-				window.getStudentData(sessionToken);
-			});
-	};
 	window.signOut = () => {
 		var auth2 = gapi.auth2.getAuthInstance();
 		auth2.signOut().then(function () {
@@ -129,7 +103,7 @@
 			<h1 class="column">Roomie</h1>
 		</div>
 		{#if page == "signin"}
-			<Login bind:signedIn />
+			<Login bind:signedIn bind:sessionToken bind:page />
 		{/if}
 		{#if page == "profile"}
 			<DataForm

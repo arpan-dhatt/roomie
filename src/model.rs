@@ -5,6 +5,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Deserialize, Debug)]
 pub struct AuthRequest {
     pub oauth_token_id: String,
+    pub eid: String
 }
 
 #[derive(Serialize, Debug)]

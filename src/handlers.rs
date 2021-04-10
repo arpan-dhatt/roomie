@@ -1,6 +1,7 @@
 use crate::model::{AuthRequest, AuthResponse, JWTAuth};
 use crate::{
     auth::{get_sub, new_token, validate_token},
+    eid::check_eid,
     model::{DBProfileEntry, GetStudentsResponse, Profile},
 };
 use actix_web::{get, post, web, HttpResponse, Responder};
@@ -38,7 +39,11 @@ pub async fn get_student(
             }
         }
         HttpResponse::Ok().body(
-            serde_json::to_string(&GetStudentsResponse{ current_student: current_student.unwrap(), students: all_students}).expect("could not serialize students to json"),
+            serde_json::to_string(&GetStudentsResponse {
+                current_student: current_student.unwrap(),
+                students: all_students,
+            })
+            .expect("could not serialize students to json"),
         )
     } else {
         HttpResponse::Forbidden().body("")
@@ -75,12 +80,15 @@ pub async fn post_student(
 
 #[post("/auth")]
 pub async fn auth_user(auth_request: web::Json<AuthRequest>) -> impl Responder {
-    let sub = get_sub(&auth_request.oauth_token_id).await;
-    match sub {
-        Ok(sub) => match new_token(&sub) {
-            Ok(token) => AuthResponse::JwtToken(token),
+    match check_eid(&auth_request.eid).await {
+        Ok(true) => match get_sub(&auth_request.oauth_token_id).await {
+            Ok(sub) => match new_token(&sub) {
+                Ok(token) => AuthResponse::JwtToken(token),
+                Err(e) => AuthResponse::Error(e.to_string()),
+            },
             Err(e) => AuthResponse::Error(e.to_string()),
         },
+        Ok(false) => AuthResponse::Error("invalid eid".to_string()),
         Err(e) => AuthResponse::Error(e.to_string()),
     }
 }
