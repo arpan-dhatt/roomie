@@ -1,11 +1,11 @@
 use actix_web::{HttpRequest, HttpResponse, Responder};
 use futures::future::{ready, Ready};
+use meilisearch_sdk::document::Document;
 use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Debug)]
 pub struct AuthRequest {
     pub oauth_token_id: String,
-    pub eid: String
 }
 
 #[derive(Serialize, Debug)]
@@ -46,7 +46,11 @@ pub struct JWTAuth {
 pub struct Profile {
     pub first_name: String,
     pub last_name: String,
-    pub college_name: String,
+    pub gender: String,
+    pub class: usize,
+    pub college: String,
+    pub major: String,
+    pub bio: String,
     pub discord: String,
     pub linkedin: String,
     pub snapchat: String,
@@ -55,16 +59,110 @@ pub struct Profile {
     pub twitter: String,
     pub email: String,
     pub phone: String,
-    pub honors: Vec<String>,
-    pub location: Vec<String>,
-    pub floorplan: Vec<String>,
-    pub additional: String,
+    pub location: String,
+    pub building_preferences: String,
+}
+
+impl Default for Profile {
+    fn default() -> Self {
+        Profile {
+            first_name: "".to_string(),
+            last_name: "".to_string(),
+            gender: "".to_string(),
+            class: 2025,
+            college: "".to_string(),
+            major: "".to_string(),
+            bio: "".to_string(),
+            discord: "".to_string(),
+            linkedin: "".to_string(),
+            snapchat: "".to_string(),
+            instagram: "".to_string(),
+            facebook: "".to_string(),
+            twitter: "".to_string(),
+            email: "".to_string(),
+            phone: "".to_string(),
+            location: "".to_string(),
+            building_preferences: "".to_string(),
+        }
+    }
+}
+
+impl From<DBProfileEntry> for Profile {
+    fn from(item: DBProfileEntry) -> Self {
+        Profile {
+            first_name: item.first_name,
+            last_name: item.last_name,
+            gender: item.gender,
+            class: item.class,
+            college: item.college,
+            major: item.major,
+            bio: item.bio,
+            discord: item.discord,
+            linkedin: item.linkedin,
+            snapchat: item.snapchat,
+            instagram: item.instagram,
+            facebook: item.facebook,
+            twitter: item.twitter,
+            email: item.email,
+            phone: item.phone,
+            location: item.location,
+            building_preferences: item.building_preferences,
+        }
+    }
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct DBProfileEntry {
     pub sub: String,
-    pub profile: Profile,
+    pub first_name: String,
+    pub last_name: String,
+    pub gender: String,
+    pub class: usize,
+    pub college: String,
+    pub major: String,
+    pub bio: String,
+    pub discord: String,
+    pub linkedin: String,
+    pub snapchat: String,
+    pub instagram: String,
+    pub facebook: String,
+    pub twitter: String,
+    pub email: String,
+    pub phone: String,
+    pub location: String,
+    pub building_preferences: String,
+}
+
+impl From<Profile> for DBProfileEntry {
+    fn from(item: Profile) -> Self {
+        DBProfileEntry {
+            sub: "".to_string(),
+            first_name: item.first_name,
+            last_name: item.last_name,
+            gender: item.gender,
+            class: item.class,
+            college: item.college,
+            major: item.major,
+            bio: item.bio,
+            discord: item.discord,
+            linkedin: item.linkedin,
+            snapchat: item.snapchat,
+            instagram: item.instagram,
+            facebook: item.facebook,
+            twitter: item.twitter,
+            email: item.email,
+            phone: item.phone,
+            location: item.location,
+            building_preferences: item.building_preferences,
+        }
+    }
+}
+
+impl Document for DBProfileEntry {
+    type UIDType = String;
+    fn get_uid(&self) -> &Self::UIDType {
+        &self.sub
+    }
 }
 
 #[derive(Serialize, Debug)]
@@ -83,5 +181,5 @@ pub struct BackendEIDFormData {
     #[serde(rename = "continue")]
     pub cont1: String,
     #[serde(rename = "continue")]
-    pub cont2: String
+    pub cont2: String,
 }

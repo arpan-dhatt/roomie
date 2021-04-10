@@ -55,8 +55,8 @@ pub async fn get_sub(token: &str) -> Result<String, &'static str> {
     match result {
         InternalOAuthResult::Content { sub } => Ok(sub),
         InternalOAuthResult::Error(details) => {
-            println!("{}", details);
-            Err("oauth server failed to return subject")
+            if details.contains("utexas") { Err("You must log in with a valid UTexas email address") }
+            else { Err("Internal Error") }
         }
     }
 }
