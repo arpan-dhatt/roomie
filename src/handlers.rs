@@ -23,7 +23,7 @@ fn create_filter(data: &GetStudentRequest) -> String {
 }
 
 fn add_filter_equal(start: &mut String, key: &str, value: impl std::fmt::Display) {
-    start.push_str(&format!("{} = {} AND ", key, value));
+    start.push_str(&format!("{} = \"{}\" AND ", key, value));
 }
 
 #[get("/student")]
