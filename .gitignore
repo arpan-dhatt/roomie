@@ -6,3 +6,4 @@
 .vscode
 .DS_Store
 /web-app/.DS_Store
+/web-app/public/images/*

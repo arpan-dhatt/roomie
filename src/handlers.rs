@@ -1,8 +1,9 @@
-use crate::model::{AuthRequest, AuthResponse, JWTAuth};
+use crate::model::{AuthRequest, AuthResponse, GetImage, JWTAuth};
 use crate::{
     auth::{get_sub, new_token, validate_token},
-    model::{DBProfileEntry, GetStudentsResponse, Profile},
+    model::{GetStudentsResponse, Profile},
 };
+use actix_files::NamedFile;
 use actix_multipart::Multipart;
 use actix_web::{get, post, web, HttpResponse, Responder};
 use futures::{StreamExt, TryStreamExt};
@@ -20,26 +21,35 @@ pub async fn get_student(
             .unwrap()
             .search()
             .with_filters(&format!("sub = \"{}\"", sub))
-            .execute::<DBProfileEntry>()
-            .await
-            .unwrap()
-            .hits;
-        let mut current_student = None;
-        let mut all_students = vec![];
-        for item in result {
-            if &item.result.sub == &sub {
-                current_student = Some(Profile::from(item.result));
-            } else {
-                all_students.push(Profile::from(item.result));
+            .execute::<Profile>()
+            .await;
+        if let Ok(result) = result {
+            let mut current_student = None;
+            let mut all_students = vec![];
+            for item in result.hits {
+                if &item.result.sub == &sub {
+                    current_student = Some(item.result);
+                } else {
+                    all_students.push(item.result);
+                }
             }
+            HttpResponse::Ok().body(
+                serde_json::to_string(&GetStudentsResponse {
+                    current_student: current_student.unwrap_or_default(),
+                    students: all_students,
+                })
+                .expect("could not serialize students to json"),
+            )
+        } else {
+            HttpResponse::Ok().body(
+                serde_json::to_string(&GetStudentsResponse {
+                    current_student: Profile::default(),
+                    students: vec![],
+                })
+                .unwrap(),
+            )
         }
-        HttpResponse::Ok().body(
-            serde_json::to_string(&GetStudentsResponse {
-                current_student: current_student.unwrap_or_default(),
-                students: all_students,
-            })
-            .expect("could not serialize students to json"),
-        )
+
     //      let mut cursor = db_client
     //          .database("roomie")
     //          .collection("students")
@@ -78,17 +88,16 @@ pub async fn get_student(
 #[post("/student")]
 pub async fn post_student(
     web::Query(jwt_auth): web::Query<JWTAuth>,
-    web::Json(student_profile): web::Json<Profile>,
+    web::Json(mut student_profile): web::Json<Profile>,
     client: web::Data<meilisearch_sdk::client::Client<'_>>,
 ) -> impl Responder {
     if let Ok(sub) = validate_token(&jwt_auth.token) {
-        let mut new_doc = DBProfileEntry::from(student_profile);
-        new_doc.sub = sub;
+        student_profile.sub = sub;
         client
             .get_or_create("students")
             .await
             .unwrap()
-            .add_or_update(&[new_doc], Some("sub"))
+            .add_or_update(&[student_profile], Some("sub"))
             .await
             .unwrap();
         //  if let Ok(sub) = validate_token(&jwt_auth.token) {
@@ -136,8 +145,8 @@ pub async fn post_profile_image(
                     if name == "file" {
                         let filename = sanitize_filename::sanitize(format!("{}.jpeg", sub));
                         let directory = std::env::var("STATIC_FILE_DIR")
-                            .unwrap_or("../profile_images/".to_string());
-                        let path = format!("{}{}", directory, filename);
+                            .unwrap_or("./web-app/public/images".to_string());
+                        let path = format!("{}/{}", directory, filename);
                         let opath = path.clone();
                         let mut file = web::block(move || std::fs::File::create(&path))
                             .await
@@ -148,7 +157,7 @@ pub async fn post_profile_image(
                                 .await
                                 .unwrap();
                         }
-                        return HttpResponse::Ok().body(filename);
+                        return HttpResponse::Ok().body(sub);
                     }
                 }
             }
