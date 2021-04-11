@@ -4,11 +4,11 @@ mod handlers;
 mod model;
 
 use actix_files as fs;
-use actix_web::{web, App, middleware, HttpServer};
+use actix_web::{middleware, web, App, HttpServer};
 use dotenv::dotenv;
+use env_logger;
 use lazy_static::lazy_static;
 use std::env;
-use env_logger;
 
 lazy_static! {
     static ref MEILISEARCH_ADDRESS: String =
@@ -37,10 +37,13 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .wrap(middleware::Logger::default())
+            .wrap(middleware::Compress::default())
             .app_data(client.clone())
             .service(handlers::get_student)
             .service(handlers::post_student)
             .service(handlers::auth_user)
+            .service(handlers::test_image_upload)
+            .service(handlers::post_profile_image)
             .service(
                 fs::Files::new(
                     "/",

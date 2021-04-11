@@ -61,6 +61,7 @@ pub struct Profile {
     pub phone: String,
     pub location: String,
     pub building_preferences: String,
+    pub profile_image: String
 }
 
 impl Default for Profile {
@@ -83,6 +84,7 @@ impl Default for Profile {
             phone: "".to_string(),
             location: "".to_string(),
             building_preferences: "".to_string(),
+            profile_image: "".to_string()
         }
     }
 }
@@ -107,6 +109,7 @@ impl From<DBProfileEntry> for Profile {
             phone: item.phone,
             location: item.location,
             building_preferences: item.building_preferences,
+            profile_image: item.profile_image
         }
     }
 }
@@ -131,8 +134,8 @@ pub struct DBProfileEntry {
     pub phone: String,
     pub location: String,
     pub building_preferences: String,
+    pub profile_image: String
 }
-
 impl From<Profile> for DBProfileEntry {
     fn from(item: Profile) -> Self {
         DBProfileEntry {
@@ -154,6 +157,7 @@ impl From<Profile> for DBProfileEntry {
             phone: item.phone,
             location: item.location,
             building_preferences: item.building_preferences,
+            profile_image: item.profile_image,
         }
     }
 }
