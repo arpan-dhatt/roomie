@@ -1,4 +1,4 @@
-use crate::model::{AuthRequest, AuthResponse, GetImage, JWTAuth};
+use crate::model::{AuthRequest, AuthResponse, GetStudentRequest, JWTAuth};
 use crate::{
     auth::{get_sub, new_token, validate_token},
     model::{GetStudentsResponse, Profile},
@@ -9,20 +9,40 @@ use actix_web::{get, post, web, HttpResponse, Responder};
 use futures::{StreamExt, TryStreamExt};
 use std::io::Write;
 
+fn create_filter(data: &GetStudentRequest) -> String {
+    let mut outString = String::new();
+    if let Some(year) = &data.class { add_filter_equal(&mut outString, "year", *year) }
+    if let Some(college) = &data.college { add_filter_equal(&mut outString, "college", college) }
+    if let Some(major) = &data.major { add_filter_equal(&mut outString, "major", major) }
+    if let Some(gender) = &data.gender { add_filter_equal(&mut outString, "gender", gender) }
+    if let Some(location) = &data.location { add_filter_equal(&mut outString, "location", location) }
+    if outString.ends_with(" AND ") {
+        outString.replace_range((outString.len()-5)..outString.len(), "");
+    }
+    outString
+}
+
+fn add_filter_equal(start: &mut String, key: &str, value: impl std::fmt::Display) {
+    start.push_str(&format!("{} = {} AND ", key, value));
+}
+
 #[get("/student")]
 pub async fn get_student(
-    web::Query(jwt_auth): web::Query<JWTAuth>,
+    web::Query(data): web::Query<GetStudentRequest>,
     client: web::Data<meilisearch_sdk::client::Client<'_>>,
 ) -> impl Responder {
-    if let Ok(sub) = validate_token(&jwt_auth.token) {
-        let result = client
+    if let Ok(sub) = validate_token(&data.token) {
+        let filter = create_filter(&data);
+        let mut index = client
             .get_or_create("students")
             .await
-            .unwrap()
-            .search()
-            .with_filters(&format!("sub = \"{}\"", sub))
-            .execute::<Profile>()
-            .await;
+            .unwrap();
+        let mut builder = index.search();
+        let mut builder = builder.with_filters(&filter).with_limit(12).with_offset(data.offset.unwrap_or(0));
+        if let Some(query) = &data.query {
+            builder = builder.with_query(&query);
+        }
+        let result = builder.execute::<Profile>().await;
         if let Ok(result) = result {
             let mut current_student = None;
             let mut all_students = vec![];
@@ -41,6 +61,7 @@ pub async fn get_student(
                 .expect("could not serialize students to json"),
             )
         } else {
+            println!("{}", filter);
             HttpResponse::Ok().body(
                 serde_json::to_string(&GetStudentsResponse {
                     current_student: Profile::default(),

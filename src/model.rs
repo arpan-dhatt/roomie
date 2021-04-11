@@ -42,6 +42,18 @@ pub struct JWTAuth {
     pub token: String,
 }
 
+#[derive(Deserialize, Debug)]
+pub struct GetStudentRequest {
+    pub token: String,
+    pub class: Option<usize>,
+    pub college: Option<String>,
+    pub major: Option<String>,
+    pub gender: Option<String>,
+    pub location: Option<String>,
+    pub query: Option<String>,
+    pub offset: Option<usize>,
+}
+
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Profile {
     pub sub: String,
@@ -113,10 +125,4 @@ pub struct BackendEIDFormData {
     pub cont1: String,
     #[serde(rename = "continue")]
     pub cont2: String,
-}
-
-#[derive(Deserialize, Debug)]
-pub struct GetImage {
-    pub token: String,
-    pub sub: String
 }
