@@ -8,9 +8,14 @@
 	let sessionToken = "";
 	let page = "signin";
 	var template = {
+		sub: "",
 		first_name: "",
 		last_name: "",
-		college_name: "",
+		gender: "Select",
+		class: 2025,
+		college: "Select",
+		major: "",
+		bio: "",
 		discord: "",
 		linkedin: "",
 		snapchat: "",
@@ -19,40 +24,32 @@
 		twitter: "",
 		email: "",
 		phone: "",
-		honors: [],
-		location: [],
-		floorplan: [],
-		additional: "",
+		location: "",
+		building_preferences: "",
 	};
 
 	var profileData = template;
 	var studentData = {
 		students: [
 			{
-				first_name: "Barack",
-				last_name: "Obama",
-				college_name:
-					"UT Austin, University of Texas Austin, University of Texas at Austin",
-				honors: ["Honors", "Non-Honors"],
-				location: ["On-Campus"],
-				floorplan: [
-					"Shared Room and Bathroom",
-					"Connected Bathroom",
-					"Private Bathrooms",
-					"Communal Bathroom",
-				],
-			},
-			{
-				first_name: "Donaldino",
-				last_name: "Trumperino",
-				college_name: "A&M",
-				honors: ["Honors", "Non-Honors"],
-				location: ["On-Campus"],
-				floorplan: [
-					"Shared Room and Bathroom",
-					"Connected Bathroom",
-					"Private Bathrooms",
-				],
+				sub: "",
+				first_name: "Test First Name",
+				last_name: "Test Last Name",
+				gender: "Select",
+				class: 2025,
+				college: "Select",
+				major: "",
+				bio: "a bio...",
+				discord: "",
+				linkedin: "",
+				snapchat: "",
+				instagram: "",
+				facebook: "",
+				twitter: "",
+				email: "",
+				phone: "",
+				location: "Select",
+				building_preferences: "prefs"
 			},
 		],
 	};
@@ -89,9 +86,9 @@
 			.then((response) => response.json())
 			.then((data) => {
 				if (data != null) {
-					console.log(data)
-					studentData = data
-					profileData = data.current_student
+					console.log(data);
+					studentData = data;
+					profileData = data.current_student;
 				}
 			});
 	};
@@ -113,7 +110,7 @@
 			/>
 		{/if}
 		{#if page == "search"}
-			<TableView studentData={studentData} />
+			<TableView {studentData} />
 		{/if}
 		{#if page != "signin"}
 			<SignOut bind:signedIn bind:page />

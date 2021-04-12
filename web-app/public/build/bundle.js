@@ -1,2 +1,4655 @@
-var app=function(){"use strict";function n(){}function e(n){return n()}function t(){return Object.create(null)}function o(n){n.forEach(e)}function l(n){return"function"==typeof n}function a(n,e){return n!=n?e==e:n!==e||n&&"object"==typeof n||"function"==typeof n}function c(n){return null==n?"":n}function i(n,e){n.appendChild(e)}function s(n,e,t){n.insertBefore(e,t||null)}function r(n){n.parentNode.removeChild(n)}function u(n,e){for(let t=0;t<n.length;t+=1)n[t]&&n[t].d(e)}function d(n){return document.createElement(n)}function m(n){return document.createTextNode(n)}function f(){return m(" ")}function h(n,e,t,o){return n.addEventListener(e,t,o),()=>n.removeEventListener(e,t,o)}function p(n,e,t){null==t?n.removeAttribute(e):n.getAttribute(e)!==t&&n.setAttribute(e,t)}function g(n,e,t){const o=new Set;for(let e=0;e<n.length;e+=1)n[e].checked&&o.add(n[e].__value);return t||o.delete(e),Array.from(o)}function v(n,e){e=""+e,n.wholeText!==e&&(n.data=e)}function _(n,e){n.value=null==e?"":e}function b(n,e,t,o){n.style.setProperty(e,t,o?"important":"")}let x;function k(n){x=n}const y=[],$=[],w=[],O=[],C=Promise.resolve();let T=!1;function I(n){w.push(n)}function D(n){O.push(n)}let H=!1;const A=new Set;function j(){if(!H){H=!0;do{for(let n=0;n<y.length;n+=1){const e=y[n];k(e),S(e.$$)}for(k(null),y.length=0;$.length;)$.pop()();for(let n=0;n<w.length;n+=1){const e=w[n];A.has(e)||(A.add(e),e())}w.length=0}while(y.length);for(;O.length;)O.pop()();T=!1,H=!1,A.clear()}}function S(n){if(null!==n.fragment){n.update(),o(n.before_update);const e=n.dirty;n.dirty=[-1],n.fragment&&n.fragment.p(n.ctx,e),n.after_update.forEach(I)}}const L=new Set;let N;function P(){N={r:0,c:[],p:N}}function B(){N.r||o(N.c),N=N.p}function M(n,e){n&&n.i&&(L.delete(n),n.i(e))}function E(n,e,t,o){if(n&&n.o){if(L.has(n))return;L.add(n),N.c.push((()=>{L.delete(n),o&&(t&&n.d(1),o())})),n.o(e)}}function R(n,e,t){const o=n.$$.props[e];void 0!==o&&(n.$$.bound[o]=t,t(n.$$.ctx[o]))}function U(n){n&&n.c()}function F(n,t,a,c){const{fragment:i,on_mount:s,on_destroy:r,after_update:u}=n.$$;i&&i.m(t,a),c||I((()=>{const t=s.map(e).filter(l);r?r.push(...t):o(t),n.$$.on_mount=[]})),u.forEach(I)}function Y(n,e){const t=n.$$;null!==t.fragment&&(o(t.on_destroy),t.fragment&&t.fragment.d(e),t.on_destroy=t.fragment=null,t.ctx=[])}function q(n,e){-1===n.$$.dirty[0]&&(y.push(n),T||(T=!0,C.then(j)),n.$$.dirty.fill(0)),n.$$.dirty[e/31|0]|=1<<e%31}function z(e,l,a,c,i,s,u=[-1]){const d=x;k(e);const m=e.$$={fragment:null,ctx:null,props:s,update:n,not_equal:i,bound:t(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(d?d.$$.context:l.context||[]),callbacks:t(),dirty:u,skip_bound:!1};let f=!1;if(m.ctx=a?a(e,l.props||{},((n,t,...o)=>{const l=o.length?o[0]:t;return m.ctx&&i(m.ctx[n],m.ctx[n]=l)&&(!m.skip_bound&&m.bound[n]&&m.bound[n](l),f&&q(e,n)),t})):[],m.update(),f=!0,o(m.before_update),m.fragment=!!c&&c(m.ctx),l.target){if(l.hydrate){const n=function(n){return Array.from(n.childNodes)}(l.target);m.fragment&&m.fragment.l(n),n.forEach(r)}else m.fragment&&m.fragment.c();l.intro&&M(e.$$.fragment),F(e,l.target,l.anchor,l.customElement),j()}k(d)}class J{$destroy(){Y(this,1),this.$destroy=n}$on(n,e){const t=this.$$.callbacks[n]||(this.$$.callbacks[n]=[]);return t.push(e),()=>{const n=t.indexOf(e);-1!==n&&t.splice(n,1)}}$set(n){var e;this.$$set&&(e=n,0!==Object.keys(e).length)&&(this.$$.skip_bound=!0,this.$$set(n),this.$$.skip_bound=!1)}}function G(e){let t,l,a,c,u,g,v,x,k,y,$,w,O,C,T,I,D,H,A,j,S,L,N,P,B,M,E,R,U,F,Y,q,z,J,G,K,Q,V,W,X,Z,nn,en,tn,on,ln,an,cn,sn,rn,un,dn,mn,fn,hn,pn,gn,vn,_n,bn,xn,kn,yn,$n,wn,On,Cn,Tn,In,Dn,Hn,An,jn,Sn,Ln,Nn,Pn,Bn,Mn,En,Rn,Un,Fn,Yn,qn,zn,Jn,Gn,Kn,Qn,Vn,Wn,Xn,Zn,ne,ee,te,oe,le,ae,ce,ie,se,re,ue,de,me,fe,he,pe,ge,ve,_e,be,xe,ke,ye,$e,we,Oe,Ce,Te,Ie,De,He,Ae,je,Se,Le,Ne,Pe,Be,Me,Ee,Re,Ue,Fe,Ye,qe,ze,Je,Ge,Ke,Qe,Ve,We,Xe,Ze,nt,et,tt,ot,lt,at,ct,it,st,rt,ut,dt,mt,ft,ht,pt,gt,vt;return{c(){t=d("main"),l=d("div"),a=d("div"),a.innerHTML="<h1>Edit Your Profile</h1>",c=f(),u=d("div"),u.innerHTML="<p>This is where you build the profile other students will see\n                after they sign in. You can modify it later by pressing the\n                &quot;Profile&quot; button that will appear on the top right of the page\n                when you&#39;re done. However, it&#39;s best to put in the correct\n                information as soon as you can.</p>",g=f(),v=d("div"),x=d("div"),k=d("div"),y=d("div"),$=d("label"),$.textContent="Enter Your Preferred First Name",w=f(),O=d("input"),C=f(),T=d("div"),I=d("label"),I.textContent="Enter Your Last Name",D=f(),H=d("input"),A=f(),j=d("div"),S=d("div"),L=d("label"),L.textContent="College Name",N=f(),P=d("input"),B=f(),M=d("p"),M.textContent="Add multiple, comma-separated names for easy\n                            searchability since I'm too lazy to add an index of\n                            colleges and stuff.",E=f(),R=d("div"),U=d("div"),U.innerHTML="<h3>Contact Information</h3>",F=f(),Y=d("div"),Y.innerHTML="<p>Enter in contact information below. Remember, this\n                            will be public available to everyone who signs into\n                            the service, so make sure you&#39;re comfortable with\n                            what you enter. Feel free to leave any, or all of\n                            these blank, but having something is better than\n                            nothing.</p>",q=f(),z=d("div"),J=d("label"),J.textContent="Discord Tag",G=f(),K=d("input"),Q=f(),V=d("div"),W=d("label"),W.textContent="LinkedIn Profile",X=f(),Z=d("input"),nn=f(),en=d("div"),tn=d("label"),tn.textContent="Snapchat",on=f(),ln=d("input"),an=f(),cn=d("div"),sn=d("label"),sn.textContent="Instagram Profile",rn=f(),un=d("input"),dn=f(),mn=d("div"),fn=d("label"),fn.textContent="Facebook Profile",hn=f(),pn=d("input"),gn=f(),vn=d("div"),_n=d("label"),_n.textContent="Twitter Profile",bn=f(),xn=d("input"),kn=f(),yn=d("div"),$n=d("label"),$n.textContent="Email",wn=f(),On=d("input"),Cn=f(),Tn=d("div"),In=d("label"),In.textContent="Phone Number",Dn=f(),Hn=d("input"),An=f(),jn=d("div"),Sn=d("div"),Sn.innerHTML="<h3>Room Information</h3>",Ln=f(),Nn=d("div"),Nn.innerHTML="<p>Select all options you are comfortable with and have\n                            available to you. This doesn&#39;t mean you have the\n                            actual room already. This is just to tell others\n                            what you are okay living in and can live in. If you\n                            change your mind about anything later, you can edit\n                            it here. If you have specific preferences, such as\n                            1st choice, 2nd choice, you can add them in the\n                            additional details section later.</p>",Pn=f(),Bn=d("div"),Mn=d("h5"),Mn.textContent="Honors Housing",En=f(),Rn=d("label"),Un=d("input"),Fn=f(),Yn=d("i"),qn=m(" Honors"),zn=f(),Jn=d("label"),Gn=d("input"),Kn=f(),Qn=d("i"),Vn=m(" Non-Honors"),Wn=f(),Xn=d("label"),Zn=d("input"),ne=f(),ee=d("i"),te=m(" Not Applicable"),oe=f(),le=d("div"),ae=d("h5"),ae.textContent="Location",ce=f(),ie=d("label"),se=d("input"),re=f(),ue=d("i"),de=m(" On-Campus"),me=f(),fe=d("label"),he=d("input"),pe=f(),ge=d("i"),ve=m(" Off-Campus"),_e=f(),be=d("label"),xe=d("input"),ke=f(),ye=d("i"),$e=m(" Not Applicable"),we=f(),Oe=d("div"),Ce=d("h5"),Ce.textContent="Room Floorplan",Te=f(),Ie=d("label"),De=d("input"),He=f(),Ae=d("i"),je=m(" Shared Room and Bathroom"),Se=f(),Le=d("label"),Ne=d("input"),Pe=f(),Be=d("i"),Me=m(" Connected Bathroom"),Ee=f(),Re=d("label"),Ue=d("input"),Fe=f(),Ye=d("i"),qe=m(" Communal Bathroom"),ze=f(),Je=d("label"),Ge=d("input"),Ke=f(),Qe=d("i"),Ve=m(" Private Bathrooms"),We=f(),Xe=d("label"),Ze=d("input"),nt=f(),et=d("i"),tt=m(" Not Applicable"),ot=f(),lt=d("div"),at=d("div"),at.innerHTML="<h3>Additional Information</h3>",ct=f(),it=d("div"),it.innerHTML="<p>This is where you can add things like preferences or\n                            other details that can&#39;t be added to the form. Add\n                            as much detail as you want since this will also be\n                            added to the search system and will help you find a\n                            good roommate. If you have buildings you prefer, or\n                            floorplans you&#39;d like instead, make sure to add that\n                            here, too!</p>",st=f(),rt=d("div"),ut=d("div"),dt=d("textarea"),mt=f(),ft=d("div"),ht=d("div"),pt=d("button"),pt.textContent="Save",p(a,"class","column col-8 col-md-12 col-mx-auto"),p(u,"class","column col-8 col-md-12 col-mx-auto"),p($,"class","form-label"),p($,"for","first-name"),p(O,"type","text"),p(O,"class","form-input"),p(O,"id","first-name"),p(y,"class","column col-6 col-md-12"),p(I,"class","form-label"),p(I,"for","last-name"),p(H,"type","text"),p(H,"class","form-input"),p(H,"id","last-name"),p(T,"class","column col-6 col-md-12"),p(k,"class","columns"),p(L,"class","form-label"),p(L,"for","college-name"),p(P,"type","text"),p(P,"class","form-input"),p(P,"id","college-name"),p(P,"placeholder","UT Austin, University of Texas Austin, etc."),p(S,"class","column col-12"),p(j,"class","columns"),b(j,"margin-top","20px"),p(U,"class","col-12"),p(Y,"class","col-12"),p(J,"class","form-label"),p(J,"for","discord-contact"),p(K,"type","text"),p(K,"class","form-input"),p(K,"id","first-name"),p(K,"placeholder","Username#0000"),p(z,"class","column col-6 col-md-12"),p(W,"class","form-label"),p(W,"for","linkedin-contact"),p(Z,"type","url"),p(Z,"class","form-input"),p(Z,"id","linkedin-contact"),p(Z,"placeholder","https://www.linkedin.com/in/profile/"),p(V,"class","column col-6 col-md-12"),p(tn,"class","form-label"),p(tn,"for","snapchat-contact"),p(ln,"type","text"),p(ln,"class","form-input"),p(ln,"id","snapchat-contact"),p(ln,"placeholder","something"),p(en,"class","column col-6 col-md-12"),p(sn,"class","form-label"),p(sn,"for","insta-contact"),p(un,"type","url"),p(un,"class","form-input"),p(un,"id","insta-contact"),p(un,"placeholder","https://www.instagram.com/elonmusk/"),p(cn,"class","column col-6 col-md-12"),p(fn,"class","form-label"),p(fn,"for","facebook-contact"),p(pn,"type","url"),p(pn,"class","form-input"),p(pn,"id","facebook-contact"),p(pn,"placeholder","https://www.facebook.com/zuck"),p(mn,"class","column col-6 col-md-12"),p(_n,"class","form-label"),p(_n,"for","twitter-contact"),p(xn,"type","url"),p(xn,"class","form-input"),p(xn,"id","twitter-contact"),p(xn,"placeholder","https://twitter.com/elonmusk"),p(vn,"class","column col-6 col-md-12"),p($n,"class","form-label"),p($n,"for","email-contact"),p(On,"type","email"),p(On,"class","form-input"),p(On,"id","email-contact"),p(On,"placeholder","john.doe@gmail.com"),p(yn,"class","column col-6 col-md-12"),p(In,"class","form-label"),p(In,"for","phone-contact"),p(Hn,"type","tel"),p(Hn,"class","form-input"),p(Hn,"id","phone-contact"),p(Hn,"placeholder","5555555555"),p(Tn,"class","column col-6 col-md-12"),p(R,"class","columns"),b(R,"margin-top","20px"),p(Sn,"class","column col-12"),p(Nn,"class","column col-12"),p(Un,"type","checkbox"),p(Un,"name","honors"),Un.__value="Honors",Un.value=Un.__value,e[15][2].push(Un),p(Yn,"class","form-icon"),p(Rn,"class","form-checkbox"),p(Gn,"type","checkbox"),p(Gn,"name","honors"),Gn.__value="Non-Honors",Gn.value=Gn.__value,e[15][2].push(Gn),p(Qn,"class","form-icon"),p(Jn,"class","form-checkbox"),p(Zn,"type","checkbox"),p(Zn,"name","honors"),Zn.__value="Not Applicable",Zn.value=Zn.__value,e[15][2].push(Zn),p(ee,"class","form-icon"),p(Xn,"class","form-checkbox"),p(Bn,"class","column col-4 col-md-12 text-left"),p(se,"type","checkbox"),p(se,"name","location"),se.__value="On-Campus",se.value=se.__value,e[15][1].push(se),p(ue,"class","form-icon"),p(ie,"class","form-checkbox"),p(he,"type","checkbox"),p(he,"name","location"),he.__value="Off-Campus",he.value=he.__value,e[15][1].push(he),p(ge,"class","form-icon"),p(fe,"class","form-checkbox"),p(xe,"type","checkbox"),p(xe,"name","location"),xe.__value="Not Applicable",xe.value=xe.__value,e[15][1].push(xe),p(ye,"class","form-icon"),p(be,"class","form-checkbox"),p(le,"class","column col-4 col-md-12 text-left"),p(De,"type","checkbox"),p(De,"name","floorplan"),De.__value="Shared Room and Bathroom",De.value=De.__value,e[15][0].push(De),p(Ae,"class","form-icon"),p(Ie,"class","form-checkbox"),p(Ne,"type","checkbox"),p(Ne,"name","floorplan"),Ne.__value="Connected Bathroom",Ne.value=Ne.__value,e[15][0].push(Ne),p(Be,"class","form-icon"),p(Le,"class","form-checkbox"),p(Ue,"type","checkbox"),p(Ue,"name","floorplan"),Ue.__value="Communal Bathroom",Ue.value=Ue.__value,e[15][0].push(Ue),p(Ye,"class","form-icon"),p(Re,"class","form-checkbox"),p(Ge,"type","checkbox"),p(Ge,"name","floorplan"),Ge.__value="Private Bathrooms",Ge.value=Ge.__value,e[15][0].push(Ge),p(Qe,"class","form-icon"),p(Je,"class","form-checkbox"),p(Ze,"type","checkbox"),p(Ze,"name","floorplan"),Ze.__value="Not Applicable",Ze.value=Ze.__value,e[15][0].push(Ze),p(et,"class","form-icon"),p(Xe,"class","form-checkbox"),p(Oe,"class","column col-4 col-md-12 text-left"),p(jn,"class","columns"),b(jn,"margin-top","20px"),p(at,"class","col-12"),p(it,"class","col-12"),p(dt,"class","form-input"),p(dt,"id","input-example-3"),p(dt,"placeholder","Details..."),p(dt,"rows","6"),p(ut,"class","form-group"),p(rt,"class","col-12 text-left"),p(lt,"class","columns"),b(lt,"margin-top","20px"),p(pt,"class","btn btn-primary"),p(ht,"class","column col-12"),p(ft,"class","columns"),b(ft,"margin-top","20px"),p(x,"class","form-group"),p(v,"class","column col-8 col-md-12 col-mx-auto"),p(l,"class","columns")},m(n,o){s(n,t,o),i(t,l),i(l,a),i(l,c),i(l,u),i(l,g),i(l,v),i(v,x),i(x,k),i(k,y),i(y,$),i(y,w),i(y,O),_(O,e[0].first_name),i(k,C),i(k,T),i(T,I),i(T,D),i(T,H),_(H,e[0].last_name),i(x,A),i(x,j),i(j,S),i(S,L),i(S,N),i(S,P),_(P,e[0].college_name),i(S,B),i(S,M),i(x,E),i(x,R),i(R,U),i(R,F),i(R,Y),i(R,q),i(R,z),i(z,J),i(z,G),i(z,K),_(K,e[0].discord),i(R,Q),i(R,V),i(V,W),i(V,X),i(V,Z),_(Z,e[0].linkedin),i(R,nn),i(R,en),i(en,tn),i(en,on),i(en,ln),_(ln,e[0].snapchat),i(R,an),i(R,cn),i(cn,sn),i(cn,rn),i(cn,un),_(un,e[0].instagram),i(R,dn),i(R,mn),i(mn,fn),i(mn,hn),i(mn,pn),_(pn,e[0].facebook),i(R,gn),i(R,vn),i(vn,_n),i(vn,bn),i(vn,xn),_(xn,e[0].twitter),i(R,kn),i(R,yn),i(yn,$n),i(yn,wn),i(yn,On),_(On,e[0].email),i(R,Cn),i(R,Tn),i(Tn,In),i(Tn,Dn),i(Tn,Hn),_(Hn,e[0].phone),i(x,An),i(x,jn),i(jn,Sn),i(jn,Ln),i(jn,Nn),i(jn,Pn),i(jn,Bn),i(Bn,Mn),i(Bn,En),i(Bn,Rn),i(Rn,Un),Un.checked=~e[0].honors.indexOf(Un.__value),i(Rn,Fn),i(Rn,Yn),i(Rn,qn),i(Bn,zn),i(Bn,Jn),i(Jn,Gn),Gn.checked=~e[0].honors.indexOf(Gn.__value),i(Jn,Kn),i(Jn,Qn),i(Jn,Vn),i(Bn,Wn),i(Bn,Xn),i(Xn,Zn),Zn.checked=~e[0].honors.indexOf(Zn.__value),i(Xn,ne),i(Xn,ee),i(Xn,te),i(jn,oe),i(jn,le),i(le,ae),i(le,ce),i(le,ie),i(ie,se),se.checked=~e[0].location.indexOf(se.__value),i(ie,re),i(ie,ue),i(ie,de),i(le,me),i(le,fe),i(fe,he),he.checked=~e[0].location.indexOf(he.__value),i(fe,pe),i(fe,ge),i(fe,ve),i(le,_e),i(le,be),i(be,xe),xe.checked=~e[0].location.indexOf(xe.__value),i(be,ke),i(be,ye),i(be,$e),i(jn,we),i(jn,Oe),i(Oe,Ce),i(Oe,Te),i(Oe,Ie),i(Ie,De),De.checked=~e[0].floorplan.indexOf(De.__value),i(Ie,He),i(Ie,Ae),i(Ie,je),i(Oe,Se),i(Oe,Le),i(Le,Ne),Ne.checked=~e[0].floorplan.indexOf(Ne.__value),i(Le,Pe),i(Le,Be),i(Le,Me),i(Oe,Ee),i(Oe,Re),i(Re,Ue),Ue.checked=~e[0].floorplan.indexOf(Ue.__value),i(Re,Fe),i(Re,Ye),i(Re,qe),i(Oe,ze),i(Oe,Je),i(Je,Ge),Ge.checked=~e[0].floorplan.indexOf(Ge.__value),i(Je,Ke),i(Je,Qe),i(Je,Ve),i(Oe,We),i(Oe,Xe),i(Xe,Ze),Ze.checked=~e[0].floorplan.indexOf(Ze.__value),i(Xe,nt),i(Xe,et),i(Xe,tt),i(x,ot),i(x,lt),i(lt,at),i(lt,ct),i(lt,it),i(lt,st),i(lt,rt),i(rt,ut),i(ut,dt),_(dt,e[0].additional),i(x,mt),i(x,ft),i(ft,ht),i(ht,pt),gt||(vt=[h(O,"input",e[3]),h(H,"input",e[4]),h(P,"input",e[5]),h(K,"input",e[6]),h(Z,"input",e[7]),h(ln,"input",e[8]),h(un,"input",e[9]),h(pn,"input",e[10]),h(xn,"input",e[11]),h(On,"input",e[12]),h(Hn,"input",e[13]),h(Un,"change",e[14]),h(Gn,"change",e[16]),h(Zn,"change",e[17]),h(se,"change",e[18]),h(he,"change",e[19]),h(xe,"change",e[20]),h(De,"change",e[21]),h(Ne,"change",e[22]),h(Ue,"change",e[23]),h(Ge,"change",e[24]),h(Ze,"change",e[25]),h(dt,"input",e[26]),h(pt,"click",e[27])],gt=!0)},p(n,[e]){1&e&&O.value!==n[0].first_name&&_(O,n[0].first_name),1&e&&H.value!==n[0].last_name&&_(H,n[0].last_name),1&e&&P.value!==n[0].college_name&&_(P,n[0].college_name),1&e&&K.value!==n[0].discord&&_(K,n[0].discord),1&e&&_(Z,n[0].linkedin),1&e&&ln.value!==n[0].snapchat&&_(ln,n[0].snapchat),1&e&&_(un,n[0].instagram),1&e&&_(pn,n[0].facebook),1&e&&_(xn,n[0].twitter),1&e&&On.value!==n[0].email&&_(On,n[0].email),1&e&&_(Hn,n[0].phone),1&e&&(Un.checked=~n[0].honors.indexOf(Un.__value)),1&e&&(Gn.checked=~n[0].honors.indexOf(Gn.__value)),1&e&&(Zn.checked=~n[0].honors.indexOf(Zn.__value)),1&e&&(se.checked=~n[0].location.indexOf(se.__value)),1&e&&(he.checked=~n[0].location.indexOf(he.__value)),1&e&&(xe.checked=~n[0].location.indexOf(xe.__value)),1&e&&(De.checked=~n[0].floorplan.indexOf(De.__value)),1&e&&(Ne.checked=~n[0].floorplan.indexOf(Ne.__value)),1&e&&(Ue.checked=~n[0].floorplan.indexOf(Ue.__value)),1&e&&(Ge.checked=~n[0].floorplan.indexOf(Ge.__value)),1&e&&(Ze.checked=~n[0].floorplan.indexOf(Ze.__value)),1&e&&_(dt,n[0].additional)},i:n,o:n,d(n){n&&r(t),e[15][2].splice(e[15][2].indexOf(Un),1),e[15][2].splice(e[15][2].indexOf(Gn),1),e[15][2].splice(e[15][2].indexOf(Zn),1),e[15][1].splice(e[15][1].indexOf(se),1),e[15][1].splice(e[15][1].indexOf(he),1),e[15][1].splice(e[15][1].indexOf(xe),1),e[15][0].splice(e[15][0].indexOf(De),1),e[15][0].splice(e[15][0].indexOf(Ne),1),e[15][0].splice(e[15][0].indexOf(Ue),1),e[15][0].splice(e[15][0].indexOf(Ge),1),e[15][0].splice(e[15][0].indexOf(Ze),1),gt=!1,o(vt)}}}function K(n,e,t){var{profileData:o}=e,{whenDone:l}=e,{sessionToken:a}=e;const c=[[],[],[]];return n.$$set=n=>{"profileData"in n&&t(0,o=n.profileData),"whenDone"in n&&t(1,l=n.whenDone),"sessionToken"in n&&t(2,a=n.sessionToken)},[o,l,a,function(){o.first_name=this.value,t(0,o)},function(){o.last_name=this.value,t(0,o)},function(){o.college_name=this.value,t(0,o)},function(){o.discord=this.value,t(0,o)},function(){o.linkedin=this.value,t(0,o)},function(){o.snapchat=this.value,t(0,o)},function(){o.instagram=this.value,t(0,o)},function(){o.facebook=this.value,t(0,o)},function(){o.twitter=this.value,t(0,o)},function(){o.email=this.value,t(0,o)},function(){o.phone=this.value,t(0,o)},function(){o.honors=g(c[2],this.__value,this.checked),t(0,o)},c,function(){o.honors=g(c[2],this.__value,this.checked),t(0,o)},function(){o.honors=g(c[2],this.__value,this.checked),t(0,o)},function(){o.location=g(c[1],this.__value,this.checked),t(0,o)},function(){o.location=g(c[1],this.__value,this.checked),t(0,o)},function(){o.location=g(c[1],this.__value,this.checked),t(0,o)},function(){o.floorplan=g(c[0],this.__value,this.checked),t(0,o)},function(){o.floorplan=g(c[0],this.__value,this.checked),t(0,o)},function(){o.floorplan=g(c[0],this.__value,this.checked),t(0,o)},function(){o.floorplan=g(c[0],this.__value,this.checked),t(0,o)},function(){o.floorplan=g(c[0],this.__value,this.checked),t(0,o)},function(){o.additional=this.value,t(0,o)},()=>{l(a,o)}]}class Q extends J{constructor(n){super(),z(this,n,K,G,a,{profileData:0,whenDone:1,sessionToken:2})}}function V(n){let e,t;return{c(){e=d("p"),t=m(n[0]),p(e,"class","column col-8 col-mx-auto"),b(e,"color","red")},m(n,o){s(n,e,o),i(e,t)},p(n,e){1&e&&v(t,n[0])},d(n){n&&r(e)}}}function W(e){let t,o,l,a,c,u,m,h,g,v,_=null!=e[0]&&V(e);return{c(){t=d("main"),o=d("div"),o.innerHTML='<div class="column col-8 col-md-12 col-mx-auto"><h3>A place to find a roommate for college!</h3></div>',l=f(),a=d("div"),a.innerHTML='<p class="column col-8 col-mx-auto">This is a digital service where you can find other students going to\n            the same college and looking for roommates. After signing in and\n            entering your information (you can edit it later), you can look at\n            profiles of other students and get in contact with them.</p>',c=f(),u=d("div"),u.innerHTML='<p class="column col-8 col-md-12 col-mx-auto">You can get started by signing in with Google! You don&#39;t need a\n            school account to enter.</p>',m=f(),h=d("div"),_&&_.c(),g=f(),v=d("div"),p(o,"class","columns"),p(a,"class","columns"),p(u,"class","columns"),b(v,"display","flex"),b(v,"justify-content","center"),p(v,"class","column col-8 col-mx-auto g-signin2"),p(v,"data-onsuccess","onSignIn"),p(h,"class","columns")},m(n,e){s(n,t,e),i(t,o),i(t,l),i(t,a),i(t,c),i(t,u),i(t,m),i(t,h),_&&_.m(h,null),i(h,g),i(h,v)},p(n,[e]){null!=n[0]?_?_.p(n,e):(_=V(n),_.c(),_.m(h,g)):_&&(_.d(1),_=null)},i:n,o:n,d(n){n&&r(t),_&&_.d()}}}function X(n,e,t){var{signedIn:o}=e,{page:l}=e,{sessionToken:a}=e;let c=null;return window.onSignIn=n=>{const e=n.getBasicProfile();console.log("ID: "+e.getId()),console.log("Image URL: "+e.getImageUrl()),console.log("Email: "+e.getEmail()),console.log("ID Token: "+n.getAuthResponse().id_token),fetch("./auth",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({oauth_token_id:n.getAuthResponse().id_token})}).then((n=>n.json())).then((n=>{console.log(n),null!=n.error?(t(0,c=n.error),window.signOut()):(t(2,l=localStorage.getItem("page")?localStorage.getItem("page"):"profile"),t(3,a=n.jwt_token),t(1,o=!0),t(0,c=null))}))},n.$$set=n=>{"signedIn"in n&&t(1,o=n.signedIn),"page"in n&&t(2,l=n.page),"sessionToken"in n&&t(3,a=n.sessionToken)},[c,o,l,a]}class Z extends J{constructor(n){super(),z(this,n,X,W,a,{signedIn:1,page:2,sessionToken:3})}}function nn(e){let t,l,a,c,u,g,_,b,x="profile"==e[0]?"Search":"Profile";return{c(){t=d("main"),l=d("div"),a=d("button"),c=m(x),u=f(),g=d("button"),g.textContent="Sign Out",p(a,"class","btn"),p(g,"class","btn"),p(l,"class","topright svelte-1hnft6h")},m(n,o){s(n,t,o),i(t,l),i(l,a),i(a,c),i(l,u),i(l,g),_||(b=[h(a,"click",e[4]),h(g,"click",e[1])],_=!0)},p(n,[e]){1&e&&x!==(x="profile"==n[0]?"Search":"Profile")&&v(c,x)},i:n,o:n,d(n){n&&r(t),_=!1,o(b)}}}function en(n,e,t){var{page:o}=e,{signedIn:l}=e;function a(n){t(0,o=n)}return n.$$set=n=>{"page"in n&&t(0,o=n.page),"signedIn"in n&&t(3,l=n.signedIn)},[o,function(){a("signin"),gapi.auth2.getAuthInstance().signOut().then((function(){console.log("User signed out."),t(3,l=!1),location.reload()}))},a,l,()=>a("profile"==o?"search":"profile")]}class tn extends J{constructor(n){super(),z(this,n,en,nn,a,{page:0,signedIn:3})}}function on(n,e,t){const o=n.slice();return o[5]=e[t],o}function ln(n,e,t){const o=n.slice();return o[5]=e[t],o}function an(n,e,t){const o=n.slice();return o[5]=e[t],o}function cn(n){let e,t,o,l,a,c,h,g,_,x,k,y,$,w,O,C,T,I,D,H,A,j,S,L,N,P,B,M,E,R,U,F,Y,q,z=n[1].college_name+"",J=n[1].additional+"",G=null!=n[1].discord&&sn(n),K=null!=n[1].linkedin&&rn(n),Q=null!=n[1].snapchat&&un(n),V=null!=n[1].instagram&&dn(n),W=null!=n[1].facebook&&mn(n),X=null!=n[1].twitter&&fn(n),Z=null!=n[1].email&&hn(n),nn=null!=n[1].phone&&pn(n),en=n[1].honors?n[1].honors:[],tn=[];for(let e=0;e<en.length;e+=1)tn[e]=gn(an(n,en,e));let cn=n[1].location?n[1].location:[],bn=[];for(let e=0;e<cn.length;e+=1)bn[e]=vn(ln(n,cn,e));let xn=n[1].floorplan?n[1].floorplan:[],kn=[];for(let e=0;e<xn.length;e+=1)kn[e]=_n(on(n,xn,e));return{c(){e=d("h6"),t=m(z),o=f(),l=d("h5"),l.textContent="Contact Information",a=f(),c=d("ul"),G&&G.c(),h=f(),K&&K.c(),g=f(),Q&&Q.c(),_=f(),V&&V.c(),x=f(),W&&W.c(),k=f(),X&&X.c(),y=f(),Z&&Z.c(),$=f(),nn&&nn.c(),w=f(),O=d("h4"),O.textContent="Room Information",C=f(),T=d("div"),I=d("div"),D=d("div"),H=d("h6"),H.textContent="Honors",A=f();for(let n=0;n<tn.length;n+=1)tn[n].c();j=f(),S=d("div"),L=d("h6"),L.textContent="Locations",N=f();for(let n=0;n<bn.length;n+=1)bn[n].c();P=f(),B=d("div"),M=d("h6"),M.textContent="Floorplans",E=f();for(let n=0;n<kn.length;n+=1)kn[n].c();R=f(),U=d("h4"),U.textContent="Additional Information",F=f(),Y=d("p"),q=m(J),p(D,"class","column col-3"),p(S,"class","column col-3"),p(B,"class","column col-3"),p(I,"class","columns"),p(T,"class","container"),b(Y,"border","1px solid gray"),b(Y,"border-radius","15px"),b(Y,"padding","10px")},m(n,r){s(n,e,r),i(e,t),s(n,o,r),s(n,l,r),s(n,a,r),s(n,c,r),G&&G.m(c,null),i(c,h),K&&K.m(c,null),i(c,g),Q&&Q.m(c,null),i(c,_),V&&V.m(c,null),i(c,x),W&&W.m(c,null),i(c,k),X&&X.m(c,null),i(c,y),Z&&Z.m(c,null),i(c,$),nn&&nn.m(c,null),s(n,w,r),s(n,O,r),s(n,C,r),s(n,T,r),i(T,I),i(I,D),i(D,H),i(D,A);for(let n=0;n<tn.length;n+=1)tn[n].m(D,null);i(I,j),i(I,S),i(S,L),i(S,N);for(let n=0;n<bn.length;n+=1)bn[n].m(S,null);i(I,P),i(I,B),i(B,M),i(B,E);for(let n=0;n<kn.length;n+=1)kn[n].m(B,null);s(n,R,r),s(n,U,r),s(n,F,r),s(n,Y,r),i(Y,q)},p(n,e){if(2&e&&z!==(z=n[1].college_name+"")&&v(t,z),null!=n[1].discord?G?G.p(n,e):(G=sn(n),G.c(),G.m(c,h)):G&&(G.d(1),G=null),null!=n[1].linkedin?K?K.p(n,e):(K=rn(n),K.c(),K.m(c,g)):K&&(K.d(1),K=null),null!=n[1].snapchat?Q?Q.p(n,e):(Q=un(n),Q.c(),Q.m(c,_)):Q&&(Q.d(1),Q=null),null!=n[1].instagram?V?V.p(n,e):(V=dn(n),V.c(),V.m(c,x)):V&&(V.d(1),V=null),null!=n[1].facebook?W?W.p(n,e):(W=mn(n),W.c(),W.m(c,k)):W&&(W.d(1),W=null),null!=n[1].twitter?X?X.p(n,e):(X=fn(n),X.c(),X.m(c,y)):X&&(X.d(1),X=null),null!=n[1].email?Z?Z.p(n,e):(Z=hn(n),Z.c(),Z.m(c,$)):Z&&(Z.d(1),Z=null),null!=n[1].phone?nn?nn.p(n,e):(nn=pn(n),nn.c(),nn.m(c,null)):nn&&(nn.d(1),nn=null),6&e){let t;for(en=n[1].honors?n[1].honors:[],t=0;t<en.length;t+=1){const o=an(n,en,t);tn[t]?tn[t].p(o,e):(tn[t]=gn(o),tn[t].c(),tn[t].m(D,null))}for(;t<tn.length;t+=1)tn[t].d(1);tn.length=en.length}if(6&e){let t;for(cn=n[1].location?n[1].location:[],t=0;t<cn.length;t+=1){const o=ln(n,cn,t);bn[t]?bn[t].p(o,e):(bn[t]=vn(o),bn[t].c(),bn[t].m(S,null))}for(;t<bn.length;t+=1)bn[t].d(1);bn.length=cn.length}if(6&e){let t;for(xn=n[1].floorplan?n[1].floorplan:[],t=0;t<xn.length;t+=1){const o=on(n,xn,t);kn[t]?kn[t].p(o,e):(kn[t]=_n(o),kn[t].c(),kn[t].m(B,null))}for(;t<kn.length;t+=1)kn[t].d(1);kn.length=xn.length}2&e&&J!==(J=n[1].additional+"")&&v(q,J)},d(n){n&&r(e),n&&r(o),n&&r(l),n&&r(a),n&&r(c),G&&G.d(),K&&K.d(),Q&&Q.d(),V&&V.d(),W&&W.d(),X&&X.d(),Z&&Z.d(),nn&&nn.d(),n&&r(w),n&&r(O),n&&r(C),n&&r(T),u(tn,n),u(bn,n),u(kn,n),n&&r(R),n&&r(U),n&&r(F),n&&r(Y)}}}function sn(n){let e,t,o="Discord: "+n[1].discord;return{c(){e=d("li"),t=m(o)},m(n,o){s(n,e,o),i(e,t)},p(n,e){2&e&&o!==(o="Discord: "+n[1].discord)&&v(t,o)},d(n){n&&r(e)}}}function rn(n){let e,t,o="LinkedIn: "+n[1].linkedin;return{c(){e=d("li"),t=m(o)},m(n,o){s(n,e,o),i(e,t)},p(n,e){2&e&&o!==(o="LinkedIn: "+n[1].linkedin)&&v(t,o)},d(n){n&&r(e)}}}function un(n){let e,t,o="SnapChat: "+n[1].snapchat;return{c(){e=d("li"),t=m(o)},m(n,o){s(n,e,o),i(e,t)},p(n,e){2&e&&o!==(o="SnapChat: "+n[1].snapchat)&&v(t,o)},d(n){n&&r(e)}}}function dn(n){let e,t,o="Instagram: "+n[1].instagram;return{c(){e=d("li"),t=m(o)},m(n,o){s(n,e,o),i(e,t)},p(n,e){2&e&&o!==(o="Instagram: "+n[1].instagram)&&v(t,o)},d(n){n&&r(e)}}}function mn(n){let e,t,o="Facebook: "+n[1].facebook;return{c(){e=d("li"),t=m(o)},m(n,o){s(n,e,o),i(e,t)},p(n,e){2&e&&o!==(o="Facebook: "+n[1].facebook)&&v(t,o)},d(n){n&&r(e)}}}function fn(n){let e,t,o="Twitter: "+n[1].twitter;return{c(){e=d("li"),t=m(o)},m(n,o){s(n,e,o),i(e,t)},p(n,e){2&e&&o!==(o="Twitter: "+n[1].twitter)&&v(t,o)},d(n){n&&r(e)}}}function hn(n){let e,t,o="Email: "+n[1].email;return{c(){e=d("li"),t=m(o)},m(n,o){s(n,e,o),i(e,t)},p(n,e){2&e&&o!==(o="Email: "+n[1].email)&&v(t,o)},d(n){n&&r(e)}}}function pn(n){let e,t,o="Phone: "+n[1].phone;return{c(){e=d("li"),t=m(o)},m(n,o){s(n,e,o),i(e,t)},p(n,e){2&e&&o!==(o="Phone: "+n[1].phone)&&v(t,o)},d(n){n&&r(e)}}}function gn(n){let e,t,o,l=n[5]+"";return{c(){e=d("span"),t=m(l),p(e,"class",o=c("chip "+n[2][n[5]])+" svelte-1ealj29")},m(n,o){s(n,e,o),i(e,t)},p(n,a){2&a&&l!==(l=n[5]+"")&&v(t,l),6&a&&o!==(o=c("chip "+n[2][n[5]])+" svelte-1ealj29")&&p(e,"class",o)},d(n){n&&r(e)}}}function vn(n){let e,t,o,l=n[5]+"";return{c(){e=d("span"),t=m(l),p(e,"class",o=c("chip "+n[2][n[5]])+" svelte-1ealj29")},m(n,o){s(n,e,o),i(e,t)},p(n,a){2&a&&l!==(l=n[5]+"")&&v(t,l),6&a&&o!==(o=c("chip "+n[2][n[5]])+" svelte-1ealj29")&&p(e,"class",o)},d(n){n&&r(e)}}}function _n(n){let e,t,o,l=n[5]+"";return{c(){e=d("span"),t=m(l),p(e,"class",o=c("chip "+n[2][n[5]])+" svelte-1ealj29")},m(n,o){s(n,e,o),i(e,t)},p(n,a){2&a&&l!==(l=n[5]+"")&&v(t,l),6&a&&o!==(o=c("chip "+n[2][n[5]])+" svelte-1ealj29")&&p(e,"class",o)},d(n){n&&r(e)}}}function bn(e){let t,l,a,u,g,_,b,x,k,y,$,w,O,C,T,I,D=e[1]?e[1].first_name+" "+e[1].last_name:"",H=e[1]&&cn(e);return{c(){t=d("main"),l=d("div"),a=d("div"),u=f(),g=d("div"),_=d("div"),b=d("div"),x=f(),k=d("div"),y=m(D),$=f(),w=d("div"),O=d("div"),H&&H.c(),p(a,"class","modal-overlay"),p(a,"aria-label","Close"),p(b,"class","btn btn-clear float-right"),p(b,"aria-label","Close"),p(k,"class","modal-title h5"),p(_,"class","modal-header"),p(O,"class","content text-left"),p(w,"class","modal-body"),p(g,"class","modal-container"),p(l,"class",C=c("modal "+(e[0]?"active":""))+" svelte-1ealj29"),p(l,"id","modal-id")},m(n,o){s(n,t,o),i(t,l),i(l,a),i(l,u),i(l,g),i(g,_),i(_,b),i(_,x),i(_,k),i(k,y),i(g,$),i(g,w),i(w,O),H&&H.m(O,null),T||(I=[h(a,"click",e[3]),h(b,"click",e[4])],T=!0)},p(n,[e]){2&e&&D!==(D=n[1]?n[1].first_name+" "+n[1].last_name:"")&&v(y,D),n[1]?H?H.p(n,e):(H=cn(n),H.c(),H.m(O,null)):H&&(H.d(1),H=null),1&e&&C!==(C=c("modal "+(n[0]?"active":""))+" svelte-1ealj29")&&p(l,"class",C)},i:n,o:n,d(n){n&&r(t),H&&H.d(),T=!1,o(I)}}}function xn(n,e,t){var{open:o}=e,{modalData:l}=e,{colorMap:a}=e;return n.$$set=n=>{"open"in n&&t(0,o=n.open),"modalData"in n&&t(1,l=n.modalData),"colorMap"in n&&t(2,a=n.colorMap)},[o,l,a,()=>{t(0,o=!1)},()=>{t(0,o=!1)}]}class kn extends J{constructor(n){super(),z(this,n,xn,bn,a,{open:0,modalData:1,colorMap:2})}}function yn(n,e,t){const o=n.slice();return o[6]=e[t],o}function $n(n,e,t){const o=n.slice();return o[9]=e[t],o}function wn(n,e,t){const o=n.slice();return o[12]=e[t],o}function On(n,e,t){const o=n.slice();return o[15]=e[t],o}function Cn(n){let e,t=n[0].students,o=[];for(let e=0;e<t.length;e+=1)o[e]=Hn(yn(n,t,e));return{c(){for(let n=0;n<o.length;n+=1)o[n].c();e=m("")},m(n,t){for(let e=0;e<o.length;e+=1)o[e].m(n,t);s(n,e,t)},p(n,l){if(15&l){let a;for(t=n[0].students,a=0;a<t.length;a+=1){const c=yn(n,t,a);o[a]?o[a].p(c,l):(o[a]=Hn(c),o[a].c(),o[a].m(e.parentNode,e))}for(;a<o.length;a+=1)o[a].d(1);o.length=t.length}},d(n){u(o,n),n&&r(e)}}}function Tn(n){let e,t,o,l=n[15]+"";return{c(){e=d("span"),t=m(l),p(e,"class",o=c("chip "+n[3][n[15]])+" svelte-1ealj29")},m(n,o){s(n,e,o),i(e,t)},p(n,a){1&a&&l!==(l=n[15]+"")&&v(t,l),1&a&&o!==(o=c("chip "+n[3][n[15]])+" svelte-1ealj29")&&p(e,"class",o)},d(n){n&&r(e)}}}function In(n){let e,t,o,l=n[12]+"";return{c(){e=d("span"),t=m(l),p(e,"class",o=c("chip "+n[3][n[12]])+" svelte-1ealj29")},m(n,o){s(n,e,o),i(e,t)},p(n,a){1&a&&l!==(l=n[12]+"")&&v(t,l),1&a&&o!==(o=c("chip "+n[3][n[12]])+" svelte-1ealj29")&&p(e,"class",o)},d(n){n&&r(e)}}}function Dn(n){let e,t,o,l=n[9]+"";return{c(){e=d("span"),t=m(l),p(e,"class",o=c("chip "+n[3][n[9]])+" svelte-1ealj29")},m(n,o){s(n,e,o),i(e,t)},p(n,a){1&a&&l!==(l=n[9]+"")&&v(t,l),1&a&&o!==(o=c("chip "+n[3][n[9]])+" svelte-1ealj29")&&p(e,"class",o)},d(n){n&&r(e)}}}function Hn(n){let e,t,o,l,a,c,g,_,b,x,k,y,$,w,O,C,T,I,D,H,A=n[6].first_name.slice(0,27)+(n[6].first_name.length>27?"... ":" ")+n[6].last_name.slice(0,27)+(n[6].last_name.length>27?"... ":" "),j=n[6].college_name.slice(0,27)+(n[6].college_name.length>27?"...":""),S=n[6].honors,L=[];for(let e=0;e<S.length;e+=1)L[e]=Tn(On(n,S,e));let N=n[6].location,P=[];for(let e=0;e<N.length;e+=1)P[e]=In(wn(n,N,e));let B=n[6].floorplan,M=[];for(let e=0;e<B.length;e+=1)M[e]=Dn($n(n,B,e));function E(){return n[5](n[6])}return{c(){e=d("tr"),t=d("td"),o=m(A),a=f(),c=d("td"),g=m(j),b=f(),x=d("td");for(let n=0;n<L.length;n+=1)L[n].c();k=f(),y=d("td");for(let n=0;n<P.length;n+=1)P[n].c();$=f(),w=d("td");for(let n=0;n<M.length;n+=1)M[n].c();O=f(),C=d("td"),T=d("button"),T.innerHTML='<i class="icon icon-more-horiz"></i>',I=f(),p(t,"class","tooltip"),p(t,"data-tooltip",l=n[6].first_name+" "+n[6].last_name),p(c,"class","tooltip"),p(c,"data-tooltip",_=n[6].college_name),p(T,"class","btn btn-primary s-circle")},m(n,l){s(n,e,l),i(e,t),i(t,o),i(e,a),i(e,c),i(c,g),i(e,b),i(e,x);for(let n=0;n<L.length;n+=1)L[n].m(x,null);i(e,k),i(e,y);for(let n=0;n<P.length;n+=1)P[n].m(y,null);i(e,$),i(e,w);for(let n=0;n<M.length;n+=1)M[n].m(w,null);i(e,O),i(e,C),i(C,T),i(e,I),D||(H=h(T,"click",E),D=!0)},p(e,a){if(n=e,1&a&&A!==(A=n[6].first_name.slice(0,27)+(n[6].first_name.length>27?"... ":" ")+n[6].last_name.slice(0,27)+(n[6].last_name.length>27?"... ":" "))&&v(o,A),1&a&&l!==(l=n[6].first_name+" "+n[6].last_name)&&p(t,"data-tooltip",l),1&a&&j!==(j=n[6].college_name.slice(0,27)+(n[6].college_name.length>27?"...":""))&&v(g,j),1&a&&_!==(_=n[6].college_name)&&p(c,"data-tooltip",_),9&a){let e;for(S=n[6].honors,e=0;e<S.length;e+=1){const t=On(n,S,e);L[e]?L[e].p(t,a):(L[e]=Tn(t),L[e].c(),L[e].m(x,null))}for(;e<L.length;e+=1)L[e].d(1);L.length=S.length}if(9&a){let e;for(N=n[6].location,e=0;e<N.length;e+=1){const t=wn(n,N,e);P[e]?P[e].p(t,a):(P[e]=In(t),P[e].c(),P[e].m(y,null))}for(;e<P.length;e+=1)P[e].d(1);P.length=N.length}if(9&a){let e;for(B=n[6].floorplan,e=0;e<B.length;e+=1){const t=$n(n,B,e);M[e]?M[e].p(t,a):(M[e]=Dn(t),M[e].c(),M[e].m(w,null))}for(;e<M.length;e+=1)M[e].d(1);M.length=B.length}},d(n){n&&r(e),u(L,n),u(P,n),u(M,n),D=!1,H()}}}function An(n){let e,t,o,l,a,c,u,m,h,g;function v(e){n[4](e)}let _={modalData:n[2],colorMap:n[3]};void 0!==n[1]&&(_.open=n[1]),t=new kn({props:_}),$.push((()=>R(t,"open",v)));let b=null!=n[0]&&Cn(n);return{c(){e=d("main"),U(t.$$.fragment),l=f(),a=d("div"),c=d("table"),u=d("thead"),u.innerHTML="<tr><th>Name</th> \n                    <th>College Name</th> \n                    <th>Honors Housing</th> \n                    <th>Preferred Locations</th> \n                    <th>Preferred Room Floorplans</th> \n                    <th>More</th></tr>",m=f(),h=d("tbody"),b&&b.c(),p(c,"class","table table-striped"),p(a,"class","column col-12 col-mx-auto")},m(n,o){s(n,e,o),F(t,e,null),i(e,l),i(e,a),i(a,c),i(c,u),i(c,m),i(c,h),b&&b.m(h,null),g=!0},p(n,[e]){const l={};4&e&&(l.modalData=n[2]),!o&&2&e&&(o=!0,l.open=n[1],D((()=>o=!1))),t.$set(l),null!=n[0]?b?b.p(n,e):(b=Cn(n),b.c(),b.m(h,null)):b&&(b.d(1),b=null)},i(n){g||(M(t.$$.fragment,n),g=!0)},o(n){E(t.$$.fragment,n),g=!1},d(n){n&&r(e),Y(t),b&&b.d()}}}function jn(n,e,t){var{studentData:o}=e;var l=!1,a={};return n.$$set=n=>{"studentData"in n&&t(0,o=n.studentData)},[o,l,a,{Honors:"green","Non-Honors":"blue","Not Applicable":"red","On-Campus":"purple","Off-Campus":"pink","Shared Room and Bathroom":"green","Connected Bathroom":"blue","Communal Bathroom":"pink","Private Bathrooms":"purple",Other:"red"},function(n){t(1,l=n)},n=>{t(2,a=n),t(1,l=!0)}]}class Sn extends J{constructor(n){super(),z(this,n,jn,An,a,{studentData:0})}}function Ln(n){let e,t,o,l,a;function c(e){n[5](e)}function i(e){n[6](e)}function s(e){n[7](e)}let r={};return void 0!==n[1]&&(r.signedIn=n[1]),void 0!==n[2]&&(r.sessionToken=n[2]),void 0!==n[0]&&(r.page=n[0]),e=new Z({props:r}),$.push((()=>R(e,"signedIn",c))),$.push((()=>R(e,"sessionToken",i))),$.push((()=>R(e,"page",s))),{c(){U(e.$$.fragment)},m(n,t){F(e,n,t),a=!0},p(n,a){const c={};!t&&2&a&&(t=!0,c.signedIn=n[1],D((()=>t=!1))),!o&&4&a&&(o=!0,c.sessionToken=n[2],D((()=>o=!1))),!l&&1&a&&(l=!0,c.page=n[0],D((()=>l=!1))),e.$set(c)},i(n){a||(M(e.$$.fragment,n),a=!0)},o(n){E(e.$$.fragment,n),a=!1},d(n){Y(e,n)}}}function Nn(n){let e,t,o;function l(e){n[8](e)}let a={whenDone:En,sessionToken:n[2]};return void 0!==n[3]&&(a.profileData=n[3]),e=new Q({props:a}),$.push((()=>R(e,"profileData",l))),{c(){U(e.$$.fragment)},m(n,t){F(e,n,t),o=!0},p(n,o){const l={};4&o&&(l.sessionToken=n[2]),!t&&8&o&&(t=!0,l.profileData=n[3],D((()=>t=!1))),e.$set(l)},i(n){o||(M(e.$$.fragment,n),o=!0)},o(n){E(e.$$.fragment,n),o=!1},d(n){Y(e,n)}}}function Pn(n){let e,t;return e=new Sn({props:{studentData:n[4]}}),{c(){U(e.$$.fragment)},m(n,o){F(e,n,o),t=!0},p(n,t){const o={};16&t&&(o.studentData=n[4]),e.$set(o)},i(n){t||(M(e.$$.fragment,n),t=!0)},o(n){E(e.$$.fragment,n),t=!1},d(n){Y(e,n)}}}function Bn(n){let e,t,o,l;function a(e){n[9](e)}function c(e){n[10](e)}let i={};return void 0!==n[1]&&(i.signedIn=n[1]),void 0!==n[0]&&(i.page=n[0]),e=new tn({props:i}),$.push((()=>R(e,"signedIn",a))),$.push((()=>R(e,"page",c))),{c(){U(e.$$.fragment)},m(n,t){F(e,n,t),l=!0},p(n,l){const a={};!t&&2&l&&(t=!0,a.signedIn=n[1],D((()=>t=!1))),!o&&1&l&&(o=!0,a.page=n[0],D((()=>o=!1))),e.$set(a)},i(n){l||(M(e.$$.fragment,n),l=!0)},o(n){E(e.$$.fragment,n),l=!1},d(n){Y(e,n)}}}function Mn(n){let e,t,o,l,a,c,u,m,h="signin"==n[0]&&Ln(n),g="profile"==n[0]&&Nn(n),v="search"==n[0]&&Pn(n),_="signin"!=n[0]&&Bn(n);return{c(){e=d("main"),t=d("div"),o=d("div"),o.innerHTML='<h1 class="column svelte-1elvtut">Roomie</h1>',l=f(),h&&h.c(),a=f(),g&&g.c(),c=f(),v&&v.c(),u=f(),_&&_.c(),p(o,"class","columns"),p(t,"class","container"),p(e,"class","svelte-1elvtut")},m(n,r){s(n,e,r),i(e,t),i(t,o),i(t,l),h&&h.m(t,null),i(t,a),g&&g.m(t,null),i(t,c),v&&v.m(t,null),i(t,u),_&&_.m(t,null),m=!0},p(n,[e]){"signin"==n[0]?h?(h.p(n,e),1&e&&M(h,1)):(h=Ln(n),h.c(),M(h,1),h.m(t,a)):h&&(P(),E(h,1,1,(()=>{h=null})),B()),"profile"==n[0]?g?(g.p(n,e),1&e&&M(g,1)):(g=Nn(n),g.c(),M(g,1),g.m(t,c)):g&&(P(),E(g,1,1,(()=>{g=null})),B()),"search"==n[0]?v?(v.p(n,e),1&e&&M(v,1)):(v=Pn(n),v.c(),M(v,1),v.m(t,u)):v&&(P(),E(v,1,1,(()=>{v=null})),B()),"signin"!=n[0]?_?(_.p(n,e),1&e&&M(_,1)):(_=Bn(n),_.c(),M(_,1),_.m(t,null)):_&&(P(),E(_,1,1,(()=>{_=null})),B())},i(n){m||(M(h),M(g),M(v),M(_),m=!0)},o(n){E(h),E(g),E(v),E(_),m=!1},d(n){n&&r(e),h&&h.d(),g&&g.d(),v&&v.d(),_&&_.d()}}}function En(n,e){console.log("sending updated data"),fetch("./student?token="+n,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(e)}).then((n=>n.json())).then((n=>console.log(n)))}function Rn(n,e,t){let o=null,l="",a="signin";var c={first_name:"",last_name:"",college_name:"",discord:"",linkedin:"",snapchat:"",instagram:"",facebook:"",twitter:"",email:"",phone:"",honors:[],location:[],floorplan:[],additional:""},i={students:[{first_name:"Barack",last_name:"Obama",college_name:"UT Austin, University of Texas Austin, University of Texas at Austin",honors:["Honors","Non-Honors"],location:["On-Campus"],floorplan:["Shared Room and Bathroom","Connected Bathroom","Private Bathrooms","Communal Bathroom"]},{first_name:"Donaldino",last_name:"Trumperino",college_name:"A&M",honors:["Honors","Non-Honors"],location:["On-Campus"],floorplan:["Shared Room and Bathroom","Connected Bathroom","Private Bathrooms"]}]};return window.signOut=()=>{gapi.auth2.getAuthInstance().signOut().then((function(){console.log("User signed out."),t(1,o=!1),t(0,a="signin")}))},window.getStudentData=n=>{console.log(n),fetch("./student?token="+n).then((n=>n.json())).then((n=>{null!=n&&(console.log(n),t(4,i=n),t(3,c=n.current_student))}))},n.$$.update=()=>{1&n.$$.dirty&&"signin"!=a&&localStorage.setItem("page",a)},[a,o,l,c,i,function(n){o=n,t(1,o)},function(n){l=n,t(2,l)},function(n){a=n,t(0,a)},function(n){t(3,c=n)},function(n){o=n,t(1,o)},function(n){a=n,t(0,a)}]}return new class extends J{constructor(n){super(),z(this,n,Rn,Mn,a,{})}}({target:document.body,props:{name:"world"}})}();
+
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+var app = (function () {
+    'use strict';
+
+    function noop() { }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    function is_empty(obj) {
+        return Object.keys(obj).length === 0;
+    }
+    function null_to_empty(value) {
+        return value == null ? '' : value;
+    }
+
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function empty() {
+        return text('');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_input_value(input, value) {
+        input.value = value == null ? '' : value;
+    }
+    function set_style(node, key, value, important) {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
+    function select_option(select, value) {
+        for (let i = 0; i < select.options.length; i += 1) {
+            const option = select.options[i];
+            if (option.__value === value) {
+                option.selected = true;
+                return;
+            }
+        }
+    }
+    function custom_event(type, detail) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, false, false, detail);
+        return e;
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    function add_flush_callback(fn) {
+        flush_callbacks.push(fn);
+    }
+    let flushing = false;
+    const seen_callbacks = new Set();
+    function flush() {
+        if (flushing)
+            return;
+        flushing = true;
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            for (let i = 0; i < dirty_components.length; i += 1) {
+                const component = dirty_components[i];
+                set_current_component(component);
+                update(component.$$);
+            }
+            set_current_component(null);
+            dirty_components.length = 0;
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                    callback();
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+        flushing = false;
+        seen_callbacks.clear();
+    }
+    function update($$) {
+        if ($$.fragment !== null) {
+            $$.update();
+            run_all($$.before_update);
+            const dirty = $$.dirty;
+            $$.dirty = [-1];
+            $$.fragment && $$.fragment.p($$.ctx, dirty);
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+    const outroing = new Set();
+    let outros;
+    function group_outros() {
+        outros = {
+            r: 0,
+            c: [],
+            p: outros // parent group
+        };
+    }
+    function check_outros() {
+        if (!outros.r) {
+            run_all(outros.c);
+        }
+        outros = outros.p;
+    }
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, detach, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.c.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    if (detach)
+                        block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+    }
+
+    const globals = (typeof window !== 'undefined'
+        ? window
+        : typeof globalThis !== 'undefined'
+            ? globalThis
+            : global);
+
+    function bind(component, name, callback) {
+        const index = component.$$.props[name];
+        if (index !== undefined) {
+            component.$$.bound[index] = callback;
+            callback(component.$$.ctx[index]);
+        }
+    }
+    function create_component(block) {
+        block && block.c();
+    }
+    function mount_component(component, target, anchor, customElement) {
+        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        fragment && fragment.m(target, anchor);
+        if (!customElement) {
+            // onMount happens before the initial afterUpdate
+            add_render_callback(() => {
+                const new_on_destroy = on_mount.map(run).filter(is_function);
+                if (on_destroy) {
+                    on_destroy.push(...new_on_destroy);
+                }
+                else {
+                    // Edge case - component was destroyed immediately,
+                    // most likely as a result of a binding initialising
+                    run_all(new_on_destroy);
+                }
+                component.$$.on_mount = [];
+            });
+        }
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        const $$ = component.$$;
+        if ($$.fragment !== null) {
+            run_all($$.on_destroy);
+            $$.fragment && $$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            $$.on_destroy = $$.fragment = null;
+            $$.ctx = [];
+        }
+    }
+    function make_dirty(component, i) {
+        if (component.$$.dirty[0] === -1) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty.fill(0);
+        }
+        component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+    }
+    function init(component, options, instance, create_fragment, not_equal, props, dirty = [-1]) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            on_disconnect: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(parent_component ? parent_component.$$.context : options.context || []),
+            // everything else
+            callbacks: blank_object(),
+            dirty,
+            skip_bound: false
+        };
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, options.props || {}, (i, ret, ...rest) => {
+                const value = rest.length ? rest[0] : ret;
+                if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
+                    if (!$$.skip_bound && $$.bound[i])
+                        $$.bound[i](value);
+                    if (ready)
+                        make_dirty(component, i);
+                }
+                return ret;
+            })
+            : [];
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        // `false` as a special case of no DOM component
+        $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+        if (options.target) {
+            if (options.hydrate) {
+                const nodes = children(options.target);
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.l(nodes);
+                nodes.forEach(detach);
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor, options.customElement);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    /**
+     * Base class for Svelte components. Used when dev=false.
+     */
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set($$props) {
+            if (this.$$set && !is_empty($$props)) {
+                this.$$.skip_bound = true;
+                this.$$set($$props);
+                this.$$.skip_bound = false;
+            }
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.37.0' }, detail)));
+    }
+    function append_dev(target, node) {
+        dispatch_dev('SvelteDOMInsert', { target, node });
+        append(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev('SvelteDOMInsert', { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev('SvelteDOMRemove', { node });
+        detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev('SvelteDOMRemoveEventListener', { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev('SvelteDOMRemoveAttribute', { node, attribute });
+        else
+            dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.wholeText === data)
+            return;
+        dispatch_dev('SvelteDOMSetData', { node: text, data });
+        text.data = data;
+    }
+    function validate_each_argument(arg) {
+        if (typeof arg !== 'string' && !(arg && typeof arg === 'object' && 'length' in arg)) {
+            let msg = '{#each} only iterates over array-like objects.';
+            if (typeof Symbol === 'function' && arg && Symbol.iterator in arg) {
+                msg += ' You can use a spread to convert this iterable into an array.';
+            }
+            throw new Error(msg);
+        }
+    }
+    function validate_slots(name, slot, keys) {
+        for (const slot_key of Object.keys(slot)) {
+            if (!~keys.indexOf(slot_key)) {
+                console.warn(`<${name}> received an unexpected slot "${slot_key}".`);
+            }
+        }
+    }
+    /**
+     * Base class for Svelte components with some minor dev-enhancements. Used when dev=true.
+     */
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error("'target' is a required option");
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn('Component was already destroyed'); // eslint-disable-line no-console
+            };
+        }
+        $capture_state() { }
+        $inject_state() { }
+    }
+
+    /* src/DataForm.svelte generated by Svelte v3.37.0 */
+
+    const file$5 = "src/DataForm.svelte";
+
+    function get_each_context$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[20] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_1$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[23] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_2$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[26] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_3$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[29] = list[i];
+    	return child_ctx;
+    }
+
+    // (90:28) {#each genderOptions as genderOption}
+    function create_each_block_3$1(ctx) {
+    	let option;
+    	let t_value = /*genderOption*/ ctx[29] + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			option = element("option");
+    			t = text(t_value);
+    			option.__value = /*genderOption*/ ctx[29];
+    			option.value = option.__value;
+    			add_location(option, file$5, 90, 32, 3438);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, option, anchor);
+    			append_dev(option, t);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(option);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_3$1.name,
+    		type: "each",
+    		source: "(90:28) {#each genderOptions as genderOption}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (106:28) {#each classYearOptions as classYearOption}
+    function create_each_block_2$2(ctx) {
+    	let option;
+    	let t_value = /*classYearOption*/ ctx[26] + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			option = element("option");
+    			t = text(t_value);
+    			option.__value = /*classYearOption*/ ctx[26];
+    			option.value = option.__value;
+    			add_location(option, file$5, 106, 32, 4163);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, option, anchor);
+    			append_dev(option, t);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(option);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_2$2.name,
+    		type: "each",
+    		source: "(106:28) {#each classYearOptions as classYearOption}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (122:28) {#each collegeOptions as collegeOption}
+    function create_each_block_1$2(ctx) {
+    	let option;
+    	let t_value = /*collegeOption*/ ctx[23] + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			option = element("option");
+    			t = text(t_value);
+    			option.__value = /*collegeOption*/ ctx[23];
+    			option.value = option.__value;
+    			add_location(option, file$5, 122, 32, 4915);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, option, anchor);
+    			append_dev(option, t);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(option);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1$2.name,
+    		type: "each",
+    		source: "(122:28) {#each collegeOptions as collegeOption}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (287:28) {#each locationOptions as locationOption}
+    function create_each_block$2(ctx) {
+    	let option;
+    	let t_value = /*locationOption*/ ctx[20] + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			option = element("option");
+    			t = text(t_value);
+    			option.__value = /*locationOption*/ ctx[20];
+    			option.value = option.__value;
+    			add_location(option, file$5, 287, 32, 12616);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, option, anchor);
+    			append_dev(option, t);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(option);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$2.name,
+    		type: "each",
+    		source: "(287:28) {#each locationOptions as locationOption}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$5(ctx) {
+    	let main;
+    	let div33;
+    	let div0;
+    	let h1;
+    	let t1;
+    	let div1;
+    	let p0;
+    	let t3;
+    	let div32;
+    	let div31;
+    	let div4;
+    	let div2;
+    	let label0;
+    	let t5;
+    	let input0;
+    	let t6;
+    	let div3;
+    	let label1;
+    	let t8;
+    	let input1;
+    	let t9;
+    	let div7;
+    	let div5;
+    	let label2;
+    	let t11;
+    	let select0;
+    	let select0_value_value;
+    	let t12;
+    	let div6;
+    	let label3;
+    	let t14;
+    	let select1;
+    	let select1_value_value;
+    	let t15;
+    	let div10;
+    	let div8;
+    	let label4;
+    	let t17;
+    	let select2;
+    	let select2_value_value;
+    	let t18;
+    	let div9;
+    	let label5;
+    	let t20;
+    	let input2;
+    	let t21;
+    	let div15;
+    	let div11;
+    	let h30;
+    	let t23;
+    	let div12;
+    	let p1;
+    	let t25;
+    	let div14;
+    	let div13;
+    	let textarea;
+    	let t26;
+    	let div26;
+    	let div16;
+    	let h31;
+    	let t28;
+    	let div17;
+    	let p2;
+    	let t30;
+    	let div18;
+    	let label6;
+    	let t32;
+    	let input3;
+    	let t33;
+    	let div19;
+    	let label7;
+    	let t35;
+    	let input4;
+    	let t36;
+    	let div20;
+    	let label8;
+    	let t38;
+    	let input5;
+    	let t39;
+    	let div21;
+    	let label9;
+    	let t41;
+    	let input6;
+    	let t42;
+    	let div22;
+    	let label10;
+    	let t44;
+    	let input7;
+    	let t45;
+    	let div23;
+    	let label11;
+    	let t47;
+    	let input8;
+    	let t48;
+    	let div24;
+    	let label12;
+    	let t50;
+    	let input9;
+    	let t51;
+    	let div25;
+    	let label13;
+    	let t53;
+    	let input10;
+    	let t54;
+    	let div28;
+    	let div27;
+    	let label14;
+    	let t56;
+    	let select3;
+    	let select3_value_value;
+    	let t57;
+    	let div30;
+    	let div29;
+    	let button;
+    	let mounted;
+    	let dispose;
+    	let each_value_3 = /*genderOptions*/ ctx[3];
+    	validate_each_argument(each_value_3);
+    	let each_blocks_3 = [];
+
+    	for (let i = 0; i < each_value_3.length; i += 1) {
+    		each_blocks_3[i] = create_each_block_3$1(get_each_context_3$1(ctx, each_value_3, i));
+    	}
+
+    	let each_value_2 = /*classYearOptions*/ ctx[5];
+    	validate_each_argument(each_value_2);
+    	let each_blocks_2 = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks_2[i] = create_each_block_2$2(get_each_context_2$2(ctx, each_value_2, i));
+    	}
+
+    	let each_value_1 = /*collegeOptions*/ ctx[4];
+    	validate_each_argument(each_value_1);
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_1$2(get_each_context_1$2(ctx, each_value_1, i));
+    	}
+
+    	let each_value = /*locationOptions*/ ctx[6];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			div33 = element("div");
+    			div0 = element("div");
+    			h1 = element("h1");
+    			h1.textContent = "Edit Your Profile";
+    			t1 = space();
+    			div1 = element("div");
+    			p0 = element("p");
+    			p0.textContent = "This is where you build the profile other students will see\n                after they sign in. You can modify it later by pressing the\n                \"Profile\" button that will appear on the top right of the page\n                when you're done. However, it's best to put in the correct\n                information as soon as you can.";
+    			t3 = space();
+    			div32 = element("div");
+    			div31 = element("div");
+    			div4 = element("div");
+    			div2 = element("div");
+    			label0 = element("label");
+    			label0.textContent = "Preferred First Name";
+    			t5 = space();
+    			input0 = element("input");
+    			t6 = space();
+    			div3 = element("div");
+    			label1 = element("label");
+    			label1.textContent = "Last Name";
+    			t8 = space();
+    			input1 = element("input");
+    			t9 = space();
+    			div7 = element("div");
+    			div5 = element("div");
+    			label2 = element("label");
+    			label2.textContent = "Gender";
+    			t11 = space();
+    			select0 = element("select");
+
+    			for (let i = 0; i < each_blocks_3.length; i += 1) {
+    				each_blocks_3[i].c();
+    			}
+
+    			t12 = space();
+    			div6 = element("div");
+    			label3 = element("label");
+    			label3.textContent = "Class Year";
+    			t14 = space();
+    			select1 = element("select");
+
+    			for (let i = 0; i < each_blocks_2.length; i += 1) {
+    				each_blocks_2[i].c();
+    			}
+
+    			t15 = space();
+    			div10 = element("div");
+    			div8 = element("div");
+    			label4 = element("label");
+    			label4.textContent = "College";
+    			t17 = space();
+    			select2 = element("select");
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t18 = space();
+    			div9 = element("div");
+    			label5 = element("label");
+    			label5.textContent = "Major";
+    			t20 = space();
+    			input2 = element("input");
+    			t21 = space();
+    			div15 = element("div");
+    			div11 = element("div");
+    			h30 = element("h3");
+    			h30.textContent = "Bio";
+    			t23 = space();
+    			div12 = element("div");
+    			p1 = element("p");
+    			p1.textContent = "What do you like to do in your free time? What\n                            organizations do you want to be a part of at UT? Any\n                            Clubs? Greek Life? Video Games? Sports? What time do\n                            you like going to sleep? Anything you think a future\n                            roommate at UT would want to know, write it here!\n                            Write as much as you can so the search engine can\n                            pick it up!";
+    			t25 = space();
+    			div14 = element("div");
+    			div13 = element("div");
+    			textarea = element("textarea");
+    			t26 = space();
+    			div26 = element("div");
+    			div16 = element("div");
+    			h31 = element("h3");
+    			h31.textContent = "Contact Information";
+    			t28 = space();
+    			div17 = element("div");
+    			p2 = element("p");
+    			p2.textContent = "Enter in contact information below. Remember, this\n                            will be public available to everyone who signs into\n                            the service, so make sure you're comfortable with\n                            what you enter. Feel free to leave any of these\n                            blank, but you should have at least one way for a\n                            prospective roommate to contact you!";
+    			t30 = space();
+    			div18 = element("div");
+    			label6 = element("label");
+    			label6.textContent = "Discord Tag";
+    			t32 = space();
+    			input3 = element("input");
+    			t33 = space();
+    			div19 = element("div");
+    			label7 = element("label");
+    			label7.textContent = "LinkedIn Profile";
+    			t35 = space();
+    			input4 = element("input");
+    			t36 = space();
+    			div20 = element("div");
+    			label8 = element("label");
+    			label8.textContent = "Snapchat";
+    			t38 = space();
+    			input5 = element("input");
+    			t39 = space();
+    			div21 = element("div");
+    			label9 = element("label");
+    			label9.textContent = "Instagram Profile";
+    			t41 = space();
+    			input6 = element("input");
+    			t42 = space();
+    			div22 = element("div");
+    			label10 = element("label");
+    			label10.textContent = "Facebook Profile";
+    			t44 = space();
+    			input7 = element("input");
+    			t45 = space();
+    			div23 = element("div");
+    			label11 = element("label");
+    			label11.textContent = "Twitter Profile";
+    			t47 = space();
+    			input8 = element("input");
+    			t48 = space();
+    			div24 = element("div");
+    			label12 = element("label");
+    			label12.textContent = "Email";
+    			t50 = space();
+    			input9 = element("input");
+    			t51 = space();
+    			div25 = element("div");
+    			label13 = element("label");
+    			label13.textContent = "Phone Number";
+    			t53 = space();
+    			input10 = element("input");
+    			t54 = space();
+    			div28 = element("div");
+    			div27 = element("div");
+    			label14 = element("label");
+    			label14.textContent = "Location";
+    			t56 = space();
+    			select3 = element("select");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t57 = space();
+    			div30 = element("div");
+    			div29 = element("div");
+    			button = element("button");
+    			button.textContent = "Save";
+    			add_location(h1, file$5, 38, 12, 1088);
+    			attr_dev(div0, "class", "column col-8 col-md-12 col-mx-auto");
+    			add_location(div0, file$5, 37, 8, 1027);
+    			add_location(p0, file$5, 41, 12, 1199);
+    			attr_dev(div1, "class", "column col-8 col-md-12 col-mx-auto");
+    			add_location(div1, file$5, 40, 8, 1138);
+    			attr_dev(label0, "class", "form-label");
+    			attr_dev(label0, "for", "first-name");
+    			add_location(label0, file$5, 53, 24, 1802);
+    			attr_dev(input0, "type", "text");
+    			attr_dev(input0, "class", "form-input");
+    			attr_dev(input0, "id", "first-name");
+    			add_location(input0, file$5, 56, 24, 1952);
+    			attr_dev(div2, "class", "column col-6 col-md-12");
+    			add_location(div2, file$5, 52, 20, 1741);
+    			attr_dev(label1, "class", "form-label");
+    			attr_dev(label1, "for", "last-name");
+    			add_location(label1, file$5, 64, 24, 2289);
+    			attr_dev(input1, "type", "text");
+    			attr_dev(input1, "class", "form-input");
+    			attr_dev(input1, "id", "last-name");
+    			add_location(input1, file$5, 67, 24, 2427);
+    			attr_dev(div3, "class", "column col-6 col-md-12");
+    			add_location(div3, file$5, 63, 20, 2228);
+    			attr_dev(div4, "class", "columns");
+    			add_location(div4, file$5, 51, 16, 1699);
+    			attr_dev(label2, "class", "form-label");
+    			attr_dev(label2, "for", "gender");
+    			add_location(label2, file$5, 77, 24, 2823);
+    			attr_dev(select0, "class", "form-select");
+    			attr_dev(select0, "id", "gender");
+    			add_location(select0, file$5, 84, 24, 3163);
+    			attr_dev(div5, "class", "column col-6 col-md-12");
+    			add_location(div5, file$5, 76, 20, 2762);
+    			attr_dev(label3, "class", "form-label");
+    			attr_dev(label3, "for", "class-year");
+    			add_location(label3, file$5, 97, 24, 3739);
+    			attr_dev(select1, "class", "form-select");
+    			attr_dev(select1, "id", "class-year");
+    			add_location(select1, file$5, 100, 24, 3879);
+    			attr_dev(div6, "class", "column col-6 col-md-12");
+    			add_location(div6, file$5, 96, 20, 3678);
+    			attr_dev(div7, "class", "columns");
+    			add_location(div7, file$5, 75, 16, 2720);
+    			attr_dev(label4, "class", "form-label");
+    			attr_dev(label4, "for", "college");
+    			add_location(label4, file$5, 115, 24, 4556);
+    			attr_dev(select2, "class", "form-select");
+    			attr_dev(select2, "id", "college");
+    			add_location(select2, file$5, 116, 24, 4636);
+    			attr_dev(div8, "class", "column col-6 col-md-12");
+    			add_location(div8, file$5, 114, 20, 4495);
+    			attr_dev(label5, "class", "form-label");
+    			attr_dev(label5, "for", "Major");
+    			add_location(label5, file$5, 129, 24, 5218);
+    			attr_dev(input2, "type", "text");
+    			attr_dev(input2, "class", "form-input");
+    			attr_dev(input2, "id", "major");
+    			add_location(input2, file$5, 130, 24, 5294);
+    			attr_dev(div9, "class", "column col-6 col-md-12");
+    			add_location(div9, file$5, 128, 20, 5157);
+    			attr_dev(div10, "class", "columns");
+    			set_style(div10, "margin-top", "20px");
+    			add_location(div10, file$5, 113, 16, 4428);
+    			add_location(h30, file$5, 140, 24, 5692);
+    			attr_dev(div11, "class", "col-12");
+    			add_location(div11, file$5, 139, 20, 5647);
+    			add_location(p1, file$5, 143, 24, 5797);
+    			attr_dev(div12, "class", "col-12");
+    			add_location(div12, file$5, 142, 20, 5752);
+    			attr_dev(textarea, "class", "form-input");
+    			attr_dev(textarea, "id", "bio");
+    			attr_dev(textarea, "placeholder", "Bio here...");
+    			attr_dev(textarea, "rows", "6");
+    			add_location(textarea, file$5, 155, 28, 6499);
+    			attr_dev(div13, "class", "form-group");
+    			add_location(div13, file$5, 154, 24, 6446);
+    			attr_dev(div14, "class", "col-12 text-left");
+    			add_location(div14, file$5, 153, 20, 6391);
+    			attr_dev(div15, "class", "columns");
+    			set_style(div15, "margin-top", "20px");
+    			add_location(div15, file$5, 138, 16, 5579);
+    			add_location(h31, file$5, 167, 24, 7001);
+    			attr_dev(div16, "class", "col-12");
+    			add_location(div16, file$5, 166, 20, 6956);
+    			add_location(p2, file$5, 170, 24, 7122);
+    			attr_dev(div17, "class", "col-12");
+    			add_location(div17, file$5, 169, 20, 7077);
+    			attr_dev(label6, "class", "form-label");
+    			attr_dev(label6, "for", "discord-contact");
+    			add_location(label6, file$5, 180, 24, 7719);
+    			attr_dev(input3, "type", "text");
+    			attr_dev(input3, "class", "form-input");
+    			attr_dev(input3, "id", "first-name");
+    			attr_dev(input3, "placeholder", "Username#0000");
+    			add_location(input3, file$5, 183, 24, 7865);
+    			attr_dev(div18, "class", "column col-6 col-md-12");
+    			add_location(div18, file$5, 179, 20, 7658);
+    			attr_dev(label7, "class", "form-label");
+    			attr_dev(label7, "for", "linkedin-contact");
+    			add_location(label7, file$5, 192, 24, 8255);
+    			attr_dev(input4, "type", "url");
+    			attr_dev(input4, "class", "form-input");
+    			attr_dev(input4, "id", "linkedin-contact");
+    			attr_dev(input4, "placeholder", "https://www.linkedin.com/in/profile/");
+    			add_location(input4, file$5, 195, 24, 8407);
+    			attr_dev(div19, "class", "column col-6 col-md-12");
+    			add_location(div19, file$5, 191, 20, 8194);
+    			attr_dev(label8, "class", "form-label");
+    			attr_dev(label8, "for", "snapchat-contact");
+    			add_location(label8, file$5, 204, 24, 8826);
+    			attr_dev(input5, "type", "text");
+    			attr_dev(input5, "class", "form-input");
+    			attr_dev(input5, "id", "snapchat-contact");
+    			attr_dev(input5, "placeholder", "something");
+    			add_location(input5, file$5, 207, 24, 8970);
+    			attr_dev(div20, "class", "column col-6 col-md-12");
+    			add_location(div20, file$5, 203, 20, 8765);
+    			attr_dev(label9, "class", "form-label");
+    			attr_dev(label9, "for", "insta-contact");
+    			add_location(label9, file$5, 216, 24, 9363);
+    			attr_dev(input6, "type", "url");
+    			attr_dev(input6, "class", "form-input");
+    			attr_dev(input6, "id", "insta-contact");
+    			attr_dev(input6, "placeholder", "https://www.instagram.com/elonmusk/");
+    			add_location(input6, file$5, 219, 24, 9513);
+    			attr_dev(div21, "class", "column col-6 col-md-12");
+    			add_location(div21, file$5, 215, 20, 9302);
+    			attr_dev(label10, "class", "form-label");
+    			attr_dev(label10, "for", "facebook-contact");
+    			add_location(label10, file$5, 228, 24, 9929);
+    			attr_dev(input7, "type", "url");
+    			attr_dev(input7, "class", "form-input");
+    			attr_dev(input7, "id", "facebook-contact");
+    			attr_dev(input7, "placeholder", "https://www.facebook.com/zuck");
+    			add_location(input7, file$5, 231, 24, 10081);
+    			attr_dev(div22, "class", "column col-6 col-md-12");
+    			add_location(div22, file$5, 227, 20, 9868);
+    			attr_dev(label11, "class", "form-label");
+    			attr_dev(label11, "for", "twitter-contact");
+    			add_location(label11, file$5, 240, 24, 10493);
+    			attr_dev(input8, "type", "url");
+    			attr_dev(input8, "class", "form-input");
+    			attr_dev(input8, "id", "twitter-contact");
+    			attr_dev(input8, "placeholder", "https://twitter.com/elonmusk");
+    			add_location(input8, file$5, 243, 24, 10643);
+    			attr_dev(div23, "class", "column col-6 col-md-12");
+    			add_location(div23, file$5, 239, 20, 10432);
+    			attr_dev(label12, "class", "form-label");
+    			attr_dev(label12, "for", "email-contact");
+    			add_location(label12, file$5, 252, 24, 11052);
+    			attr_dev(input9, "type", "email");
+    			attr_dev(input9, "class", "form-input");
+    			attr_dev(input9, "id", "email-contact");
+    			attr_dev(input9, "placeholder", "john.doe@gmail.com");
+    			add_location(input9, file$5, 255, 24, 11190);
+    			attr_dev(div24, "class", "column col-6 col-md-12");
+    			add_location(div24, file$5, 251, 20, 10991);
+    			attr_dev(label13, "class", "form-label");
+    			attr_dev(label13, "for", "phone-contact");
+    			add_location(label13, file$5, 264, 24, 11587);
+    			attr_dev(input10, "type", "tel");
+    			attr_dev(input10, "class", "form-input");
+    			attr_dev(input10, "id", "phone-contact");
+    			attr_dev(input10, "placeholder", "5555555555");
+    			add_location(input10, file$5, 267, 24, 11732);
+    			attr_dev(div25, "class", "column col-6 col-md-12");
+    			add_location(div25, file$5, 263, 20, 11526);
+    			attr_dev(div26, "class", "columns");
+    			set_style(div26, "margin-top", "20px");
+    			add_location(div26, file$5, 165, 16, 6889);
+    			attr_dev(label14, "class", "form-label");
+    			attr_dev(label14, "for", "location");
+    			add_location(label14, file$5, 278, 24, 12197);
+    			attr_dev(select3, "class", "form-select");
+    			attr_dev(select3, "id", "location");
+    			add_location(select3, file$5, 281, 24, 12333);
+    			attr_dev(div27, "class", "column col-12");
+    			add_location(div27, file$5, 277, 20, 12145);
+    			attr_dev(div28, "class", "columns");
+    			set_style(div28, "margin-top", "20px");
+    			add_location(div28, file$5, 276, 16, 12077);
+    			attr_dev(button, "class", "btn btn-primary");
+    			add_location(button, file$5, 296, 24, 12998);
+    			attr_dev(div29, "class", "column col-12");
+    			add_location(div29, file$5, 295, 20, 12946);
+    			attr_dev(div30, "class", "columns");
+    			set_style(div30, "margin-top", "20px");
+    			add_location(div30, file$5, 294, 16, 12879);
+    			attr_dev(div31, "class", "form-group");
+    			add_location(div31, file$5, 50, 12, 1658);
+    			attr_dev(div32, "class", "column col-8 col-md-12 col-mx-auto");
+    			add_location(div32, file$5, 49, 8, 1597);
+    			attr_dev(div33, "class", "columns");
+    			add_location(div33, file$5, 36, 4, 997);
+    			add_location(main, file$5, 35, 0, 986);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			append_dev(main, div33);
+    			append_dev(div33, div0);
+    			append_dev(div0, h1);
+    			append_dev(div33, t1);
+    			append_dev(div33, div1);
+    			append_dev(div1, p0);
+    			append_dev(div33, t3);
+    			append_dev(div33, div32);
+    			append_dev(div32, div31);
+    			append_dev(div31, div4);
+    			append_dev(div4, div2);
+    			append_dev(div2, label0);
+    			append_dev(div2, t5);
+    			append_dev(div2, input0);
+    			set_input_value(input0, /*profileData*/ ctx[0].first_name);
+    			append_dev(div4, t6);
+    			append_dev(div4, div3);
+    			append_dev(div3, label1);
+    			append_dev(div3, t8);
+    			append_dev(div3, input1);
+    			set_input_value(input1, /*profileData*/ ctx[0].last_name);
+    			append_dev(div31, t9);
+    			append_dev(div31, div7);
+    			append_dev(div7, div5);
+    			append_dev(div5, label2);
+    			append_dev(div5, t11);
+    			append_dev(div5, select0);
+
+    			for (let i = 0; i < each_blocks_3.length; i += 1) {
+    				each_blocks_3[i].m(select0, null);
+    			}
+
+    			select_option(select0, /*profileData*/ ctx[0].gender);
+    			append_dev(div7, t12);
+    			append_dev(div7, div6);
+    			append_dev(div6, label3);
+    			append_dev(div6, t14);
+    			append_dev(div6, select1);
+
+    			for (let i = 0; i < each_blocks_2.length; i += 1) {
+    				each_blocks_2[i].m(select1, null);
+    			}
+
+    			select_option(select1, /*profileData*/ ctx[0].class);
+    			append_dev(div31, t15);
+    			append_dev(div31, div10);
+    			append_dev(div10, div8);
+    			append_dev(div8, label4);
+    			append_dev(div8, t17);
+    			append_dev(div8, select2);
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(select2, null);
+    			}
+
+    			select_option(select2, /*profileData*/ ctx[0].college);
+    			append_dev(div10, t18);
+    			append_dev(div10, div9);
+    			append_dev(div9, label5);
+    			append_dev(div9, t20);
+    			append_dev(div9, input2);
+    			set_input_value(input2, /*profileData*/ ctx[0].major);
+    			append_dev(div31, t21);
+    			append_dev(div31, div15);
+    			append_dev(div15, div11);
+    			append_dev(div11, h30);
+    			append_dev(div15, t23);
+    			append_dev(div15, div12);
+    			append_dev(div12, p1);
+    			append_dev(div15, t25);
+    			append_dev(div15, div14);
+    			append_dev(div14, div13);
+    			append_dev(div13, textarea);
+    			set_input_value(textarea, /*profileData*/ ctx[0].bio);
+    			append_dev(div31, t26);
+    			append_dev(div31, div26);
+    			append_dev(div26, div16);
+    			append_dev(div16, h31);
+    			append_dev(div26, t28);
+    			append_dev(div26, div17);
+    			append_dev(div17, p2);
+    			append_dev(div26, t30);
+    			append_dev(div26, div18);
+    			append_dev(div18, label6);
+    			append_dev(div18, t32);
+    			append_dev(div18, input3);
+    			set_input_value(input3, /*profileData*/ ctx[0].discord);
+    			append_dev(div26, t33);
+    			append_dev(div26, div19);
+    			append_dev(div19, label7);
+    			append_dev(div19, t35);
+    			append_dev(div19, input4);
+    			set_input_value(input4, /*profileData*/ ctx[0].linkedin);
+    			append_dev(div26, t36);
+    			append_dev(div26, div20);
+    			append_dev(div20, label8);
+    			append_dev(div20, t38);
+    			append_dev(div20, input5);
+    			set_input_value(input5, /*profileData*/ ctx[0].snapchat);
+    			append_dev(div26, t39);
+    			append_dev(div26, div21);
+    			append_dev(div21, label9);
+    			append_dev(div21, t41);
+    			append_dev(div21, input6);
+    			set_input_value(input6, /*profileData*/ ctx[0].instagram);
+    			append_dev(div26, t42);
+    			append_dev(div26, div22);
+    			append_dev(div22, label10);
+    			append_dev(div22, t44);
+    			append_dev(div22, input7);
+    			set_input_value(input7, /*profileData*/ ctx[0].facebook);
+    			append_dev(div26, t45);
+    			append_dev(div26, div23);
+    			append_dev(div23, label11);
+    			append_dev(div23, t47);
+    			append_dev(div23, input8);
+    			set_input_value(input8, /*profileData*/ ctx[0].twitter);
+    			append_dev(div26, t48);
+    			append_dev(div26, div24);
+    			append_dev(div24, label12);
+    			append_dev(div24, t50);
+    			append_dev(div24, input9);
+    			set_input_value(input9, /*profileData*/ ctx[0].email);
+    			append_dev(div26, t51);
+    			append_dev(div26, div25);
+    			append_dev(div25, label13);
+    			append_dev(div25, t53);
+    			append_dev(div25, input10);
+    			set_input_value(input10, /*profileData*/ ctx[0].phone);
+    			append_dev(div31, t54);
+    			append_dev(div31, div28);
+    			append_dev(div28, div27);
+    			append_dev(div27, label14);
+    			append_dev(div27, t56);
+    			append_dev(div27, select3);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(select3, null);
+    			}
+
+    			select_option(select3, /*profileData*/ ctx[0].location);
+    			append_dev(div31, t57);
+    			append_dev(div31, div30);
+    			append_dev(div30, div29);
+    			append_dev(div29, button);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[7]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[8]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[9]),
+    					listen_dev(textarea, "input", /*textarea_input_handler*/ ctx[10]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[11]),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[12]),
+    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[13]),
+    					listen_dev(input6, "input", /*input6_input_handler*/ ctx[14]),
+    					listen_dev(input7, "input", /*input7_input_handler*/ ctx[15]),
+    					listen_dev(input8, "input", /*input8_input_handler*/ ctx[16]),
+    					listen_dev(input9, "input", /*input9_input_handler*/ ctx[17]),
+    					listen_dev(input10, "input", /*input10_input_handler*/ ctx[18]),
+    					listen_dev(button, "click", /*click_handler*/ ctx[19], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*profileData, genderOptions*/ 9 && input0.value !== /*profileData*/ ctx[0].first_name) {
+    				set_input_value(input0, /*profileData*/ ctx[0].first_name);
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9 && input1.value !== /*profileData*/ ctx[0].last_name) {
+    				set_input_value(input1, /*profileData*/ ctx[0].last_name);
+    			}
+
+    			if (dirty[0] & /*genderOptions*/ 8) {
+    				each_value_3 = /*genderOptions*/ ctx[3];
+    				validate_each_argument(each_value_3);
+    				let i;
+
+    				for (i = 0; i < each_value_3.length; i += 1) {
+    					const child_ctx = get_each_context_3$1(ctx, each_value_3, i);
+
+    					if (each_blocks_3[i]) {
+    						each_blocks_3[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_3[i] = create_each_block_3$1(child_ctx);
+    						each_blocks_3[i].c();
+    						each_blocks_3[i].m(select0, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_3.length; i += 1) {
+    					each_blocks_3[i].d(1);
+    				}
+
+    				each_blocks_3.length = each_value_3.length;
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9 && select0_value_value !== (select0_value_value = /*profileData*/ ctx[0].gender)) {
+    				select_option(select0, /*profileData*/ ctx[0].gender);
+    			}
+
+    			if (dirty[0] & /*classYearOptions*/ 32) {
+    				each_value_2 = /*classYearOptions*/ ctx[5];
+    				validate_each_argument(each_value_2);
+    				let i;
+
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2$2(ctx, each_value_2, i);
+
+    					if (each_blocks_2[i]) {
+    						each_blocks_2[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_2[i] = create_each_block_2$2(child_ctx);
+    						each_blocks_2[i].c();
+    						each_blocks_2[i].m(select1, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_2.length; i += 1) {
+    					each_blocks_2[i].d(1);
+    				}
+
+    				each_blocks_2.length = each_value_2.length;
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9 && select1_value_value !== (select1_value_value = /*profileData*/ ctx[0].class)) {
+    				select_option(select1, /*profileData*/ ctx[0].class);
+    			}
+
+    			if (dirty[0] & /*collegeOptions*/ 16) {
+    				each_value_1 = /*collegeOptions*/ ctx[4];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$2(ctx, each_value_1, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_1[i] = create_each_block_1$2(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(select2, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_1.length; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+
+    				each_blocks_1.length = each_value_1.length;
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9 && select2_value_value !== (select2_value_value = /*profileData*/ ctx[0].college)) {
+    				select_option(select2, /*profileData*/ ctx[0].college);
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9 && input2.value !== /*profileData*/ ctx[0].major) {
+    				set_input_value(input2, /*profileData*/ ctx[0].major);
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9) {
+    				set_input_value(textarea, /*profileData*/ ctx[0].bio);
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9 && input3.value !== /*profileData*/ ctx[0].discord) {
+    				set_input_value(input3, /*profileData*/ ctx[0].discord);
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9) {
+    				set_input_value(input4, /*profileData*/ ctx[0].linkedin);
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9 && input5.value !== /*profileData*/ ctx[0].snapchat) {
+    				set_input_value(input5, /*profileData*/ ctx[0].snapchat);
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9) {
+    				set_input_value(input6, /*profileData*/ ctx[0].instagram);
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9) {
+    				set_input_value(input7, /*profileData*/ ctx[0].facebook);
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9) {
+    				set_input_value(input8, /*profileData*/ ctx[0].twitter);
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9 && input9.value !== /*profileData*/ ctx[0].email) {
+    				set_input_value(input9, /*profileData*/ ctx[0].email);
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9) {
+    				set_input_value(input10, /*profileData*/ ctx[0].phone);
+    			}
+
+    			if (dirty[0] & /*locationOptions*/ 64) {
+    				each_value = /*locationOptions*/ ctx[6];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(select3, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9 && select3_value_value !== (select3_value_value = /*profileData*/ ctx[0].location)) {
+    				select_option(select3, /*profileData*/ ctx[0].location);
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			destroy_each(each_blocks_3, detaching);
+    			destroy_each(each_blocks_2, detaching);
+    			destroy_each(each_blocks_1, detaching);
+    			destroy_each(each_blocks, detaching);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$5.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$5($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("DataForm", slots, []);
+    	var { profileData } = $$props;
+    	var { whenDone } = $$props;
+    	var { sessionToken } = $$props;
+
+    	let genderOptions = [
+    		"Select",
+    		"Male",
+    		"Female",
+    		"Transgender",
+    		"Non-Binary",
+    		"Other",
+    		"Prefer not to respond"
+    	];
+
+    	let collegeOptions = [
+    		"Select",
+    		"School of Architecture",
+    		"McCombs School of Business",
+    		"Moody College of Communication",
+    		"College of Education",
+    		"Cockrell School of Engineering",
+    		"College of Fine Arts",
+    		"Jackson School of Geosciences",
+    		"School of Information",
+    		"College of Liberal Arts",
+    		"College of Natural Science",
+    		"School of Nursing",
+    		"College of Pharmacy",
+    		"Steve Hicks School of Social Work",
+    		"School of Undergraduate Studies"
+    	];
+
+    	let classYearOptions = [2026, 2025, 2024, 2023, 2022, 2021, 2020];
+    	let locationOptions = ["Select", "On-Campus", "Off-Campus"];
+    	const writable_props = ["profileData", "whenDone", "sessionToken"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<DataForm> was created with unknown prop '${key}'`);
+    	});
+
+    	function input0_input_handler() {
+    		profileData.first_name = this.value;
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	function input1_input_handler() {
+    		profileData.last_name = this.value;
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	function input2_input_handler() {
+    		profileData.major = this.value;
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	function textarea_input_handler() {
+    		profileData.bio = this.value;
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	function input3_input_handler() {
+    		profileData.discord = this.value;
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	function input4_input_handler() {
+    		profileData.linkedin = this.value;
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	function input5_input_handler() {
+    		profileData.snapchat = this.value;
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	function input6_input_handler() {
+    		profileData.instagram = this.value;
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	function input7_input_handler() {
+    		profileData.facebook = this.value;
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	function input8_input_handler() {
+    		profileData.twitter = this.value;
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	function input9_input_handler() {
+    		profileData.email = this.value;
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	function input10_input_handler() {
+    		profileData.phone = this.value;
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	const click_handler = () => {
+    		whenDone(sessionToken, profileData);
+    	};
+
+    	$$self.$$set = $$props => {
+    		if ("profileData" in $$props) $$invalidate(0, profileData = $$props.profileData);
+    		if ("whenDone" in $$props) $$invalidate(1, whenDone = $$props.whenDone);
+    		if ("sessionToken" in $$props) $$invalidate(2, sessionToken = $$props.sessionToken);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		profileData,
+    		whenDone,
+    		sessionToken,
+    		genderOptions,
+    		collegeOptions,
+    		classYearOptions,
+    		locationOptions
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("profileData" in $$props) $$invalidate(0, profileData = $$props.profileData);
+    		if ("whenDone" in $$props) $$invalidate(1, whenDone = $$props.whenDone);
+    		if ("sessionToken" in $$props) $$invalidate(2, sessionToken = $$props.sessionToken);
+    		if ("genderOptions" in $$props) $$invalidate(3, genderOptions = $$props.genderOptions);
+    		if ("collegeOptions" in $$props) $$invalidate(4, collegeOptions = $$props.collegeOptions);
+    		if ("classYearOptions" in $$props) $$invalidate(5, classYearOptions = $$props.classYearOptions);
+    		if ("locationOptions" in $$props) $$invalidate(6, locationOptions = $$props.locationOptions);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		profileData,
+    		whenDone,
+    		sessionToken,
+    		genderOptions,
+    		collegeOptions,
+    		classYearOptions,
+    		locationOptions,
+    		input0_input_handler,
+    		input1_input_handler,
+    		input2_input_handler,
+    		textarea_input_handler,
+    		input3_input_handler,
+    		input4_input_handler,
+    		input5_input_handler,
+    		input6_input_handler,
+    		input7_input_handler,
+    		input8_input_handler,
+    		input9_input_handler,
+    		input10_input_handler,
+    		click_handler
+    	];
+    }
+
+    class DataForm extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(
+    			this,
+    			options,
+    			instance$5,
+    			create_fragment$5,
+    			safe_not_equal,
+    			{
+    				profileData: 0,
+    				whenDone: 1,
+    				sessionToken: 2
+    			},
+    			[-1, -1]
+    		);
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "DataForm",
+    			options,
+    			id: create_fragment$5.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*profileData*/ ctx[0] === undefined && !("profileData" in props)) {
+    			console.warn("<DataForm> was created without expected prop 'profileData'");
+    		}
+
+    		if (/*whenDone*/ ctx[1] === undefined && !("whenDone" in props)) {
+    			console.warn("<DataForm> was created without expected prop 'whenDone'");
+    		}
+
+    		if (/*sessionToken*/ ctx[2] === undefined && !("sessionToken" in props)) {
+    			console.warn("<DataForm> was created without expected prop 'sessionToken'");
+    		}
+    	}
+
+    	get profileData() {
+    		throw new Error("<DataForm>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set profileData(value) {
+    		throw new Error("<DataForm>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get whenDone() {
+    		throw new Error("<DataForm>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set whenDone(value) {
+    		throw new Error("<DataForm>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get sessionToken() {
+    		throw new Error("<DataForm>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set sessionToken(value) {
+    		throw new Error("<DataForm>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/Login.svelte generated by Svelte v3.37.0 */
+
+    const { console: console_1$2 } = globals;
+    const file$4 = "src/Login.svelte";
+
+    // (61:8) {#if errorMessage != null}
+    function create_if_block$3(ctx) {
+    	let p;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t = text(/*errorMessage*/ ctx[0]);
+    			attr_dev(p, "class", "column col-8 col-mx-auto");
+    			set_style(p, "color", "red");
+    			add_location(p, file$4, 61, 12, 2242);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*errorMessage*/ 1) set_data_dev(t, /*errorMessage*/ ctx[0]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$3.name,
+    		type: "if",
+    		source: "(61:8) {#if errorMessage != null}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$4(ctx) {
+    	let main;
+    	let div1;
+    	let div0;
+    	let h3;
+    	let t1;
+    	let div2;
+    	let p0;
+    	let t3;
+    	let div3;
+    	let p1;
+    	let t5;
+    	let div5;
+    	let t6;
+    	let div4;
+    	let if_block = /*errorMessage*/ ctx[0] != null && create_if_block$3(ctx);
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			div1 = element("div");
+    			div0 = element("div");
+    			h3 = element("h3");
+    			h3.textContent = "A place to find a roommate for college!";
+    			t1 = space();
+    			div2 = element("div");
+    			p0 = element("p");
+    			p0.textContent = "This is a digital service where you can find other students going to\n            the same college and looking for roommates. After signing in and\n            entering your information (you can edit it later), you can look at\n            profiles of other students and get in contact with them.";
+    			t3 = space();
+    			div3 = element("div");
+    			p1 = element("p");
+    			p1.textContent = "You can get started by signing in with Google! You don't need a\n            school account to enter.";
+    			t5 = space();
+    			div5 = element("div");
+    			if (if_block) if_block.c();
+    			t6 = space();
+    			div4 = element("div");
+    			add_location(h3, file$4, 42, 12, 1475);
+    			attr_dev(div0, "class", "column col-8 col-md-12 col-mx-auto");
+    			add_location(div0, file$4, 41, 8, 1414);
+    			attr_dev(div1, "class", "columns");
+    			add_location(div1, file$4, 40, 4, 1384);
+    			attr_dev(p0, "class", "column col-8 col-mx-auto");
+    			add_location(p0, file$4, 46, 8, 1584);
+    			attr_dev(div2, "class", "columns");
+    			add_location(div2, file$4, 45, 4, 1554);
+    			attr_dev(p1, "class", "column col-8 col-md-12 col-mx-auto");
+    			add_location(p1, file$4, 54, 8, 1985);
+    			attr_dev(div3, "class", "columns");
+    			add_location(div3, file$4, 53, 4, 1955);
+    			set_style(div4, "display", "flex");
+    			set_style(div4, "justify-content", "center");
+    			attr_dev(div4, "class", "column col-8 col-mx-auto g-signin2");
+    			attr_dev(div4, "data-onsuccess", "onSignIn");
+    			add_location(div4, file$4, 65, 8, 2369);
+    			attr_dev(div5, "class", "columns");
+    			add_location(div5, file$4, 59, 4, 2173);
+    			add_location(main, file$4, 39, 0, 1373);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			append_dev(main, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, h3);
+    			append_dev(main, t1);
+    			append_dev(main, div2);
+    			append_dev(div2, p0);
+    			append_dev(main, t3);
+    			append_dev(main, div3);
+    			append_dev(div3, p1);
+    			append_dev(main, t5);
+    			append_dev(main, div5);
+    			if (if_block) if_block.m(div5, null);
+    			append_dev(div5, t6);
+    			append_dev(div5, div4);
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (/*errorMessage*/ ctx[0] != null) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$3(ctx);
+    					if_block.c();
+    					if_block.m(div5, t6);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			if (if_block) if_block.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$4.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$4($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Login", slots, []);
+    	var { signedIn } = $$props;
+    	var { page } = $$props;
+    	var { sessionToken } = $$props;
+    	let errorMessage = null;
+
+    	window.onSignIn = googleUser => {
+    		const profile = googleUser.getBasicProfile();
+    		console.log("ID: " + profile.getId());
+    		console.log("Image URL: " + profile.getImageUrl());
+    		console.log("Email: " + profile.getEmail());
+    		console.log("ID Token: " + googleUser.getAuthResponse().id_token);
+
+    		fetch("./auth", {
+    			method: "POST",
+    			headers: { "Content-Type": "application/json" },
+    			body: JSON.stringify({
+    				oauth_token_id: googleUser.getAuthResponse().id_token
+    			})
+    		}).then(response => response.json()).then(data => {
+    			console.log(data);
+
+    			if (data.error != null) {
+    				$$invalidate(0, errorMessage = data.error);
+    				window.signOut();
+    			} else {
+    				$$invalidate(2, page = localStorage.getItem("page")
+    				? localStorage.getItem("page")
+    				: "profile");
+
+    				$$invalidate(3, sessionToken = data.jwt_token);
+    				$$invalidate(1, signedIn = true);
+    				$$invalidate(0, errorMessage = null);
+    			} //window.getStudentData(sessionToken);
+    		});
+    	};
+
+    	const writable_props = ["signedIn", "page", "sessionToken"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$2.warn(`<Login> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ("signedIn" in $$props) $$invalidate(1, signedIn = $$props.signedIn);
+    		if ("page" in $$props) $$invalidate(2, page = $$props.page);
+    		if ("sessionToken" in $$props) $$invalidate(3, sessionToken = $$props.sessionToken);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		signedIn,
+    		page,
+    		sessionToken,
+    		errorMessage
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("signedIn" in $$props) $$invalidate(1, signedIn = $$props.signedIn);
+    		if ("page" in $$props) $$invalidate(2, page = $$props.page);
+    		if ("sessionToken" in $$props) $$invalidate(3, sessionToken = $$props.sessionToken);
+    		if ("errorMessage" in $$props) $$invalidate(0, errorMessage = $$props.errorMessage);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [errorMessage, signedIn, page, sessionToken];
+    }
+
+    class Login extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$4, create_fragment$4, safe_not_equal, { signedIn: 1, page: 2, sessionToken: 3 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Login",
+    			options,
+    			id: create_fragment$4.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*signedIn*/ ctx[1] === undefined && !("signedIn" in props)) {
+    			console_1$2.warn("<Login> was created without expected prop 'signedIn'");
+    		}
+
+    		if (/*page*/ ctx[2] === undefined && !("page" in props)) {
+    			console_1$2.warn("<Login> was created without expected prop 'page'");
+    		}
+
+    		if (/*sessionToken*/ ctx[3] === undefined && !("sessionToken" in props)) {
+    			console_1$2.warn("<Login> was created without expected prop 'sessionToken'");
+    		}
+    	}
+
+    	get signedIn() {
+    		throw new Error("<Login>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set signedIn(value) {
+    		throw new Error("<Login>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get page() {
+    		throw new Error("<Login>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set page(value) {
+    		throw new Error("<Login>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get sessionToken() {
+    		throw new Error("<Login>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set sessionToken(value) {
+    		throw new Error("<Login>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/SignOut.svelte generated by Svelte v3.37.0 */
+
+    const { console: console_1$1 } = globals;
+    const file$3 = "src/SignOut.svelte";
+
+    function create_fragment$3(ctx) {
+    	let main;
+    	let div;
+    	let button0;
+    	let t0_value = (/*page*/ ctx[0] == "profile" ? "Search" : "Profile") + "";
+    	let t0;
+    	let t1;
+    	let button1;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			div = element("div");
+    			button0 = element("button");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			button1 = element("button");
+    			button1.textContent = "Sign Out";
+    			attr_dev(button0, "class", "btn");
+    			add_location(button0, file$3, 25, 8, 510);
+    			attr_dev(button1, "class", "btn");
+    			add_location(button1, file$3, 26, 8, 662);
+    			attr_dev(div, "class", "topright svelte-1hnft6h");
+    			add_location(div, file$3, 24, 4, 479);
+    			add_location(main, file$3, 23, 0, 468);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			append_dev(main, div);
+    			append_dev(div, button0);
+    			append_dev(button0, t0);
+    			append_dev(div, t1);
+    			append_dev(div, button1);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(button0, "click", /*click_handler*/ ctx[4], false, false, false),
+    					listen_dev(button1, "click", /*signOut*/ ctx[1], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*page*/ 1 && t0_value !== (t0_value = (/*page*/ ctx[0] == "profile" ? "Search" : "Profile") + "")) set_data_dev(t0, t0_value);
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$3.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$3($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("SignOut", slots, []);
+    	var { page } = $$props;
+    	var { signedIn } = $$props;
+
+    	function signOutRequest() {
+    		var auth2 = gapi.auth2.getAuthInstance();
+
+    		auth2.signOut().then(function () {
+    			console.log("User signed out.");
+    			$$invalidate(3, signedIn = false);
+    			location.reload();
+    		});
+    	}
+
+    	function signOut() {
+    		switchToPage("signin");
+    		signOutRequest();
+    	}
+
+    	function switchToPage(string) {
+    		$$invalidate(0, page = string);
+    	}
+
+    	const writable_props = ["page", "signedIn"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$1.warn(`<SignOut> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = () => switchToPage(page == "profile" ? "search" : "profile");
+
+    	$$self.$$set = $$props => {
+    		if ("page" in $$props) $$invalidate(0, page = $$props.page);
+    		if ("signedIn" in $$props) $$invalidate(3, signedIn = $$props.signedIn);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		page,
+    		signedIn,
+    		signOutRequest,
+    		signOut,
+    		switchToPage
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("page" in $$props) $$invalidate(0, page = $$props.page);
+    		if ("signedIn" in $$props) $$invalidate(3, signedIn = $$props.signedIn);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [page, signOut, switchToPage, signedIn, click_handler];
+    }
+
+    class SignOut extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, { page: 0, signedIn: 3 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "SignOut",
+    			options,
+    			id: create_fragment$3.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*page*/ ctx[0] === undefined && !("page" in props)) {
+    			console_1$1.warn("<SignOut> was created without expected prop 'page'");
+    		}
+
+    		if (/*signedIn*/ ctx[3] === undefined && !("signedIn" in props)) {
+    			console_1$1.warn("<SignOut> was created without expected prop 'signedIn'");
+    		}
+    	}
+
+    	get page() {
+    		throw new Error("<SignOut>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set page(value) {
+    		throw new Error("<SignOut>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get signedIn() {
+    		throw new Error("<SignOut>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set signedIn(value) {
+    		throw new Error("<SignOut>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/MoreInfoModal.svelte generated by Svelte v3.37.0 */
+
+    const file$2 = "src/MoreInfoModal.svelte";
+
+    function get_each_context$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[5] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_1$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[5] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_2$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[5] = list[i];
+    	return child_ctx;
+    }
+
+    // (33:20) {#if modalData}
+    function create_if_block$2(ctx) {
+    	let h60;
+    	let t0_value = /*modalData*/ ctx[1].college_name + "";
+    	let t0;
+    	let t1;
+    	let h5;
+    	let t3;
+    	let ul;
+    	let t4;
+    	let t5;
+    	let t6;
+    	let t7;
+    	let t8;
+    	let t9;
+    	let t10;
+    	let t11;
+    	let h40;
+    	let t13;
+    	let div4;
+    	let div3;
+    	let div0;
+    	let h61;
+    	let t15;
+    	let t16;
+    	let div1;
+    	let h62;
+    	let t18;
+    	let t19;
+    	let div2;
+    	let h63;
+    	let t21;
+    	let t22;
+    	let h41;
+    	let t24;
+    	let p;
+    	let t25_value = /*modalData*/ ctx[1].additional + "";
+    	let t25;
+    	let if_block0 = /*modalData*/ ctx[1].discord != undefined && create_if_block_8(ctx);
+    	let if_block1 = /*modalData*/ ctx[1].linkedin != undefined && create_if_block_7(ctx);
+    	let if_block2 = /*modalData*/ ctx[1].snapchat != undefined && create_if_block_6(ctx);
+    	let if_block3 = /*modalData*/ ctx[1].instagram != undefined && create_if_block_5(ctx);
+    	let if_block4 = /*modalData*/ ctx[1].facebook != undefined && create_if_block_4(ctx);
+    	let if_block5 = /*modalData*/ ctx[1].twitter != undefined && create_if_block_3$1(ctx);
+    	let if_block6 = /*modalData*/ ctx[1].email != undefined && create_if_block_2$1(ctx);
+    	let if_block7 = /*modalData*/ ctx[1].phone != undefined && create_if_block_1$1(ctx);
+
+    	let each_value_2 = /*modalData*/ ctx[1].honors
+    	? /*modalData*/ ctx[1].honors
+    	: [];
+
+    	validate_each_argument(each_value_2);
+    	let each_blocks_2 = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks_2[i] = create_each_block_2$1(get_each_context_2$1(ctx, each_value_2, i));
+    	}
+
+    	let each_value_1 = /*modalData*/ ctx[1].location
+    	? /*modalData*/ ctx[1].location
+    	: [];
+
+    	validate_each_argument(each_value_1);
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+    	}
+
+    	let each_value = /*modalData*/ ctx[1].floorplan
+    	? /*modalData*/ ctx[1].floorplan
+    	: [];
+
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			h60 = element("h6");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			h5 = element("h5");
+    			h5.textContent = "Contact Information";
+    			t3 = space();
+    			ul = element("ul");
+    			if (if_block0) if_block0.c();
+    			t4 = space();
+    			if (if_block1) if_block1.c();
+    			t5 = space();
+    			if (if_block2) if_block2.c();
+    			t6 = space();
+    			if (if_block3) if_block3.c();
+    			t7 = space();
+    			if (if_block4) if_block4.c();
+    			t8 = space();
+    			if (if_block5) if_block5.c();
+    			t9 = space();
+    			if (if_block6) if_block6.c();
+    			t10 = space();
+    			if (if_block7) if_block7.c();
+    			t11 = space();
+    			h40 = element("h4");
+    			h40.textContent = "Room Information";
+    			t13 = space();
+    			div4 = element("div");
+    			div3 = element("div");
+    			div0 = element("div");
+    			h61 = element("h6");
+    			h61.textContent = "Honors";
+    			t15 = space();
+
+    			for (let i = 0; i < each_blocks_2.length; i += 1) {
+    				each_blocks_2[i].c();
+    			}
+
+    			t16 = space();
+    			div1 = element("div");
+    			h62 = element("h6");
+    			h62.textContent = "Locations";
+    			t18 = space();
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t19 = space();
+    			div2 = element("div");
+    			h63 = element("h6");
+    			h63.textContent = "Floorplans";
+    			t21 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t22 = space();
+    			h41 = element("h4");
+    			h41.textContent = "Additional Information";
+    			t24 = space();
+    			p = element("p");
+    			t25 = text(t25_value);
+    			add_location(h60, file$2, 33, 24, 1006);
+    			add_location(h5, file$2, 34, 24, 1064);
+    			add_location(ul, file$2, 35, 24, 1117);
+    			add_location(h40, file$2, 45, 24, 2083);
+    			add_location(h61, file$2, 49, 36, 2302);
+    			attr_dev(div0, "class", "column col-3");
+    			add_location(div0, file$2, 48, 32, 2239);
+    			add_location(h62, file$2, 57, 36, 2771);
+    			attr_dev(div1, "class", "column col-3");
+    			add_location(div1, file$2, 56, 32, 2708);
+    			add_location(h63, file$2, 65, 36, 3247);
+    			attr_dev(div2, "class", "column col-3");
+    			add_location(div2, file$2, 64, 32, 3184);
+    			attr_dev(div3, "class", "columns");
+    			add_location(div3, file$2, 47, 28, 2185);
+    			attr_dev(div4, "class", "container");
+    			add_location(div4, file$2, 46, 24, 2133);
+    			add_location(h41, file$2, 74, 24, 3721);
+    			set_style(p, "border", "1px solid gray");
+    			set_style(p, "border-radius", "15px");
+    			set_style(p, "padding", "10px");
+    			add_location(p, file$2, 75, 24, 3777);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, h60, anchor);
+    			append_dev(h60, t0);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, h5, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, ul, anchor);
+    			if (if_block0) if_block0.m(ul, null);
+    			append_dev(ul, t4);
+    			if (if_block1) if_block1.m(ul, null);
+    			append_dev(ul, t5);
+    			if (if_block2) if_block2.m(ul, null);
+    			append_dev(ul, t6);
+    			if (if_block3) if_block3.m(ul, null);
+    			append_dev(ul, t7);
+    			if (if_block4) if_block4.m(ul, null);
+    			append_dev(ul, t8);
+    			if (if_block5) if_block5.m(ul, null);
+    			append_dev(ul, t9);
+    			if (if_block6) if_block6.m(ul, null);
+    			append_dev(ul, t10);
+    			if (if_block7) if_block7.m(ul, null);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, h40, anchor);
+    			insert_dev(target, t13, anchor);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, div3);
+    			append_dev(div3, div0);
+    			append_dev(div0, h61);
+    			append_dev(div0, t15);
+
+    			for (let i = 0; i < each_blocks_2.length; i += 1) {
+    				each_blocks_2[i].m(div0, null);
+    			}
+
+    			append_dev(div3, t16);
+    			append_dev(div3, div1);
+    			append_dev(div1, h62);
+    			append_dev(div1, t18);
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(div1, null);
+    			}
+
+    			append_dev(div3, t19);
+    			append_dev(div3, div2);
+    			append_dev(div2, h63);
+    			append_dev(div2, t21);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div2, null);
+    			}
+
+    			insert_dev(target, t22, anchor);
+    			insert_dev(target, h41, anchor);
+    			insert_dev(target, t24, anchor);
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t25);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*modalData*/ 2 && t0_value !== (t0_value = /*modalData*/ ctx[1].college_name + "")) set_data_dev(t0, t0_value);
+
+    			if (/*modalData*/ ctx[1].discord != undefined) {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
+    				} else {
+    					if_block0 = create_if_block_8(ctx);
+    					if_block0.c();
+    					if_block0.m(ul, t4);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (/*modalData*/ ctx[1].linkedin != undefined) {
+    				if (if_block1) {
+    					if_block1.p(ctx, dirty);
+    				} else {
+    					if_block1 = create_if_block_7(ctx);
+    					if_block1.c();
+    					if_block1.m(ul, t5);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
+
+    			if (/*modalData*/ ctx[1].snapchat != undefined) {
+    				if (if_block2) {
+    					if_block2.p(ctx, dirty);
+    				} else {
+    					if_block2 = create_if_block_6(ctx);
+    					if_block2.c();
+    					if_block2.m(ul, t6);
+    				}
+    			} else if (if_block2) {
+    				if_block2.d(1);
+    				if_block2 = null;
+    			}
+
+    			if (/*modalData*/ ctx[1].instagram != undefined) {
+    				if (if_block3) {
+    					if_block3.p(ctx, dirty);
+    				} else {
+    					if_block3 = create_if_block_5(ctx);
+    					if_block3.c();
+    					if_block3.m(ul, t7);
+    				}
+    			} else if (if_block3) {
+    				if_block3.d(1);
+    				if_block3 = null;
+    			}
+
+    			if (/*modalData*/ ctx[1].facebook != undefined) {
+    				if (if_block4) {
+    					if_block4.p(ctx, dirty);
+    				} else {
+    					if_block4 = create_if_block_4(ctx);
+    					if_block4.c();
+    					if_block4.m(ul, t8);
+    				}
+    			} else if (if_block4) {
+    				if_block4.d(1);
+    				if_block4 = null;
+    			}
+
+    			if (/*modalData*/ ctx[1].twitter != undefined) {
+    				if (if_block5) {
+    					if_block5.p(ctx, dirty);
+    				} else {
+    					if_block5 = create_if_block_3$1(ctx);
+    					if_block5.c();
+    					if_block5.m(ul, t9);
+    				}
+    			} else if (if_block5) {
+    				if_block5.d(1);
+    				if_block5 = null;
+    			}
+
+    			if (/*modalData*/ ctx[1].email != undefined) {
+    				if (if_block6) {
+    					if_block6.p(ctx, dirty);
+    				} else {
+    					if_block6 = create_if_block_2$1(ctx);
+    					if_block6.c();
+    					if_block6.m(ul, t10);
+    				}
+    			} else if (if_block6) {
+    				if_block6.d(1);
+    				if_block6 = null;
+    			}
+
+    			if (/*modalData*/ ctx[1].phone != undefined) {
+    				if (if_block7) {
+    					if_block7.p(ctx, dirty);
+    				} else {
+    					if_block7 = create_if_block_1$1(ctx);
+    					if_block7.c();
+    					if_block7.m(ul, null);
+    				}
+    			} else if (if_block7) {
+    				if_block7.d(1);
+    				if_block7 = null;
+    			}
+
+    			if (dirty & /*colorMap, modalData*/ 6) {
+    				each_value_2 = /*modalData*/ ctx[1].honors
+    				? /*modalData*/ ctx[1].honors
+    				: [];
+
+    				validate_each_argument(each_value_2);
+    				let i;
+
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2$1(ctx, each_value_2, i);
+
+    					if (each_blocks_2[i]) {
+    						each_blocks_2[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_2[i] = create_each_block_2$1(child_ctx);
+    						each_blocks_2[i].c();
+    						each_blocks_2[i].m(div0, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_2.length; i += 1) {
+    					each_blocks_2[i].d(1);
+    				}
+
+    				each_blocks_2.length = each_value_2.length;
+    			}
+
+    			if (dirty & /*colorMap, modalData*/ 6) {
+    				each_value_1 = /*modalData*/ ctx[1].location
+    				? /*modalData*/ ctx[1].location
+    				: [];
+
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$1(ctx, each_value_1, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_1[i] = create_each_block_1$1(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(div1, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_1.length; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+
+    				each_blocks_1.length = each_value_1.length;
+    			}
+
+    			if (dirty & /*colorMap, modalData*/ 6) {
+    				each_value = /*modalData*/ ctx[1].floorplan
+    				? /*modalData*/ ctx[1].floorplan
+    				: [];
+
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div2, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+
+    			if (dirty & /*modalData*/ 2 && t25_value !== (t25_value = /*modalData*/ ctx[1].additional + "")) set_data_dev(t25, t25_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h60);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(h5);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(ul);
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
+    			if (if_block2) if_block2.d();
+    			if (if_block3) if_block3.d();
+    			if (if_block4) if_block4.d();
+    			if (if_block5) if_block5.d();
+    			if (if_block6) if_block6.d();
+    			if (if_block7) if_block7.d();
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(h40);
+    			if (detaching) detach_dev(t13);
+    			if (detaching) detach_dev(div4);
+    			destroy_each(each_blocks_2, detaching);
+    			destroy_each(each_blocks_1, detaching);
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(t22);
+    			if (detaching) detach_dev(h41);
+    			if (detaching) detach_dev(t24);
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$2.name,
+    		type: "if",
+    		source: "(33:20) {#if modalData}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (37:28) {#if modalData.discord != undefined }
+    function create_if_block_8(ctx) {
+    	let li;
+    	let t_value = "Discord: " + /*modalData*/ ctx[1].discord + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			t = text(t_value);
+    			add_location(li, file$2, 36, 65, 1187);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			append_dev(li, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*modalData*/ 2 && t_value !== (t_value = "Discord: " + /*modalData*/ ctx[1].discord + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(li);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_8.name,
+    		type: "if",
+    		source: "(37:28) {#if modalData.discord != undefined }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (38:28) {#if modalData.linkedin != undefined }
+    function create_if_block_7(ctx) {
+    	let li;
+    	let t_value = "LinkedIn: " + /*modalData*/ ctx[1].linkedin + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			t = text(t_value);
+    			add_location(li, file$2, 37, 66, 1301);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			append_dev(li, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*modalData*/ 2 && t_value !== (t_value = "LinkedIn: " + /*modalData*/ ctx[1].linkedin + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(li);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_7.name,
+    		type: "if",
+    		source: "(38:28) {#if modalData.linkedin != undefined }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (39:28) {#if modalData.snapchat != undefined }
+    function create_if_block_6(ctx) {
+    	let li;
+    	let t_value = "SnapChat: " + /*modalData*/ ctx[1].snapchat + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			t = text(t_value);
+    			add_location(li, file$2, 38, 66, 1417);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			append_dev(li, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*modalData*/ 2 && t_value !== (t_value = "SnapChat: " + /*modalData*/ ctx[1].snapchat + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(li);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_6.name,
+    		type: "if",
+    		source: "(39:28) {#if modalData.snapchat != undefined }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (40:28) {#if modalData.instagram != undefined }
+    function create_if_block_5(ctx) {
+    	let li;
+    	let t_value = "Instagram: " + /*modalData*/ ctx[1].instagram + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			t = text(t_value);
+    			add_location(li, file$2, 39, 67, 1534);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			append_dev(li, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*modalData*/ 2 && t_value !== (t_value = "Instagram: " + /*modalData*/ ctx[1].instagram + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(li);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_5.name,
+    		type: "if",
+    		source: "(40:28) {#if modalData.instagram != undefined }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (41:28) {#if modalData.facebook != undefined }
+    function create_if_block_4(ctx) {
+    	let li;
+    	let t_value = "Facebook: " + /*modalData*/ ctx[1].facebook + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			t = text(t_value);
+    			add_location(li, file$2, 40, 66, 1652);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			append_dev(li, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*modalData*/ 2 && t_value !== (t_value = "Facebook: " + /*modalData*/ ctx[1].facebook + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(li);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_4.name,
+    		type: "if",
+    		source: "(41:28) {#if modalData.facebook != undefined }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (42:28) {#if modalData.twitter != undefined }
+    function create_if_block_3$1(ctx) {
+    	let li;
+    	let t_value = "Twitter: " + /*modalData*/ ctx[1].twitter + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			t = text(t_value);
+    			add_location(li, file$2, 41, 65, 1767);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			append_dev(li, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*modalData*/ 2 && t_value !== (t_value = "Twitter: " + /*modalData*/ ctx[1].twitter + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(li);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3$1.name,
+    		type: "if",
+    		source: "(42:28) {#if modalData.twitter != undefined }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (43:28) {#if modalData.email != undefined }
+    function create_if_block_2$1(ctx) {
+    	let li;
+    	let t_value = "Email: " + /*modalData*/ ctx[1].email + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			t = text(t_value);
+    			add_location(li, file$2, 42, 63, 1878);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			append_dev(li, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*modalData*/ 2 && t_value !== (t_value = "Email: " + /*modalData*/ ctx[1].email + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(li);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2$1.name,
+    		type: "if",
+    		source: "(43:28) {#if modalData.email != undefined }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (44:28) {#if modalData.phone != undefined }
+    function create_if_block_1$1(ctx) {
+    	let li;
+    	let t_value = "Phone: " + /*modalData*/ ctx[1].phone + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			t = text(t_value);
+    			add_location(li, file$2, 43, 63, 1985);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			append_dev(li, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*modalData*/ 2 && t_value !== (t_value = "Phone: " + /*modalData*/ ctx[1].phone + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(li);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$1.name,
+    		type: "if",
+    		source: "(44:28) {#if modalData.phone != undefined }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (51:36) {#each modalData.honors ? modalData.honors : [] as honor}
+    function create_each_block_2$1(ctx) {
+    	let span;
+    	let t_value = /*honor*/ ctx[5] + "";
+    	let t;
+    	let span_class_value;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(t_value);
+    			attr_dev(span, "class", span_class_value = "" + (null_to_empty("chip " + /*colorMap*/ ctx[2][/*honor*/ ctx[5]]) + " svelte-1ealj29"));
+    			add_location(span, file$2, 51, 40, 2452);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*modalData*/ 2 && t_value !== (t_value = /*honor*/ ctx[5] + "")) set_data_dev(t, t_value);
+
+    			if (dirty & /*colorMap, modalData*/ 6 && span_class_value !== (span_class_value = "" + (null_to_empty("chip " + /*colorMap*/ ctx[2][/*honor*/ ctx[5]]) + " svelte-1ealj29"))) {
+    				attr_dev(span, "class", span_class_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_2$1.name,
+    		type: "each",
+    		source: "(51:36) {#each modalData.honors ? modalData.honors : [] as honor}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (59:36) {#each modalData.location ? modalData.location : [] as honor}
+    function create_each_block_1$1(ctx) {
+    	let span;
+    	let t_value = /*honor*/ ctx[5] + "";
+    	let t;
+    	let span_class_value;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(t_value);
+    			attr_dev(span, "class", span_class_value = "" + (null_to_empty("chip " + /*colorMap*/ ctx[2][/*honor*/ ctx[5]]) + " svelte-1ealj29"));
+    			add_location(span, file$2, 59, 40, 2928);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*modalData*/ 2 && t_value !== (t_value = /*honor*/ ctx[5] + "")) set_data_dev(t, t_value);
+
+    			if (dirty & /*colorMap, modalData*/ 6 && span_class_value !== (span_class_value = "" + (null_to_empty("chip " + /*colorMap*/ ctx[2][/*honor*/ ctx[5]]) + " svelte-1ealj29"))) {
+    				attr_dev(span, "class", span_class_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1$1.name,
+    		type: "each",
+    		source: "(59:36) {#each modalData.location ? modalData.location : [] as honor}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (67:36) {#each modalData.floorplan ? modalData.floorplan : [] as honor}
+    function create_each_block$1(ctx) {
+    	let span;
+    	let t_value = /*honor*/ ctx[5] + "";
+    	let t;
+    	let span_class_value;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(t_value);
+    			attr_dev(span, "class", span_class_value = "" + (null_to_empty("chip " + /*colorMap*/ ctx[2][/*honor*/ ctx[5]]) + " svelte-1ealj29"));
+    			add_location(span, file$2, 67, 40, 3407);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*modalData*/ 2 && t_value !== (t_value = /*honor*/ ctx[5] + "")) set_data_dev(t, t_value);
+
+    			if (dirty & /*colorMap, modalData*/ 6 && span_class_value !== (span_class_value = "" + (null_to_empty("chip " + /*colorMap*/ ctx[2][/*honor*/ ctx[5]]) + " svelte-1ealj29"))) {
+    				attr_dev(span, "class", span_class_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$1.name,
+    		type: "each",
+    		source: "(67:36) {#each modalData.floorplan ? modalData.floorplan : [] as honor}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$2(ctx) {
+    	let main;
+    	let div7;
+    	let div0;
+    	let t0;
+    	let div6;
+    	let div3;
+    	let div1;
+    	let t1;
+    	let div2;
+
+    	let t2_value = (/*modalData*/ ctx[1]
+    	? /*modalData*/ ctx[1].first_name + " " + /*modalData*/ ctx[1].last_name
+    	: "") + "";
+
+    	let t2;
+    	let t3;
+    	let div5;
+    	let div4;
+    	let div7_class_value;
+    	let mounted;
+    	let dispose;
+    	let if_block = /*modalData*/ ctx[1] && create_if_block$2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			div7 = element("div");
+    			div0 = element("div");
+    			t0 = space();
+    			div6 = element("div");
+    			div3 = element("div");
+    			div1 = element("div");
+    			t1 = space();
+    			div2 = element("div");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			div5 = element("div");
+    			div4 = element("div");
+    			if (if_block) if_block.c();
+    			attr_dev(div0, "class", "modal-overlay");
+    			attr_dev(div0, "aria-label", "Close");
+    			add_location(div0, file$2, 8, 8, 173);
+    			attr_dev(div1, "class", "btn btn-clear float-right");
+    			attr_dev(div1, "aria-label", "Close");
+    			add_location(div1, file$2, 17, 16, 422);
+    			attr_dev(div2, "class", "modal-title h5");
+    			add_location(div2, file$2, 24, 16, 654);
+    			attr_dev(div3, "class", "modal-header");
+    			add_location(div3, file$2, 16, 12, 379);
+    			attr_dev(div4, "class", "content text-left");
+    			add_location(div4, file$2, 31, 16, 914);
+    			attr_dev(div5, "class", "modal-body");
+    			add_location(div5, file$2, 30, 12, 873);
+    			attr_dev(div6, "class", "modal-container");
+    			add_location(div6, file$2, 15, 8, 337);
+    			attr_dev(div7, "class", div7_class_value = "" + (null_to_empty("modal " + (/*open*/ ctx[0] ? "active" : "")) + " svelte-1ealj29"));
+    			attr_dev(div7, "id", "modal-id");
+    			add_location(div7, file$2, 7, 4, 103);
+    			add_location(main, file$2, 6, 0, 92);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			append_dev(main, div7);
+    			append_dev(div7, div0);
+    			append_dev(div7, t0);
+    			append_dev(div7, div6);
+    			append_dev(div6, div3);
+    			append_dev(div3, div1);
+    			append_dev(div3, t1);
+    			append_dev(div3, div2);
+    			append_dev(div2, t2);
+    			append_dev(div6, t3);
+    			append_dev(div6, div5);
+    			append_dev(div5, div4);
+    			if (if_block) if_block.m(div4, null);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(div0, "click", /*click_handler*/ ctx[3], false, false, false),
+    					listen_dev(div1, "click", /*click_handler_1*/ ctx[4], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*modalData*/ 2 && t2_value !== (t2_value = (/*modalData*/ ctx[1]
+    			? /*modalData*/ ctx[1].first_name + " " + /*modalData*/ ctx[1].last_name
+    			: "") + "")) set_data_dev(t2, t2_value);
+
+    			if (/*modalData*/ ctx[1]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$2(ctx);
+    					if_block.c();
+    					if_block.m(div4, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if (dirty & /*open*/ 1 && div7_class_value !== (div7_class_value = "" + (null_to_empty("modal " + (/*open*/ ctx[0] ? "active" : "")) + " svelte-1ealj29"))) {
+    				attr_dev(div7, "class", div7_class_value);
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			if (if_block) if_block.d();
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$2.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$2($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("MoreInfoModal", slots, []);
+    	var { open } = $$props;
+    	var { modalData } = $$props;
+    	var { colorMap } = $$props;
+    	const writable_props = ["open", "modalData", "colorMap"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<MoreInfoModal> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = () => {
+    		$$invalidate(0, open = false);
+    	};
+
+    	const click_handler_1 = () => {
+    		$$invalidate(0, open = false);
+    	};
+
+    	$$self.$$set = $$props => {
+    		if ("open" in $$props) $$invalidate(0, open = $$props.open);
+    		if ("modalData" in $$props) $$invalidate(1, modalData = $$props.modalData);
+    		if ("colorMap" in $$props) $$invalidate(2, colorMap = $$props.colorMap);
+    	};
+
+    	$$self.$capture_state = () => ({ open, modalData, colorMap });
+
+    	$$self.$inject_state = $$props => {
+    		if ("open" in $$props) $$invalidate(0, open = $$props.open);
+    		if ("modalData" in $$props) $$invalidate(1, modalData = $$props.modalData);
+    		if ("colorMap" in $$props) $$invalidate(2, colorMap = $$props.colorMap);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [open, modalData, colorMap, click_handler, click_handler_1];
+    }
+
+    class MoreInfoModal extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { open: 0, modalData: 1, colorMap: 2 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "MoreInfoModal",
+    			options,
+    			id: create_fragment$2.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*open*/ ctx[0] === undefined && !("open" in props)) {
+    			console.warn("<MoreInfoModal> was created without expected prop 'open'");
+    		}
+
+    		if (/*modalData*/ ctx[1] === undefined && !("modalData" in props)) {
+    			console.warn("<MoreInfoModal> was created without expected prop 'modalData'");
+    		}
+
+    		if (/*colorMap*/ ctx[2] === undefined && !("colorMap" in props)) {
+    			console.warn("<MoreInfoModal> was created without expected prop 'colorMap'");
+    		}
+    	}
+
+    	get open() {
+    		throw new Error("<MoreInfoModal>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set open(value) {
+    		throw new Error("<MoreInfoModal>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get modalData() {
+    		throw new Error("<MoreInfoModal>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set modalData(value) {
+    		throw new Error("<MoreInfoModal>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colorMap() {
+    		throw new Error("<MoreInfoModal>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colorMap(value) {
+    		throw new Error("<MoreInfoModal>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/TableView.svelte generated by Svelte v3.37.0 */
+    const file$1 = "src/TableView.svelte";
+
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[6] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[9] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[12] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_3(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[15] = list[i];
+    	return child_ctx;
+    }
+
+    // (36:16) {#if studentData != null}
+    function create_if_block$1(ctx) {
+    	let each_1_anchor;
+    	let each_value = /*studentData*/ ctx[0].students;
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*modalData, studentData, modalOpen, colorMap*/ 15) {
+    				each_value = /*studentData*/ ctx[0].students;
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$1.name,
+    		type: "if",
+    		source: "(36:16) {#if studentData != null}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (62:32) {#each student.honors as honor}
+    function create_each_block_3(ctx) {
+    	let span;
+    	let t_value = /*honor*/ ctx[15] + "";
+    	let t;
+    	let span_class_value;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(t_value);
+    			attr_dev(span, "class", span_class_value = "" + (null_to_empty("chip " + /*colorMap*/ ctx[3][/*honor*/ ctx[15]]) + " svelte-1ealj29"));
+    			add_location(span, file$1, 62, 36, 2466);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*studentData*/ 1 && t_value !== (t_value = /*honor*/ ctx[15] + "")) set_data_dev(t, t_value);
+
+    			if (dirty & /*studentData*/ 1 && span_class_value !== (span_class_value = "" + (null_to_empty("chip " + /*colorMap*/ ctx[3][/*honor*/ ctx[15]]) + " svelte-1ealj29"))) {
+    				attr_dev(span, "class", span_class_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_3.name,
+    		type: "each",
+    		source: "(62:32) {#each student.honors as honor}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (69:32) {#each student.location as location}
+    function create_each_block_2(ctx) {
+    	let span;
+    	let t_value = /*location*/ ctx[12] + "";
+    	let t;
+    	let span_class_value;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(t_value);
+    			attr_dev(span, "class", span_class_value = "" + (null_to_empty("chip " + /*colorMap*/ ctx[3][/*location*/ ctx[12]]) + " svelte-1ealj29"));
+    			add_location(span, file$1, 69, 36, 2811);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*studentData*/ 1 && t_value !== (t_value = /*location*/ ctx[12] + "")) set_data_dev(t, t_value);
+
+    			if (dirty & /*studentData*/ 1 && span_class_value !== (span_class_value = "" + (null_to_empty("chip " + /*colorMap*/ ctx[3][/*location*/ ctx[12]]) + " svelte-1ealj29"))) {
+    				attr_dev(span, "class", span_class_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_2.name,
+    		type: "each",
+    		source: "(69:32) {#each student.location as location}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (76:32) {#each student.floorplan as floorplan}
+    function create_each_block_1(ctx) {
+    	let span;
+    	let t_value = /*floorplan*/ ctx[9] + "";
+    	let t;
+    	let span_class_value;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(t_value);
+    			attr_dev(span, "class", span_class_value = "" + (null_to_empty("chip " + /*colorMap*/ ctx[3][/*floorplan*/ ctx[9]]) + " svelte-1ealj29"));
+    			add_location(span, file$1, 76, 36, 3164);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*studentData*/ 1 && t_value !== (t_value = /*floorplan*/ ctx[9] + "")) set_data_dev(t, t_value);
+
+    			if (dirty & /*studentData*/ 1 && span_class_value !== (span_class_value = "" + (null_to_empty("chip " + /*colorMap*/ ctx[3][/*floorplan*/ ctx[9]]) + " svelte-1ealj29"))) {
+    				attr_dev(span, "class", span_class_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(76:32) {#each student.floorplan as floorplan}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (37:20) {#each studentData.students as student}
+    function create_each_block(ctx) {
+    	let tr;
+    	let td0;
+    	let t0_value = /*student*/ ctx[6].first_name.slice(0, 27) + (/*student*/ ctx[6].first_name.length > 27 ? "... " : " ") + /*student*/ ctx[6].last_name.slice(0, 27) + (/*student*/ ctx[6].last_name.length > 27 ? "... " : " ") + "";
+    	let t0;
+    	let td0_data_tooltip_value;
+    	let t1;
+    	let td1;
+    	let t2_value = /*student*/ ctx[6].college_name.slice(0, 27) + (/*student*/ ctx[6].college_name.length > 27 ? "..." : "") + "";
+    	let t2;
+    	let td1_data_tooltip_value;
+    	let t3;
+    	let td2;
+    	let t4;
+    	let td3;
+    	let t5;
+    	let td4;
+    	let t6;
+    	let td5;
+    	let button;
+    	let i;
+    	let t7;
+    	let mounted;
+    	let dispose;
+    	let each_value_3 = /*student*/ ctx[6].honors;
+    	validate_each_argument(each_value_3);
+    	let each_blocks_2 = [];
+
+    	for (let i = 0; i < each_value_3.length; i += 1) {
+    		each_blocks_2[i] = create_each_block_3(get_each_context_3(ctx, each_value_3, i));
+    	}
+
+    	let each_value_2 = /*student*/ ctx[6].location;
+    	validate_each_argument(each_value_2);
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+    	}
+
+    	let each_value_1 = /*student*/ ctx[6].floorplan;
+    	validate_each_argument(each_value_1);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	function click_handler() {
+    		return /*click_handler*/ ctx[5](/*student*/ ctx[6]);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			td1 = element("td");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			td2 = element("td");
+
+    			for (let i = 0; i < each_blocks_2.length; i += 1) {
+    				each_blocks_2[i].c();
+    			}
+
+    			t4 = space();
+    			td3 = element("td");
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t5 = space();
+    			td4 = element("td");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t6 = space();
+    			td5 = element("td");
+    			button = element("button");
+    			i = element("i");
+    			t7 = space();
+    			attr_dev(td0, "class", "tooltip");
+    			attr_dev(td0, "data-tooltip", td0_data_tooltip_value = /*student*/ ctx[6].first_name + " " + /*student*/ ctx[6].last_name);
+    			add_location(td0, file$1, 38, 28, 1199);
+    			attr_dev(td1, "class", "tooltip");
+    			attr_dev(td1, "data-tooltip", td1_data_tooltip_value = /*student*/ ctx[6].college_name);
+    			add_location(td1, file$1, 52, 28, 1944);
+    			add_location(td2, file$1, 60, 28, 2361);
+    			add_location(td3, file$1, 67, 28, 2701);
+    			add_location(td4, file$1, 74, 28, 3052);
+    			attr_dev(i, "class", "icon icon-more-horiz");
+    			add_location(i, file$1, 88, 37, 3770);
+    			attr_dev(button, "class", "btn btn-primary s-circle");
+    			add_location(button, file$1, 82, 32, 3444);
+    			add_location(td5, file$1, 81, 28, 3407);
+    			add_location(tr, file$1, 37, 24, 1166);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, t0);
+    			append_dev(tr, t1);
+    			append_dev(tr, td1);
+    			append_dev(td1, t2);
+    			append_dev(tr, t3);
+    			append_dev(tr, td2);
+
+    			for (let i = 0; i < each_blocks_2.length; i += 1) {
+    				each_blocks_2[i].m(td2, null);
+    			}
+
+    			append_dev(tr, t4);
+    			append_dev(tr, td3);
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(td3, null);
+    			}
+
+    			append_dev(tr, t5);
+    			append_dev(tr, td4);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(td4, null);
+    			}
+
+    			append_dev(tr, t6);
+    			append_dev(tr, td5);
+    			append_dev(td5, button);
+    			append_dev(button, i);
+    			append_dev(tr, t7);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", click_handler, false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty & /*studentData*/ 1 && t0_value !== (t0_value = /*student*/ ctx[6].first_name.slice(0, 27) + (/*student*/ ctx[6].first_name.length > 27 ? "... " : " ") + /*student*/ ctx[6].last_name.slice(0, 27) + (/*student*/ ctx[6].last_name.length > 27 ? "... " : " ") + "")) set_data_dev(t0, t0_value);
+
+    			if (dirty & /*studentData*/ 1 && td0_data_tooltip_value !== (td0_data_tooltip_value = /*student*/ ctx[6].first_name + " " + /*student*/ ctx[6].last_name)) {
+    				attr_dev(td0, "data-tooltip", td0_data_tooltip_value);
+    			}
+
+    			if (dirty & /*studentData*/ 1 && t2_value !== (t2_value = /*student*/ ctx[6].college_name.slice(0, 27) + (/*student*/ ctx[6].college_name.length > 27 ? "..." : "") + "")) set_data_dev(t2, t2_value);
+
+    			if (dirty & /*studentData*/ 1 && td1_data_tooltip_value !== (td1_data_tooltip_value = /*student*/ ctx[6].college_name)) {
+    				attr_dev(td1, "data-tooltip", td1_data_tooltip_value);
+    			}
+
+    			if (dirty & /*colorMap, studentData*/ 9) {
+    				each_value_3 = /*student*/ ctx[6].honors;
+    				validate_each_argument(each_value_3);
+    				let i;
+
+    				for (i = 0; i < each_value_3.length; i += 1) {
+    					const child_ctx = get_each_context_3(ctx, each_value_3, i);
+
+    					if (each_blocks_2[i]) {
+    						each_blocks_2[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_2[i] = create_each_block_3(child_ctx);
+    						each_blocks_2[i].c();
+    						each_blocks_2[i].m(td2, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_2.length; i += 1) {
+    					each_blocks_2[i].d(1);
+    				}
+
+    				each_blocks_2.length = each_value_3.length;
+    			}
+
+    			if (dirty & /*colorMap, studentData*/ 9) {
+    				each_value_2 = /*student*/ ctx[6].location;
+    				validate_each_argument(each_value_2);
+    				let i;
+
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2(ctx, each_value_2, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_1[i] = create_each_block_2(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(td3, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_1.length; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+
+    				each_blocks_1.length = each_value_2.length;
+    			}
+
+    			if (dirty & /*colorMap, studentData*/ 9) {
+    				each_value_1 = /*student*/ ctx[6].floorplan;
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(td4, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_1.length;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(tr);
+    			destroy_each(each_blocks_2, detaching);
+    			destroy_each(each_blocks_1, detaching);
+    			destroy_each(each_blocks, detaching);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block.name,
+    		type: "each",
+    		source: "(37:20) {#each studentData.students as student}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$1(ctx) {
+    	let main;
+    	let moreinfomodal;
+    	let updating_open;
+    	let t0;
+    	let div;
+    	let table;
+    	let thead;
+    	let tr;
+    	let th0;
+    	let t2;
+    	let th1;
+    	let t4;
+    	let th2;
+    	let t6;
+    	let th3;
+    	let t8;
+    	let th4;
+    	let t10;
+    	let th5;
+    	let t12;
+    	let tbody;
+    	let current;
+
+    	function moreinfomodal_open_binding(value) {
+    		/*moreinfomodal_open_binding*/ ctx[4](value);
+    	}
+
+    	let moreinfomodal_props = {
+    		modalData: /*modalData*/ ctx[2],
+    		colorMap: /*colorMap*/ ctx[3]
+    	};
+
+    	if (/*modalOpen*/ ctx[1] !== void 0) {
+    		moreinfomodal_props.open = /*modalOpen*/ ctx[1];
+    	}
+
+    	moreinfomodal = new MoreInfoModal({
+    			props: moreinfomodal_props,
+    			$$inline: true
+    		});
+
+    	binding_callbacks.push(() => bind(moreinfomodal, "open", moreinfomodal_open_binding));
+    	let if_block = /*studentData*/ ctx[0] != null && create_if_block$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			create_component(moreinfomodal.$$.fragment);
+    			t0 = space();
+    			div = element("div");
+    			table = element("table");
+    			thead = element("thead");
+    			tr = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "Name";
+    			t2 = space();
+    			th1 = element("th");
+    			th1.textContent = "College Name";
+    			t4 = space();
+    			th2 = element("th");
+    			th2.textContent = "Honors Housing";
+    			t6 = space();
+    			th3 = element("th");
+    			th3.textContent = "Preferred Locations";
+    			t8 = space();
+    			th4 = element("th");
+    			th4.textContent = "Preferred Room Floorplans";
+    			t10 = space();
+    			th5 = element("th");
+    			th5.textContent = "More";
+    			t12 = space();
+    			tbody = element("tbody");
+    			if (if_block) if_block.c();
+    			add_location(th0, file$1, 26, 20, 739);
+    			add_location(th1, file$1, 27, 20, 773);
+    			add_location(th2, file$1, 28, 20, 815);
+    			add_location(th3, file$1, 29, 20, 859);
+    			add_location(th4, file$1, 30, 20, 908);
+    			add_location(th5, file$1, 31, 20, 963);
+    			add_location(tr, file$1, 25, 16, 714);
+    			add_location(thead, file$1, 24, 12, 690);
+    			add_location(tbody, file$1, 34, 12, 1032);
+    			attr_dev(table, "class", "table table-striped");
+    			add_location(table, file$1, 23, 8, 642);
+    			attr_dev(div, "class", "column col-12 col-mx-auto");
+    			add_location(div, file$1, 22, 4, 594);
+    			add_location(main, file$1, 20, 0, 516);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			mount_component(moreinfomodal, main, null);
+    			append_dev(main, t0);
+    			append_dev(main, div);
+    			append_dev(div, table);
+    			append_dev(table, thead);
+    			append_dev(thead, tr);
+    			append_dev(tr, th0);
+    			append_dev(tr, t2);
+    			append_dev(tr, th1);
+    			append_dev(tr, t4);
+    			append_dev(tr, th2);
+    			append_dev(tr, t6);
+    			append_dev(tr, th3);
+    			append_dev(tr, t8);
+    			append_dev(tr, th4);
+    			append_dev(tr, t10);
+    			append_dev(tr, th5);
+    			append_dev(table, t12);
+    			append_dev(table, tbody);
+    			if (if_block) if_block.m(tbody, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			const moreinfomodal_changes = {};
+    			if (dirty & /*modalData*/ 4) moreinfomodal_changes.modalData = /*modalData*/ ctx[2];
+
+    			if (!updating_open && dirty & /*modalOpen*/ 2) {
+    				updating_open = true;
+    				moreinfomodal_changes.open = /*modalOpen*/ ctx[1];
+    				add_flush_callback(() => updating_open = false);
+    			}
+
+    			moreinfomodal.$set(moreinfomodal_changes);
+
+    			if (/*studentData*/ ctx[0] != null) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$1(ctx);
+    					if_block.c();
+    					if_block.m(tbody, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(moreinfomodal.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(moreinfomodal.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			destroy_component(moreinfomodal);
+    			if (if_block) if_block.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$1.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("TableView", slots, []);
+    	var { studentData } = $$props;
+
+    	const colorMap = {
+    		Honors: "green",
+    		"Non-Honors": "blue",
+    		"Not Applicable": "red",
+    		"On-Campus": "purple",
+    		"Off-Campus": "pink",
+    		"Shared Room and Bathroom": "green",
+    		"Connected Bathroom": "blue",
+    		"Communal Bathroom": "pink",
+    		"Private Bathrooms": "purple",
+    		Other: "red"
+    	};
+
+    	var modalOpen = false;
+    	var modalData = {};
+    	const writable_props = ["studentData"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<TableView> was created with unknown prop '${key}'`);
+    	});
+
+    	function moreinfomodal_open_binding(value) {
+    		modalOpen = value;
+    		$$invalidate(1, modalOpen);
+    	}
+
+    	const click_handler = student => {
+    		$$invalidate(2, modalData = student);
+    		$$invalidate(1, modalOpen = true);
+    	};
+
+    	$$self.$$set = $$props => {
+    		if ("studentData" in $$props) $$invalidate(0, studentData = $$props.studentData);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		MoreInfoModal,
+    		studentData,
+    		colorMap,
+    		modalOpen,
+    		modalData
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("studentData" in $$props) $$invalidate(0, studentData = $$props.studentData);
+    		if ("modalOpen" in $$props) $$invalidate(1, modalOpen = $$props.modalOpen);
+    		if ("modalData" in $$props) $$invalidate(2, modalData = $$props.modalData);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		studentData,
+    		modalOpen,
+    		modalData,
+    		colorMap,
+    		moreinfomodal_open_binding,
+    		click_handler
+    	];
+    }
+
+    class TableView extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { studentData: 0 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "TableView",
+    			options,
+    			id: create_fragment$1.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*studentData*/ ctx[0] === undefined && !("studentData" in props)) {
+    			console.warn("<TableView> was created without expected prop 'studentData'");
+    		}
+    	}
+
+    	get studentData() {
+    		throw new Error("<TableView>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set studentData(value) {
+    		throw new Error("<TableView>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/App.svelte generated by Svelte v3.37.0 */
+
+    const { console: console_1 } = globals;
+    const file = "src/App.svelte";
+
+    // (102:2) {#if page == "signin"}
+    function create_if_block_3(ctx) {
+    	let login;
+    	let updating_signedIn;
+    	let updating_sessionToken;
+    	let updating_page;
+    	let current;
+
+    	function login_signedIn_binding(value) {
+    		/*login_signedIn_binding*/ ctx[5](value);
+    	}
+
+    	function login_sessionToken_binding(value) {
+    		/*login_sessionToken_binding*/ ctx[6](value);
+    	}
+
+    	function login_page_binding(value) {
+    		/*login_page_binding*/ ctx[7](value);
+    	}
+
+    	let login_props = {};
+
+    	if (/*signedIn*/ ctx[1] !== void 0) {
+    		login_props.signedIn = /*signedIn*/ ctx[1];
+    	}
+
+    	if (/*sessionToken*/ ctx[2] !== void 0) {
+    		login_props.sessionToken = /*sessionToken*/ ctx[2];
+    	}
+
+    	if (/*page*/ ctx[0] !== void 0) {
+    		login_props.page = /*page*/ ctx[0];
+    	}
+
+    	login = new Login({ props: login_props, $$inline: true });
+    	binding_callbacks.push(() => bind(login, "signedIn", login_signedIn_binding));
+    	binding_callbacks.push(() => bind(login, "sessionToken", login_sessionToken_binding));
+    	binding_callbacks.push(() => bind(login, "page", login_page_binding));
+
+    	const block = {
+    		c: function create() {
+    			create_component(login.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(login, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const login_changes = {};
+
+    			if (!updating_signedIn && dirty & /*signedIn*/ 2) {
+    				updating_signedIn = true;
+    				login_changes.signedIn = /*signedIn*/ ctx[1];
+    				add_flush_callback(() => updating_signedIn = false);
+    			}
+
+    			if (!updating_sessionToken && dirty & /*sessionToken*/ 4) {
+    				updating_sessionToken = true;
+    				login_changes.sessionToken = /*sessionToken*/ ctx[2];
+    				add_flush_callback(() => updating_sessionToken = false);
+    			}
+
+    			if (!updating_page && dirty & /*page*/ 1) {
+    				updating_page = true;
+    				login_changes.page = /*page*/ ctx[0];
+    				add_flush_callback(() => updating_page = false);
+    			}
+
+    			login.$set(login_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(login.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(login.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(login, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3.name,
+    		type: "if",
+    		source: "(102:2) {#if page == \\\"signin\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (105:2) {#if page == "profile"}
+    function create_if_block_2(ctx) {
+    	let dataform;
+    	let updating_profileData;
+    	let current;
+
+    	function dataform_profileData_binding(value) {
+    		/*dataform_profileData_binding*/ ctx[8](value);
+    	}
+
+    	let dataform_props = {
+    		whenDone: updateProfileData,
+    		sessionToken: /*sessionToken*/ ctx[2]
+    	};
+
+    	if (/*profileData*/ ctx[3] !== void 0) {
+    		dataform_props.profileData = /*profileData*/ ctx[3];
+    	}
+
+    	dataform = new DataForm({ props: dataform_props, $$inline: true });
+    	binding_callbacks.push(() => bind(dataform, "profileData", dataform_profileData_binding));
+
+    	const block = {
+    		c: function create() {
+    			create_component(dataform.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(dataform, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const dataform_changes = {};
+    			if (dirty & /*sessionToken*/ 4) dataform_changes.sessionToken = /*sessionToken*/ ctx[2];
+
+    			if (!updating_profileData && dirty & /*profileData*/ 8) {
+    				updating_profileData = true;
+    				dataform_changes.profileData = /*profileData*/ ctx[3];
+    				add_flush_callback(() => updating_profileData = false);
+    			}
+
+    			dataform.$set(dataform_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(dataform.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(dataform.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(dataform, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(105:2) {#if page == \\\"profile\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (112:2) {#if page == "search"}
+    function create_if_block_1(ctx) {
+    	let tableview;
+    	let current;
+
+    	tableview = new TableView({
+    			props: { studentData: /*studentData*/ ctx[4] },
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(tableview.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(tableview, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const tableview_changes = {};
+    			if (dirty & /*studentData*/ 16) tableview_changes.studentData = /*studentData*/ ctx[4];
+    			tableview.$set(tableview_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(tableview.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(tableview.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(tableview, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(112:2) {#if page == \\\"search\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (115:2) {#if page != "signin"}
+    function create_if_block(ctx) {
+    	let signout;
+    	let updating_signedIn;
+    	let updating_page;
+    	let current;
+
+    	function signout_signedIn_binding(value) {
+    		/*signout_signedIn_binding*/ ctx[9](value);
+    	}
+
+    	function signout_page_binding(value) {
+    		/*signout_page_binding*/ ctx[10](value);
+    	}
+
+    	let signout_props = {};
+
+    	if (/*signedIn*/ ctx[1] !== void 0) {
+    		signout_props.signedIn = /*signedIn*/ ctx[1];
+    	}
+
+    	if (/*page*/ ctx[0] !== void 0) {
+    		signout_props.page = /*page*/ ctx[0];
+    	}
+
+    	signout = new SignOut({ props: signout_props, $$inline: true });
+    	binding_callbacks.push(() => bind(signout, "signedIn", signout_signedIn_binding));
+    	binding_callbacks.push(() => bind(signout, "page", signout_page_binding));
+
+    	const block = {
+    		c: function create() {
+    			create_component(signout.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(signout, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const signout_changes = {};
+
+    			if (!updating_signedIn && dirty & /*signedIn*/ 2) {
+    				updating_signedIn = true;
+    				signout_changes.signedIn = /*signedIn*/ ctx[1];
+    				add_flush_callback(() => updating_signedIn = false);
+    			}
+
+    			if (!updating_page && dirty & /*page*/ 1) {
+    				updating_page = true;
+    				signout_changes.page = /*page*/ ctx[0];
+    				add_flush_callback(() => updating_page = false);
+    			}
+
+    			signout.$set(signout_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(signout.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(signout.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(signout, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(115:2) {#if page != \\\"signin\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment(ctx) {
+    	let main;
+    	let div1;
+    	let div0;
+    	let h1;
+    	let t1;
+    	let t2;
+    	let t3;
+    	let t4;
+    	let current;
+    	let if_block0 = /*page*/ ctx[0] == "signin" && create_if_block_3(ctx);
+    	let if_block1 = /*page*/ ctx[0] == "profile" && create_if_block_2(ctx);
+    	let if_block2 = /*page*/ ctx[0] == "search" && create_if_block_1(ctx);
+    	let if_block3 = /*page*/ ctx[0] != "signin" && create_if_block(ctx);
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			div1 = element("div");
+    			div0 = element("div");
+    			h1 = element("h1");
+    			h1.textContent = "Roomie";
+    			t1 = space();
+    			if (if_block0) if_block0.c();
+    			t2 = space();
+    			if (if_block1) if_block1.c();
+    			t3 = space();
+    			if (if_block2) if_block2.c();
+    			t4 = space();
+    			if (if_block3) if_block3.c();
+    			attr_dev(h1, "class", "column svelte-1elvtut");
+    			add_location(h1, file, 99, 3, 2017);
+    			attr_dev(div0, "class", "columns");
+    			add_location(div0, file, 98, 2, 1992);
+    			attr_dev(div1, "class", "container");
+    			add_location(div1, file, 97, 1, 1966);
+    			attr_dev(main, "class", "svelte-1elvtut");
+    			add_location(main, file, 96, 0, 1958);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			append_dev(main, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, h1);
+    			append_dev(div1, t1);
+    			if (if_block0) if_block0.m(div1, null);
+    			append_dev(div1, t2);
+    			if (if_block1) if_block1.m(div1, null);
+    			append_dev(div1, t3);
+    			if (if_block2) if_block2.m(div1, null);
+    			append_dev(div1, t4);
+    			if (if_block3) if_block3.m(div1, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (/*page*/ ctx[0] == "signin") {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
+
+    					if (dirty & /*page*/ 1) {
+    						transition_in(if_block0, 1);
+    					}
+    				} else {
+    					if_block0 = create_if_block_3(ctx);
+    					if_block0.c();
+    					transition_in(if_block0, 1);
+    					if_block0.m(div1, t2);
+    				}
+    			} else if (if_block0) {
+    				group_outros();
+
+    				transition_out(if_block0, 1, 1, () => {
+    					if_block0 = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (/*page*/ ctx[0] == "profile") {
+    				if (if_block1) {
+    					if_block1.p(ctx, dirty);
+
+    					if (dirty & /*page*/ 1) {
+    						transition_in(if_block1, 1);
+    					}
+    				} else {
+    					if_block1 = create_if_block_2(ctx);
+    					if_block1.c();
+    					transition_in(if_block1, 1);
+    					if_block1.m(div1, t3);
+    				}
+    			} else if (if_block1) {
+    				group_outros();
+
+    				transition_out(if_block1, 1, 1, () => {
+    					if_block1 = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (/*page*/ ctx[0] == "search") {
+    				if (if_block2) {
+    					if_block2.p(ctx, dirty);
+
+    					if (dirty & /*page*/ 1) {
+    						transition_in(if_block2, 1);
+    					}
+    				} else {
+    					if_block2 = create_if_block_1(ctx);
+    					if_block2.c();
+    					transition_in(if_block2, 1);
+    					if_block2.m(div1, t4);
+    				}
+    			} else if (if_block2) {
+    				group_outros();
+
+    				transition_out(if_block2, 1, 1, () => {
+    					if_block2 = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (/*page*/ ctx[0] != "signin") {
+    				if (if_block3) {
+    					if_block3.p(ctx, dirty);
+
+    					if (dirty & /*page*/ 1) {
+    						transition_in(if_block3, 1);
+    					}
+    				} else {
+    					if_block3 = create_if_block(ctx);
+    					if_block3.c();
+    					transition_in(if_block3, 1);
+    					if_block3.m(div1, null);
+    				}
+    			} else if (if_block3) {
+    				group_outros();
+
+    				transition_out(if_block3, 1, 1, () => {
+    					if_block3 = null;
+    				});
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block0);
+    			transition_in(if_block1);
+    			transition_in(if_block2);
+    			transition_in(if_block3);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block0);
+    			transition_out(if_block1);
+    			transition_out(if_block2);
+    			transition_out(if_block3);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
+    			if (if_block2) if_block2.d();
+    			if (if_block3) if_block3.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function updateProfileData(sessionToken, profileData) {
+    	console.log("sending updated data");
+
+    	fetch("./student?token=" + sessionToken, {
+    		method: "POST",
+    		headers: { "Content-Type": "application/json" },
+    		body: JSON.stringify(profileData)
+    	}).then(response => response.json()).then(data => console.log(data));
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("App", slots, []);
+    	let signedIn = null;
+    	let sessionToken = "";
+    	let page = "signin";
+
+    	var template = {
+    		sub: "",
+    		first_name: "",
+    		last_name: "",
+    		gender: "Select",
+    		class: 2025,
+    		college: "Select",
+    		major: "",
+    		bio: "",
+    		discord: "",
+    		linkedin: "",
+    		snapchat: "",
+    		instagram: "",
+    		facebook: "",
+    		twitter: "",
+    		email: "",
+    		phone: "",
+    		location: "",
+    		building_preferences: ""
+    	};
+
+    	var profileData = template;
+
+    	var studentData = {
+    		students: [
+    			{
+    				sub: "",
+    				first_name: "Test First Name",
+    				last_name: "Test Last Name",
+    				gender: "Select",
+    				class: 2025,
+    				college: "Select",
+    				major: "",
+    				bio: "a bio...",
+    				discord: "",
+    				linkedin: "",
+    				snapchat: "",
+    				instagram: "",
+    				facebook: "",
+    				twitter: "",
+    				email: "",
+    				phone: "",
+    				location: "Select",
+    				building_preferences: "prefs"
+    			}
+    		]
+    	};
+
+    	window.signOut = () => {
+    		var auth2 = gapi.auth2.getAuthInstance();
+
+    		auth2.signOut().then(function () {
+    			console.log("User signed out.");
+    			$$invalidate(1, signedIn = false);
+    			$$invalidate(0, page = "signin");
+    		});
+    	};
+
+    	window.getStudentData = session_token => {
+    		console.log(session_token);
+
+    		fetch("./student?token=" + session_token).then(response => response.json()).then(data => {
+    			if (data != null) {
+    				console.log(data);
+    				$$invalidate(4, studentData = data);
+    				$$invalidate(3, profileData = data.current_student);
+    			}
+    		});
+    	};
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	function login_signedIn_binding(value) {
+    		signedIn = value;
+    		$$invalidate(1, signedIn);
+    	}
+
+    	function login_sessionToken_binding(value) {
+    		sessionToken = value;
+    		$$invalidate(2, sessionToken);
+    	}
+
+    	function login_page_binding(value) {
+    		page = value;
+    		$$invalidate(0, page);
+    	}
+
+    	function dataform_profileData_binding(value) {
+    		profileData = value;
+    		$$invalidate(3, profileData);
+    	}
+
+    	function signout_signedIn_binding(value) {
+    		signedIn = value;
+    		$$invalidate(1, signedIn);
+    	}
+
+    	function signout_page_binding(value) {
+    		page = value;
+    		$$invalidate(0, page);
+    	}
+
+    	$$self.$capture_state = () => ({
+    		DataForm,
+    		Login,
+    		SignOut,
+    		TableView,
+    		signedIn,
+    		sessionToken,
+    		page,
+    		template,
+    		profileData,
+    		studentData,
+    		updateProfileData
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("signedIn" in $$props) $$invalidate(1, signedIn = $$props.signedIn);
+    		if ("sessionToken" in $$props) $$invalidate(2, sessionToken = $$props.sessionToken);
+    		if ("page" in $$props) $$invalidate(0, page = $$props.page);
+    		if ("template" in $$props) template = $$props.template;
+    		if ("profileData" in $$props) $$invalidate(3, profileData = $$props.profileData);
+    		if ("studentData" in $$props) $$invalidate(4, studentData = $$props.studentData);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*page*/ 1) {
+    			{
+    				if (page != "signin") {
+    					localStorage.setItem("page", page);
+    				}
+    			}
+    		}
+    	};
+
+    	return [
+    		page,
+    		signedIn,
+    		sessionToken,
+    		profileData,
+    		studentData,
+    		login_signedIn_binding,
+    		login_sessionToken_binding,
+    		login_page_binding,
+    		dataform_profileData_binding,
+    		signout_signedIn_binding,
+    		signout_page_binding
+    	];
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "App",
+    			options,
+    			id: create_fragment.name
+    		});
+    	}
+    }
+
+    const app = new App({
+    	target: document.body,
+    	props: {
+    		name: 'world'
+    	}
+    });
+
+    return app;
+
+}());
 //# sourceMappingURL=bundle.js.map

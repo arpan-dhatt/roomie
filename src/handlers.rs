@@ -3,27 +3,39 @@ use crate::{
     auth::{get_sub, new_token, validate_token},
     model::{GetStudentsResponse, Profile},
 };
-use actix_files::NamedFile;
 use actix_multipart::Multipart;
 use actix_web::{get, post, web, HttpResponse, Responder};
 use futures::{StreamExt, TryStreamExt};
 use std::io::Write;
 
 fn create_filter(data: &GetStudentRequest) -> String {
-    let mut outString = String::new();
-    if let Some(year) = &data.class { add_filter_equal(&mut outString, "year", *year) }
-    if let Some(college) = &data.college { add_filter_equal(&mut outString, "college", college) }
-    if let Some(major) = &data.major { add_filter_equal(&mut outString, "major", major) }
-    if let Some(gender) = &data.gender { add_filter_equal(&mut outString, "gender", gender) }
-    if let Some(location) = &data.location { add_filter_equal(&mut outString, "location", location) }
-    if outString.ends_with(" AND ") {
-        outString.replace_range((outString.len()-5)..outString.len(), "");
+    let mut out_string = String::new();
+    if let Some(year) = &data.class {
+        add_filter_equal(&mut out_string, "year", *year, false)
     }
-    outString
+    if let Some(college) = &data.college {
+        add_filter_equal(&mut out_string, "college", college, true)
+    }
+    if let Some(major) = &data.major {
+        add_filter_equal(&mut out_string, "major", major, true)
+    }
+    if let Some(gender) = &data.gender {
+        add_filter_equal(&mut out_string, "gender", gender, true)
+    }
+    if let Some(location) = &data.location {
+        add_filter_equal(&mut out_string, "location", location, true)
+    }
+    if out_string.ends_with(" AND ") {
+        out_string.replace_range((out_string.len() - 5)..out_string.len(), "");
+    }
+    out_string
 }
 
-fn add_filter_equal(start: &mut String, key: &str, value: impl std::fmt::Display) {
-    start.push_str(&format!("{} = \"{}\" AND ", key, value));
+fn add_filter_equal(start: &mut String, key: &str, value: impl std::fmt::Display, quotes: bool) {
+    start.push_str(&match quotes {
+        true => format!("{} = \"{}\" AND ", key, value),
+        false => format!("{} = {} AND ", key, value),
+    });
 }
 
 #[get("/student")]
@@ -33,12 +45,12 @@ pub async fn get_student(
 ) -> impl Responder {
     if let Ok(sub) = validate_token(&data.token) {
         let filter = create_filter(&data);
-        let mut index = client
-            .get_or_create("students")
-            .await
-            .unwrap();
+        let index = client.get_or_create("students").await.unwrap();
         let mut builder = index.search();
-        let mut builder = builder.with_filters(&filter).with_limit(12).with_offset(data.offset.unwrap_or(0));
+        let mut builder = builder
+            .with_filters(&filter)
+            .with_limit(12)
+            .with_offset(data.offset.unwrap_or(0));
         if let Some(query) = &data.query {
             builder = builder.with_query(&query);
         }
@@ -168,7 +180,6 @@ pub async fn post_profile_image(
                         let directory = std::env::var("STATIC_FILE_DIR")
                             .unwrap_or("./web-app/public/images".to_string());
                         let path = format!("{}/{}", directory, filename);
-                        let opath = path.clone();
                         let mut file = web::block(move || std::fs::File::create(&path))
                             .await
                             .unwrap();

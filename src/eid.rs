@@ -1,5 +1,5 @@
 use crate::model::BackendEIDFormData;
-use actix_web::{client::Client, test, web::Buf, HttpMessage};
+use actix_web::{client::Client, web::Buf, HttpMessage};
 use regex::Regex;
 
 pub async fn check_eid(eid: &str) -> Result<bool, &'static str> {

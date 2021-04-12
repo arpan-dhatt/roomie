@@ -2,6 +2,35 @@
     export var profileData;
     export var whenDone;
     export var sessionToken;
+
+    let genderOptions = [
+        "Select",
+        "Male",
+        "Female",
+        "Transgender",
+        "Non-Binary",
+        "Other",
+        "Prefer not to respond",
+    ];
+    let collegeOptions = [
+        "Select",
+        "School of Architecture",
+        "McCombs School of Business",
+        "Moody College of Communication",
+        "College of Education",
+        "Cockrell School of Engineering",
+        "College of Fine Arts",
+        "Jackson School of Geosciences",
+        "School of Information",
+        "College of Liberal Arts",
+        "College of Natural Science",
+        "School of Nursing",
+        "College of Pharmacy",
+        "Steve Hicks School of Social Work",
+        "School of Undergraduate Studies",
+    ];
+    let classYearOptions = [2026, 2025, 2024, 2023, 2022, 2021, 2020];
+    let locationOptions = ["Select", "On-Campus", "Off-Campus"];
 </script>
 
 <main>
@@ -23,7 +52,7 @@
                 <div class="columns">
                     <div class="column col-6 col-md-12">
                         <label class="form-label" for="first-name"
-                            >Enter Your Preferred First Name</label
+                            >Preferred First Name</label
                         >
                         <input
                             type="text"
@@ -33,8 +62,8 @@
                         />
                     </div>
                     <div class="column col-6 col-md-12">
-                        <label class="form-label" for="last-name"
-                            >Enter Your Last Name</label
+                        <label class="form-label" for="last-name">
+                            Last Name</label
                         >
                         <input
                             type="text"
@@ -44,23 +73,94 @@
                         />
                     </div>
                 </div>
-                <div class="columns" style="margin-top: 20px;">
-                    <div class="column col-12">
-                        <label class="form-label" for="college-name"
-                            >College Name</label
+                <div class="columns">
+                    <div class="column col-6 col-md-12">
+                        <label class="form-label" for="gender">Gender</label>
+                        <!-- <input
+                            type="text"
+                            class="form-input"
+                            id="first-name"
+                            bind:value={profileData.first_name}
+                        /> -->
+                        <select
+                            class="form-select"
+                            id="gender"
+                            value={profileData.gender}
                         >
+                            {#each genderOptions as genderOption}
+                                <option value={genderOption}
+                                    >{genderOption}</option
+                                >
+                            {/each}
+                        </select>
+                    </div>
+                    <div class="column col-6 col-md-12">
+                        <label class="form-label" for="class-year"
+                            >Class Year</label
+                        >
+                        <select
+                            class="form-select"
+                            id="class-year"
+                            value={profileData.class}
+                        >
+                            {#each classYearOptions as classYearOption}
+                                <option value={classYearOption}
+                                    >{classYearOption}</option
+                                >
+                            {/each}
+                        </select>
+                    </div>
+                </div>
+                <div class="columns" style="margin-top: 20px">
+                    <div class="column col-6 col-md-12">
+                        <label class="form-label" for="college">College</label>
+                        <select
+                            class="form-select"
+                            id="college"
+                            value={profileData.college}
+                        >
+                            {#each collegeOptions as collegeOption}
+                                <option value={collegeOption}
+                                    >{collegeOption}</option
+                                >
+                            {/each}
+                        </select>
+                    </div>
+                    <div class="column col-6 col-md-12">
+                        <label class="form-label" for="Major">Major</label>
                         <input
                             type="text"
                             class="form-input"
-                            id="college-name"
-                            placeholder="UT Austin, University of Texas Austin, etc."
-                            bind:value={profileData.college_name}
+                            id="major"
+                            bind:value={profileData.major}
                         />
+                    </div>
+                </div>
+                <div class="columns" style="margin-top: 20px;">
+                    <div class="col-12">
+                        <h3>Bio</h3>
+                    </div>
+                    <div class="col-12">
                         <p>
-                            Add multiple, comma-separated names for easy
-                            searchability since I'm too lazy to add an index of
-                            colleges and stuff.
+                            What do you like to do in your free time? What
+                            organizations do you want to be a part of at UT? Any
+                            Clubs? Greek Life? Video Games? Sports? What time do
+                            you like going to sleep? Anything you think a future
+                            roommate at UT would want to know, write it here!
+                            Write as much as you can so the search engine can
+                            pick it up!
                         </p>
+                    </div>
+                    <div class="col-12 text-left">
+                        <div class="form-group">
+                            <textarea
+                                class="form-input"
+                                id="bio"
+                                placeholder="Bio here..."
+                                rows="6"
+                                bind:value={profileData.bio}
+                            />
+                        </div>
                     </div>
                 </div>
                 <div class="columns" style="margin-top: 20px">
@@ -72,9 +172,9 @@
                             Enter in contact information below. Remember, this
                             will be public available to everyone who signs into
                             the service, so make sure you're comfortable with
-                            what you enter. Feel free to leave any, or all of
-                            these blank, but having something is better than
-                            nothing.
+                            what you enter. Feel free to leave any of these
+                            blank, but you should have at least one way for a
+                            prospective roommate to contact you!
                         </p>
                     </div>
                     <div class="column col-6 col-md-12">
@@ -176,155 +276,20 @@
                 </div>
                 <div class="columns" style="margin-top: 20px;">
                     <div class="column col-12">
-                        <h3>Room Information</h3>
-                    </div>
-                    <div class="column col-12">
-                        <p>
-                            Select all options you are comfortable with and have
-                            available to you. This doesn't mean you have the
-                            actual room already. This is just to tell others
-                            what you are okay living in and can live in. If you
-                            change your mind about anything later, you can edit
-                            it here. If you have specific preferences, such as
-                            1st choice, 2nd choice, you can add them in the
-                            additional details section later.
-                        </p>
-                    </div>
-                    <div class="column col-4 col-md-12 text-left">
-                        <h5>Honors Housing</h5>
-                        <label class="form-checkbox">
-                            <input
-                                type="checkbox"
-                                name="honors"
-                                value={"Honors"}
-                                bind:group={profileData.honors}
-                            />
-                            <i class="form-icon" /> Honors
-                        </label>
-                        <label class="form-checkbox">
-                            <input
-                                type="checkbox"
-                                name="honors"
-                                value={"Non-Honors"}
-                                bind:group={profileData.honors}
-                            />
-                            <i class="form-icon" /> Non-Honors
-                        </label>
-                        <label class="form-checkbox">
-                            <input
-                                type="checkbox"
-                                name="honors"
-                                value={"Not Applicable"}
-                                bind:group={profileData.honors}
-                            />
-                            <i class="form-icon" /> Not Applicable
-                        </label>
-                    </div>
-                    <div class="column col-4 col-md-12 text-left">
-                        <h5>Location</h5>
-                        <label class="form-checkbox">
-                            <input
-                                type="checkbox"
-                                name="location"
-                                value={"On-Campus"}
-                                bind:group={profileData.location}
-                            />
-                            <i class="form-icon" /> On-Campus
-                        </label>
-                        <label class="form-checkbox">
-                            <input
-                                type="checkbox"
-                                name="location"
-                                value={"Off-Campus"}
-                                bind:group={profileData.location}
-                            />
-                            <i class="form-icon" /> Off-Campus
-                        </label>
-                        <label class="form-checkbox">
-                            <input
-                                type="checkbox"
-                                name="location"
-                                value={"Not Applicable"}
-                                bind:group={profileData.location}
-                            />
-                            <i class="form-icon" /> Not Applicable
-                        </label>
-                    </div>
-                    <div class="column col-4 col-md-12 text-left">
-                        <h5>Room Floorplan</h5>
-                        <label class="form-checkbox">
-                            <input
-                                type="checkbox"
-                                name="floorplan"
-                                value={"Shared Room and Bathroom"}
-                                bind:group={profileData.floorplan}
-                            />
-                            <i class="form-icon" /> Shared Room and Bathroom
-                        </label>
-                        <label class="form-checkbox">
-                            <input
-                                type="checkbox"
-                                name="floorplan"
-                                value={"Connected Bathroom"}
-                                bind:group={profileData.floorplan}
-                            />
-                            <i class="form-icon" /> Connected Bathroom
-                        </label>
-                        <label class="form-checkbox">
-                            <input
-                                type="checkbox"
-                                name="floorplan"
-                                value={"Communal Bathroom"}
-                                bind:group={profileData.floorplan}
-                            />
-                            <i class="form-icon" /> Communal Bathroom
-                        </label>
-                        <label class="form-checkbox">
-                            <input
-                                type="checkbox"
-                                name="floorplan"
-                                value={"Private Bathrooms"}
-                                bind:group={profileData.floorplan}
-                            />
-                            <i class="form-icon" /> Private Bathrooms
-                        </label>
-                        <label class="form-checkbox">
-                            <input
-                                type="checkbox"
-                                name="floorplan"
-                                value={"Not Applicable"}
-                                bind:group={profileData.floorplan}
-                            />
-                            <i class="form-icon" /> Not Applicable
-                        </label>
-                    </div>
-                </div>
-
-                <div class="columns" style="margin-top: 20px;">
-                    <div class="col-12">
-                        <h3>Additional Information</h3>
-                    </div>
-                    <div class="col-12">
-                        <p>
-                            This is where you can add things like preferences or
-                            other details that can't be added to the form. Add
-                            as much detail as you want since this will also be
-                            added to the search system and will help you find a
-                            good roommate. If you have buildings you prefer, or
-                            floorplans you'd like instead, make sure to add that
-                            here, too!
-                        </p>
-                    </div>
-                    <div class="col-12 text-left">
-                        <div class="form-group">
-                            <textarea
-                                class="form-input"
-                                id="input-example-3"
-                                placeholder="Details..."
-                                rows="6"
-                                bind:value={profileData.additional}
-                            />
-                        </div>
+                        <label class="form-label" for="location"
+                            >Location</label
+                        >
+                        <select
+                            class="form-select"
+                            id="location"
+                            value={profileData.location}
+                        >
+                            {#each locationOptions as locationOption}
+                                <option value={locationOption}
+                                    >{locationOption}</option
+                                >
+                            {/each}
+                        </select>
                     </div>
                 </div>
                 <div class="columns" style="margin-top: 20px">

@@ -1,6 +1,4 @@
 <script>
-    import { error } from "node:console";
-
     export var signedIn;
     export var page;
     export var sessionToken;
