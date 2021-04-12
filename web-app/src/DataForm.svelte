@@ -85,7 +85,7 @@
                         <select
                             class="form-select"
                             id="gender"
-                            value={profileData.gender}
+                            bind:value={profileData.gender}
                         >
                             {#each genderOptions as genderOption}
                                 <option value={genderOption}
@@ -101,7 +101,7 @@
                         <select
                             class="form-select"
                             id="class-year"
-                            value={profileData.class}
+                            bind:value={profileData.class}
                         >
                             {#each classYearOptions as classYearOption}
                                 <option value={classYearOption}
@@ -117,7 +117,7 @@
                         <select
                             class="form-select"
                             id="college"
-                            value={profileData.college}
+                            bind:value={profileData.college}
                         >
                             {#each collegeOptions as collegeOption}
                                 <option value={collegeOption}
@@ -275,6 +275,9 @@
                     </div>
                 </div>
                 <div class="columns" style="margin-top: 20px;">
+                    <div class="col-12">
+                        <h3>Housing Information</h3>
+                    </div>
                     <div class="column col-12">
                         <label class="form-label" for="location"
                             >Location</label
@@ -290,6 +293,12 @@
                                 >
                             {/each}
                         </select>
+                    </div>
+                </div>
+                <div class="columns" style="margin-top: 20px">
+                    <div class="col-12">
+                        <label for="building-preferences">Building Preferences</label>
+                        <input type="text" class="form-input" bind:value={profileData.building_preferences}>
                     </div>
                 </div>
                 <div class="columns" style="margin-top: 20px">

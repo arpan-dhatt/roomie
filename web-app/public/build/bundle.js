@@ -86,6 +86,10 @@ var app = (function () {
             }
         }
     }
+    function select_value(select) {
+        const selected_option = select.querySelector(':checked') || select.options[0];
+        return selected_option && selected_option.__value;
+    }
     function custom_event(type, detail) {
         const e = document.createEvent('CustomEvent');
         e.initCustomEvent(type, false, false, detail);
@@ -425,41 +429,41 @@ var app = (function () {
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[20] = list[i];
+    	child_ctx[24] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[23] = list[i];
+    	child_ctx[27] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[26] = list[i];
+    	child_ctx[30] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_3$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[29] = list[i];
+    	child_ctx[33] = list[i];
     	return child_ctx;
     }
 
     // (90:28) {#each genderOptions as genderOption}
     function create_each_block_3$1(ctx) {
     	let option;
-    	let t_value = /*genderOption*/ ctx[29] + "";
+    	let t_value = /*genderOption*/ ctx[33] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			option = element("option");
     			t = text(t_value);
-    			option.__value = /*genderOption*/ ctx[29];
+    			option.__value = /*genderOption*/ ctx[33];
     			option.value = option.__value;
-    			add_location(option, file$5, 90, 32, 3438);
+    			add_location(option, file$5, 90, 32, 3443);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -485,16 +489,16 @@ var app = (function () {
     // (106:28) {#each classYearOptions as classYearOption}
     function create_each_block_2$2(ctx) {
     	let option;
-    	let t_value = /*classYearOption*/ ctx[26] + "";
+    	let t_value = /*classYearOption*/ ctx[30] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			option = element("option");
     			t = text(t_value);
-    			option.__value = /*classYearOption*/ ctx[26];
+    			option.__value = /*classYearOption*/ ctx[30];
     			option.value = option.__value;
-    			add_location(option, file$5, 106, 32, 4163);
+    			add_location(option, file$5, 106, 32, 4173);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -520,16 +524,16 @@ var app = (function () {
     // (122:28) {#each collegeOptions as collegeOption}
     function create_each_block_1$2(ctx) {
     	let option;
-    	let t_value = /*collegeOption*/ ctx[23] + "";
+    	let t_value = /*collegeOption*/ ctx[27] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			option = element("option");
     			t = text(t_value);
-    			option.__value = /*collegeOption*/ ctx[23];
+    			option.__value = /*collegeOption*/ ctx[27];
     			option.value = option.__value;
-    			add_location(option, file$5, 122, 32, 4915);
+    			add_location(option, file$5, 122, 32, 4930);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -552,19 +556,19 @@ var app = (function () {
     	return block;
     }
 
-    // (287:28) {#each locationOptions as locationOption}
+    // (290:28) {#each locationOptions as locationOption}
     function create_each_block$2(ctx) {
     	let option;
-    	let t_value = /*locationOption*/ ctx[20] + "";
+    	let t_value = /*locationOption*/ ctx[24] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			option = element("option");
     			t = text(t_value);
-    			option.__value = /*locationOption*/ ctx[20];
+    			option.__value = /*locationOption*/ ctx[24];
     			option.value = option.__value;
-    			add_location(option, file$5, 287, 32, 12616);
+    			add_location(option, file$5, 290, 32, 12752);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -580,7 +584,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(287:28) {#each locationOptions as locationOption}",
+    		source: "(290:28) {#each locationOptions as locationOption}",
     		ctx
     	});
 
@@ -589,15 +593,15 @@ var app = (function () {
 
     function create_fragment$5(ctx) {
     	let main;
-    	let div33;
+    	let div36;
     	let div0;
     	let h1;
     	let t1;
     	let div1;
     	let p0;
     	let t3;
-    	let div32;
-    	let div31;
+    	let div35;
+    	let div34;
     	let div4;
     	let div2;
     	let label0;
@@ -614,20 +618,17 @@ var app = (function () {
     	let label2;
     	let t11;
     	let select0;
-    	let select0_value_value;
     	let t12;
     	let div6;
     	let label3;
     	let t14;
     	let select1;
-    	let select1_value_value;
     	let t15;
     	let div10;
     	let div8;
     	let label4;
     	let t17;
     	let select2;
-    	let select2_value_value;
     	let t18;
     	let div9;
     	let label5;
@@ -692,15 +693,24 @@ var app = (function () {
     	let t53;
     	let input10;
     	let t54;
-    	let div28;
+    	let div29;
     	let div27;
-    	let label14;
+    	let h32;
     	let t56;
+    	let div28;
+    	let label14;
+    	let t58;
     	let select3;
     	let select3_value_value;
-    	let t57;
+    	let t59;
+    	let div31;
     	let div30;
-    	let div29;
+    	let label15;
+    	let t61;
+    	let input11;
+    	let t62;
+    	let div33;
+    	let div32;
     	let button;
     	let mounted;
     	let dispose;
@@ -739,7 +749,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			main = element("main");
-    			div33 = element("div");
+    			div36 = element("div");
     			div0 = element("div");
     			h1 = element("h1");
     			h1.textContent = "Edit Your Profile";
@@ -748,8 +758,8 @@ var app = (function () {
     			p0 = element("p");
     			p0.textContent = "This is where you build the profile other students will see\n                after they sign in. You can modify it later by pressing the\n                \"Profile\" button that will appear on the top right of the page\n                when you're done. However, it's best to put in the correct\n                information as soon as you can.";
     			t3 = space();
-    			div32 = element("div");
-    			div31 = element("div");
+    			div35 = element("div");
+    			div34 = element("div");
     			div4 = element("div");
     			div2 = element("div");
     			label0 = element("label");
@@ -874,20 +884,31 @@ var app = (function () {
     			t53 = space();
     			input10 = element("input");
     			t54 = space();
-    			div28 = element("div");
+    			div29 = element("div");
     			div27 = element("div");
+    			h32 = element("h3");
+    			h32.textContent = "Housing Information";
+    			t56 = space();
+    			div28 = element("div");
     			label14 = element("label");
     			label14.textContent = "Location";
-    			t56 = space();
+    			t58 = space();
     			select3 = element("select");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t57 = space();
+    			t59 = space();
+    			div31 = element("div");
     			div30 = element("div");
-    			div29 = element("div");
+    			label15 = element("label");
+    			label15.textContent = "Building Preferences";
+    			t61 = space();
+    			input11 = element("input");
+    			t62 = space();
+    			div33 = element("div");
+    			div32 = element("div");
     			button = element("button");
     			button.textContent = "Save";
     			add_location(h1, file$5, 38, 12, 1088);
@@ -921,170 +942,186 @@ var app = (function () {
     			add_location(label2, file$5, 77, 24, 2823);
     			attr_dev(select0, "class", "form-select");
     			attr_dev(select0, "id", "gender");
+    			if (/*profileData*/ ctx[0].gender === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[9].call(select0));
     			add_location(select0, file$5, 84, 24, 3163);
     			attr_dev(div5, "class", "column col-6 col-md-12");
     			add_location(div5, file$5, 76, 20, 2762);
     			attr_dev(label3, "class", "form-label");
     			attr_dev(label3, "for", "class-year");
-    			add_location(label3, file$5, 97, 24, 3739);
+    			add_location(label3, file$5, 97, 24, 3744);
     			attr_dev(select1, "class", "form-select");
     			attr_dev(select1, "id", "class-year");
-    			add_location(select1, file$5, 100, 24, 3879);
+    			if (/*profileData*/ ctx[0].class === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[10].call(select1));
+    			add_location(select1, file$5, 100, 24, 3884);
     			attr_dev(div6, "class", "column col-6 col-md-12");
-    			add_location(div6, file$5, 96, 20, 3678);
+    			add_location(div6, file$5, 96, 20, 3683);
     			attr_dev(div7, "class", "columns");
     			add_location(div7, file$5, 75, 16, 2720);
     			attr_dev(label4, "class", "form-label");
     			attr_dev(label4, "for", "college");
-    			add_location(label4, file$5, 115, 24, 4556);
+    			add_location(label4, file$5, 115, 24, 4566);
     			attr_dev(select2, "class", "form-select");
     			attr_dev(select2, "id", "college");
-    			add_location(select2, file$5, 116, 24, 4636);
+    			if (/*profileData*/ ctx[0].college === void 0) add_render_callback(() => /*select2_change_handler*/ ctx[11].call(select2));
+    			add_location(select2, file$5, 116, 24, 4646);
     			attr_dev(div8, "class", "column col-6 col-md-12");
-    			add_location(div8, file$5, 114, 20, 4495);
+    			add_location(div8, file$5, 114, 20, 4505);
     			attr_dev(label5, "class", "form-label");
     			attr_dev(label5, "for", "Major");
-    			add_location(label5, file$5, 129, 24, 5218);
+    			add_location(label5, file$5, 129, 24, 5233);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "class", "form-input");
     			attr_dev(input2, "id", "major");
-    			add_location(input2, file$5, 130, 24, 5294);
+    			add_location(input2, file$5, 130, 24, 5309);
     			attr_dev(div9, "class", "column col-6 col-md-12");
-    			add_location(div9, file$5, 128, 20, 5157);
+    			add_location(div9, file$5, 128, 20, 5172);
     			attr_dev(div10, "class", "columns");
     			set_style(div10, "margin-top", "20px");
-    			add_location(div10, file$5, 113, 16, 4428);
-    			add_location(h30, file$5, 140, 24, 5692);
+    			add_location(div10, file$5, 113, 16, 4438);
+    			add_location(h30, file$5, 140, 24, 5707);
     			attr_dev(div11, "class", "col-12");
-    			add_location(div11, file$5, 139, 20, 5647);
-    			add_location(p1, file$5, 143, 24, 5797);
+    			add_location(div11, file$5, 139, 20, 5662);
+    			add_location(p1, file$5, 143, 24, 5812);
     			attr_dev(div12, "class", "col-12");
-    			add_location(div12, file$5, 142, 20, 5752);
+    			add_location(div12, file$5, 142, 20, 5767);
     			attr_dev(textarea, "class", "form-input");
     			attr_dev(textarea, "id", "bio");
     			attr_dev(textarea, "placeholder", "Bio here...");
     			attr_dev(textarea, "rows", "6");
-    			add_location(textarea, file$5, 155, 28, 6499);
+    			add_location(textarea, file$5, 155, 28, 6514);
     			attr_dev(div13, "class", "form-group");
-    			add_location(div13, file$5, 154, 24, 6446);
+    			add_location(div13, file$5, 154, 24, 6461);
     			attr_dev(div14, "class", "col-12 text-left");
-    			add_location(div14, file$5, 153, 20, 6391);
+    			add_location(div14, file$5, 153, 20, 6406);
     			attr_dev(div15, "class", "columns");
     			set_style(div15, "margin-top", "20px");
-    			add_location(div15, file$5, 138, 16, 5579);
-    			add_location(h31, file$5, 167, 24, 7001);
+    			add_location(div15, file$5, 138, 16, 5594);
+    			add_location(h31, file$5, 167, 24, 7016);
     			attr_dev(div16, "class", "col-12");
-    			add_location(div16, file$5, 166, 20, 6956);
-    			add_location(p2, file$5, 170, 24, 7122);
+    			add_location(div16, file$5, 166, 20, 6971);
+    			add_location(p2, file$5, 170, 24, 7137);
     			attr_dev(div17, "class", "col-12");
-    			add_location(div17, file$5, 169, 20, 7077);
+    			add_location(div17, file$5, 169, 20, 7092);
     			attr_dev(label6, "class", "form-label");
     			attr_dev(label6, "for", "discord-contact");
-    			add_location(label6, file$5, 180, 24, 7719);
+    			add_location(label6, file$5, 180, 24, 7734);
     			attr_dev(input3, "type", "text");
     			attr_dev(input3, "class", "form-input");
     			attr_dev(input3, "id", "first-name");
     			attr_dev(input3, "placeholder", "Username#0000");
-    			add_location(input3, file$5, 183, 24, 7865);
+    			add_location(input3, file$5, 183, 24, 7880);
     			attr_dev(div18, "class", "column col-6 col-md-12");
-    			add_location(div18, file$5, 179, 20, 7658);
+    			add_location(div18, file$5, 179, 20, 7673);
     			attr_dev(label7, "class", "form-label");
     			attr_dev(label7, "for", "linkedin-contact");
-    			add_location(label7, file$5, 192, 24, 8255);
+    			add_location(label7, file$5, 192, 24, 8270);
     			attr_dev(input4, "type", "url");
     			attr_dev(input4, "class", "form-input");
     			attr_dev(input4, "id", "linkedin-contact");
     			attr_dev(input4, "placeholder", "https://www.linkedin.com/in/profile/");
-    			add_location(input4, file$5, 195, 24, 8407);
+    			add_location(input4, file$5, 195, 24, 8422);
     			attr_dev(div19, "class", "column col-6 col-md-12");
-    			add_location(div19, file$5, 191, 20, 8194);
+    			add_location(div19, file$5, 191, 20, 8209);
     			attr_dev(label8, "class", "form-label");
     			attr_dev(label8, "for", "snapchat-contact");
-    			add_location(label8, file$5, 204, 24, 8826);
+    			add_location(label8, file$5, 204, 24, 8841);
     			attr_dev(input5, "type", "text");
     			attr_dev(input5, "class", "form-input");
     			attr_dev(input5, "id", "snapchat-contact");
     			attr_dev(input5, "placeholder", "something");
-    			add_location(input5, file$5, 207, 24, 8970);
+    			add_location(input5, file$5, 207, 24, 8985);
     			attr_dev(div20, "class", "column col-6 col-md-12");
-    			add_location(div20, file$5, 203, 20, 8765);
+    			add_location(div20, file$5, 203, 20, 8780);
     			attr_dev(label9, "class", "form-label");
     			attr_dev(label9, "for", "insta-contact");
-    			add_location(label9, file$5, 216, 24, 9363);
+    			add_location(label9, file$5, 216, 24, 9378);
     			attr_dev(input6, "type", "url");
     			attr_dev(input6, "class", "form-input");
     			attr_dev(input6, "id", "insta-contact");
     			attr_dev(input6, "placeholder", "https://www.instagram.com/elonmusk/");
-    			add_location(input6, file$5, 219, 24, 9513);
+    			add_location(input6, file$5, 219, 24, 9528);
     			attr_dev(div21, "class", "column col-6 col-md-12");
-    			add_location(div21, file$5, 215, 20, 9302);
+    			add_location(div21, file$5, 215, 20, 9317);
     			attr_dev(label10, "class", "form-label");
     			attr_dev(label10, "for", "facebook-contact");
-    			add_location(label10, file$5, 228, 24, 9929);
+    			add_location(label10, file$5, 228, 24, 9944);
     			attr_dev(input7, "type", "url");
     			attr_dev(input7, "class", "form-input");
     			attr_dev(input7, "id", "facebook-contact");
     			attr_dev(input7, "placeholder", "https://www.facebook.com/zuck");
-    			add_location(input7, file$5, 231, 24, 10081);
+    			add_location(input7, file$5, 231, 24, 10096);
     			attr_dev(div22, "class", "column col-6 col-md-12");
-    			add_location(div22, file$5, 227, 20, 9868);
+    			add_location(div22, file$5, 227, 20, 9883);
     			attr_dev(label11, "class", "form-label");
     			attr_dev(label11, "for", "twitter-contact");
-    			add_location(label11, file$5, 240, 24, 10493);
+    			add_location(label11, file$5, 240, 24, 10508);
     			attr_dev(input8, "type", "url");
     			attr_dev(input8, "class", "form-input");
     			attr_dev(input8, "id", "twitter-contact");
     			attr_dev(input8, "placeholder", "https://twitter.com/elonmusk");
-    			add_location(input8, file$5, 243, 24, 10643);
+    			add_location(input8, file$5, 243, 24, 10658);
     			attr_dev(div23, "class", "column col-6 col-md-12");
-    			add_location(div23, file$5, 239, 20, 10432);
+    			add_location(div23, file$5, 239, 20, 10447);
     			attr_dev(label12, "class", "form-label");
     			attr_dev(label12, "for", "email-contact");
-    			add_location(label12, file$5, 252, 24, 11052);
+    			add_location(label12, file$5, 252, 24, 11067);
     			attr_dev(input9, "type", "email");
     			attr_dev(input9, "class", "form-input");
     			attr_dev(input9, "id", "email-contact");
     			attr_dev(input9, "placeholder", "john.doe@gmail.com");
-    			add_location(input9, file$5, 255, 24, 11190);
+    			add_location(input9, file$5, 255, 24, 11205);
     			attr_dev(div24, "class", "column col-6 col-md-12");
-    			add_location(div24, file$5, 251, 20, 10991);
+    			add_location(div24, file$5, 251, 20, 11006);
     			attr_dev(label13, "class", "form-label");
     			attr_dev(label13, "for", "phone-contact");
-    			add_location(label13, file$5, 264, 24, 11587);
+    			add_location(label13, file$5, 264, 24, 11602);
     			attr_dev(input10, "type", "tel");
     			attr_dev(input10, "class", "form-input");
     			attr_dev(input10, "id", "phone-contact");
     			attr_dev(input10, "placeholder", "5555555555");
-    			add_location(input10, file$5, 267, 24, 11732);
+    			add_location(input10, file$5, 267, 24, 11747);
     			attr_dev(div25, "class", "column col-6 col-md-12");
-    			add_location(div25, file$5, 263, 20, 11526);
+    			add_location(div25, file$5, 263, 20, 11541);
     			attr_dev(div26, "class", "columns");
     			set_style(div26, "margin-top", "20px");
-    			add_location(div26, file$5, 165, 16, 6889);
+    			add_location(div26, file$5, 165, 16, 6904);
+    			add_location(h32, file$5, 278, 24, 12205);
+    			attr_dev(div27, "class", "col-12");
+    			add_location(div27, file$5, 277, 20, 12160);
     			attr_dev(label14, "class", "form-label");
     			attr_dev(label14, "for", "location");
-    			add_location(label14, file$5, 278, 24, 12197);
+    			add_location(label14, file$5, 281, 24, 12333);
     			attr_dev(select3, "class", "form-select");
     			attr_dev(select3, "id", "location");
-    			add_location(select3, file$5, 281, 24, 12333);
-    			attr_dev(div27, "class", "column col-12");
-    			add_location(div27, file$5, 277, 20, 12145);
-    			attr_dev(div28, "class", "columns");
-    			set_style(div28, "margin-top", "20px");
-    			add_location(div28, file$5, 276, 16, 12077);
+    			add_location(select3, file$5, 284, 24, 12469);
+    			attr_dev(div28, "class", "column col-12");
+    			add_location(div28, file$5, 280, 20, 12281);
+    			attr_dev(div29, "class", "columns");
+    			set_style(div29, "margin-top", "20px");
+    			add_location(div29, file$5, 276, 16, 12092);
+    			attr_dev(label15, "for", "building-preferences");
+    			add_location(label15, file$5, 299, 24, 13127);
+    			attr_dev(input11, "type", "text");
+    			attr_dev(input11, "class", "form-input");
+    			add_location(input11, file$5, 300, 24, 13214);
+    			attr_dev(div30, "class", "col-12");
+    			add_location(div30, file$5, 298, 20, 13082);
+    			attr_dev(div31, "class", "columns");
+    			set_style(div31, "margin-top", "20px");
+    			add_location(div31, file$5, 297, 16, 13015);
     			attr_dev(button, "class", "btn btn-primary");
-    			add_location(button, file$5, 296, 24, 12998);
-    			attr_dev(div29, "class", "column col-12");
-    			add_location(div29, file$5, 295, 20, 12946);
-    			attr_dev(div30, "class", "columns");
-    			set_style(div30, "margin-top", "20px");
-    			add_location(div30, file$5, 294, 16, 12879);
-    			attr_dev(div31, "class", "form-group");
-    			add_location(div31, file$5, 50, 12, 1658);
-    			attr_dev(div32, "class", "column col-8 col-md-12 col-mx-auto");
-    			add_location(div32, file$5, 49, 8, 1597);
+    			add_location(button, file$5, 305, 24, 13484);
+    			attr_dev(div32, "class", "column col-12");
+    			add_location(div32, file$5, 304, 20, 13432);
     			attr_dev(div33, "class", "columns");
-    			add_location(div33, file$5, 36, 4, 997);
+    			set_style(div33, "margin-top", "20px");
+    			add_location(div33, file$5, 303, 16, 13365);
+    			attr_dev(div34, "class", "form-group");
+    			add_location(div34, file$5, 50, 12, 1658);
+    			attr_dev(div35, "class", "column col-8 col-md-12 col-mx-auto");
+    			add_location(div35, file$5, 49, 8, 1597);
+    			attr_dev(div36, "class", "columns");
+    			add_location(div36, file$5, 36, 4, 997);
     			add_location(main, file$5, 35, 0, 986);
     		},
     		l: function claim(nodes) {
@@ -1092,16 +1129,16 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
-    			append_dev(main, div33);
-    			append_dev(div33, div0);
+    			append_dev(main, div36);
+    			append_dev(div36, div0);
     			append_dev(div0, h1);
-    			append_dev(div33, t1);
-    			append_dev(div33, div1);
+    			append_dev(div36, t1);
+    			append_dev(div36, div1);
     			append_dev(div1, p0);
-    			append_dev(div33, t3);
-    			append_dev(div33, div32);
-    			append_dev(div32, div31);
-    			append_dev(div31, div4);
+    			append_dev(div36, t3);
+    			append_dev(div36, div35);
+    			append_dev(div35, div34);
+    			append_dev(div34, div4);
     			append_dev(div4, div2);
     			append_dev(div2, label0);
     			append_dev(div2, t5);
@@ -1113,8 +1150,8 @@ var app = (function () {
     			append_dev(div3, t8);
     			append_dev(div3, input1);
     			set_input_value(input1, /*profileData*/ ctx[0].last_name);
-    			append_dev(div31, t9);
-    			append_dev(div31, div7);
+    			append_dev(div34, t9);
+    			append_dev(div34, div7);
     			append_dev(div7, div5);
     			append_dev(div5, label2);
     			append_dev(div5, t11);
@@ -1136,8 +1173,8 @@ var app = (function () {
     			}
 
     			select_option(select1, /*profileData*/ ctx[0].class);
-    			append_dev(div31, t15);
-    			append_dev(div31, div10);
+    			append_dev(div34, t15);
+    			append_dev(div34, div10);
     			append_dev(div10, div8);
     			append_dev(div8, label4);
     			append_dev(div8, t17);
@@ -1154,8 +1191,8 @@ var app = (function () {
     			append_dev(div9, t20);
     			append_dev(div9, input2);
     			set_input_value(input2, /*profileData*/ ctx[0].major);
-    			append_dev(div31, t21);
-    			append_dev(div31, div15);
+    			append_dev(div34, t21);
+    			append_dev(div34, div15);
     			append_dev(div15, div11);
     			append_dev(div11, h30);
     			append_dev(div15, t23);
@@ -1166,8 +1203,8 @@ var app = (function () {
     			append_dev(div14, div13);
     			append_dev(div13, textarea);
     			set_input_value(textarea, /*profileData*/ ctx[0].bio);
-    			append_dev(div31, t26);
-    			append_dev(div31, div26);
+    			append_dev(div34, t26);
+    			append_dev(div34, div26);
     			append_dev(div26, div16);
     			append_dev(div16, h31);
     			append_dev(div26, t28);
@@ -1221,38 +1258,52 @@ var app = (function () {
     			append_dev(div25, t53);
     			append_dev(div25, input10);
     			set_input_value(input10, /*profileData*/ ctx[0].phone);
-    			append_dev(div31, t54);
-    			append_dev(div31, div28);
-    			append_dev(div28, div27);
-    			append_dev(div27, label14);
-    			append_dev(div27, t56);
-    			append_dev(div27, select3);
+    			append_dev(div34, t54);
+    			append_dev(div34, div29);
+    			append_dev(div29, div27);
+    			append_dev(div27, h32);
+    			append_dev(div29, t56);
+    			append_dev(div29, div28);
+    			append_dev(div28, label14);
+    			append_dev(div28, t58);
+    			append_dev(div28, select3);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(select3, null);
     			}
 
     			select_option(select3, /*profileData*/ ctx[0].location);
-    			append_dev(div31, t57);
+    			append_dev(div34, t59);
+    			append_dev(div34, div31);
     			append_dev(div31, div30);
-    			append_dev(div30, div29);
-    			append_dev(div29, button);
+    			append_dev(div30, label15);
+    			append_dev(div30, t61);
+    			append_dev(div30, input11);
+    			set_input_value(input11, /*profileData*/ ctx[0].building_preferences);
+    			append_dev(div34, t62);
+    			append_dev(div34, div33);
+    			append_dev(div33, div32);
+    			append_dev(div32, button);
 
     			if (!mounted) {
     				dispose = [
     					listen_dev(input0, "input", /*input0_input_handler*/ ctx[7]),
     					listen_dev(input1, "input", /*input1_input_handler*/ ctx[8]),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[9]),
-    					listen_dev(textarea, "input", /*textarea_input_handler*/ ctx[10]),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[11]),
-    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[12]),
-    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[13]),
-    					listen_dev(input6, "input", /*input6_input_handler*/ ctx[14]),
-    					listen_dev(input7, "input", /*input7_input_handler*/ ctx[15]),
-    					listen_dev(input8, "input", /*input8_input_handler*/ ctx[16]),
-    					listen_dev(input9, "input", /*input9_input_handler*/ ctx[17]),
-    					listen_dev(input10, "input", /*input10_input_handler*/ ctx[18]),
-    					listen_dev(button, "click", /*click_handler*/ ctx[19], false, false, false)
+    					listen_dev(select0, "change", /*select0_change_handler*/ ctx[9]),
+    					listen_dev(select1, "change", /*select1_change_handler*/ ctx[10]),
+    					listen_dev(select2, "change", /*select2_change_handler*/ ctx[11]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[12]),
+    					listen_dev(textarea, "input", /*textarea_input_handler*/ ctx[13]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[14]),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[15]),
+    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[16]),
+    					listen_dev(input6, "input", /*input6_input_handler*/ ctx[17]),
+    					listen_dev(input7, "input", /*input7_input_handler*/ ctx[18]),
+    					listen_dev(input8, "input", /*input8_input_handler*/ ctx[19]),
+    					listen_dev(input9, "input", /*input9_input_handler*/ ctx[20]),
+    					listen_dev(input10, "input", /*input10_input_handler*/ ctx[21]),
+    					listen_dev(input11, "input", /*input11_input_handler*/ ctx[22]),
+    					listen_dev(button, "click", /*click_handler*/ ctx[23], false, false, false)
     				];
 
     				mounted = true;
@@ -1291,7 +1342,7 @@ var app = (function () {
     				each_blocks_3.length = each_value_3.length;
     			}
 
-    			if (dirty[0] & /*profileData, genderOptions*/ 9 && select0_value_value !== (select0_value_value = /*profileData*/ ctx[0].gender)) {
+    			if (dirty[0] & /*profileData, genderOptions*/ 9) {
     				select_option(select0, /*profileData*/ ctx[0].gender);
     			}
 
@@ -1319,7 +1370,7 @@ var app = (function () {
     				each_blocks_2.length = each_value_2.length;
     			}
 
-    			if (dirty[0] & /*profileData, genderOptions*/ 9 && select1_value_value !== (select1_value_value = /*profileData*/ ctx[0].class)) {
+    			if (dirty[0] & /*profileData, genderOptions*/ 9) {
     				select_option(select1, /*profileData*/ ctx[0].class);
     			}
 
@@ -1347,7 +1398,7 @@ var app = (function () {
     				each_blocks_1.length = each_value_1.length;
     			}
 
-    			if (dirty[0] & /*profileData, genderOptions*/ 9 && select2_value_value !== (select2_value_value = /*profileData*/ ctx[0].college)) {
+    			if (dirty[0] & /*profileData, genderOptions*/ 9) {
     				select_option(select2, /*profileData*/ ctx[0].college);
     			}
 
@@ -1417,6 +1468,10 @@ var app = (function () {
 
     			if (dirty[0] & /*profileData, genderOptions*/ 9 && select3_value_value !== (select3_value_value = /*profileData*/ ctx[0].location)) {
     				select_option(select3, /*profileData*/ ctx[0].location);
+    			}
+
+    			if (dirty[0] & /*profileData, genderOptions*/ 9 && input11.value !== /*profileData*/ ctx[0].building_preferences) {
+    				set_input_value(input11, /*profileData*/ ctx[0].building_preferences);
     			}
     		},
     		i: noop,
@@ -1498,6 +1553,24 @@ var app = (function () {
     		$$invalidate(3, genderOptions);
     	}
 
+    	function select0_change_handler() {
+    		profileData.gender = select_value(this);
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	function select1_change_handler() {
+    		profileData.class = select_value(this);
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
+    	function select2_change_handler() {
+    		profileData.college = select_value(this);
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
     	function input2_input_handler() {
     		profileData.major = this.value;
     		$$invalidate(0, profileData);
@@ -1558,6 +1631,12 @@ var app = (function () {
     		$$invalidate(3, genderOptions);
     	}
 
+    	function input11_input_handler() {
+    		profileData.building_preferences = this.value;
+    		$$invalidate(0, profileData);
+    		$$invalidate(3, genderOptions);
+    	}
+
     	const click_handler = () => {
     		whenDone(sessionToken, profileData);
     	};
@@ -1602,6 +1681,9 @@ var app = (function () {
     		locationOptions,
     		input0_input_handler,
     		input1_input_handler,
+    		select0_change_handler,
+    		select1_change_handler,
+    		select2_change_handler,
     		input2_input_handler,
     		textarea_input_handler,
     		input3_input_handler,
@@ -1612,6 +1694,7 @@ var app = (function () {
     		input8_input_handler,
     		input9_input_handler,
     		input10_input_handler,
+    		input11_input_handler,
     		click_handler
     	];
     }
