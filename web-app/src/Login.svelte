@@ -38,24 +38,21 @@
 </script>
 
 <main>
-    <div class="columns">
+    <div class="columns" style="margin-bottom: 20px;">
         <div class="column col-8 col-md-12 col-mx-auto">
-            <h3>A place to find a roommate for college!</h3>
+            <h3>
+                Welcome Longhorns! Roomie is a roommate finding service made by
+                UT students* for UT students.
+            </h3>
+            <h4>
+                Get started by signing in with Google! Make sure to use your
+                utexas.edu email. If you're an incoming freshman, <a
+                    href="https://get.utmail.utexas.edu/"
+                    >go to the UT website</a
+                > to get yours using your UT EID. It's the same ID you used to log
+                into MyStatus!
+            </h4>
         </div>
-    </div>
-    <div class="columns">
-        <p class="column col-8 col-mx-auto">
-            This is a digital service where you can find other students going to
-            the same college and looking for roommates. After signing in and
-            entering your information (you can edit it later), you can look at
-            profiles of other students and get in contact with them.
-        </p>
-    </div>
-    <div class="columns">
-        <p class="column col-8 col-md-12 col-mx-auto">
-            You can get started by signing in with Google! You don't need a
-            school account to enter.
-        </p>
     </div>
     <div class="columns">
         {#if errorMessage != null}
@@ -68,5 +65,23 @@
             class="column col-8 col-mx-auto g-signin2"
             data-onsuccess="onSignIn"
         />
+    </div>
+    <div class="columns" style="margin-top: 40px;">
+        <div class="column col-8 col-mx-auto">
+            <p>
+                You can use this platform to find roommates at UT. After signing
+                in, you can make a profile for yourself (editable at any time)
+                and look at the profiles of other students to find the best
+                roommate. Try to use the search feature to narrow down who
+                you're looking for. If you want a roommate in the class of 2025,
+                make sure you add "2025" to your search. You can search for
+                students specific colleges, like the College of Natural Science
+                or specific majors, like Neuroscience!
+            </p>
+            <p class="text-gray">
+                *I am a UT student but this service is NOT officially endorsed
+                by or supported by the University of Texas
+            </p>
+        </div>
     </div>
 </main>
