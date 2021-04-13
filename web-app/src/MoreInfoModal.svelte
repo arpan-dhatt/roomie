@@ -22,58 +22,74 @@
                         open = false;
                     }}
                 />
-                <div class="modal-title h5">
-                    {modalData
-                        ? modalData.first_name + " " + modalData.last_name
-                        : ""}
-                </div>
             </div>
             <div class="modal-body">
                 <div class="content text-left">
                     {#if modalData}
-                        <h6>{modalData.college_name}</h6>
-                        <h5>Contact Information</h5>
-                        <ul>
-                            {#if modalData.discord != undefined }<li>{"Discord: " + modalData.discord}</li>{/if}
-                            {#if modalData.linkedin != undefined }<li>{"LinkedIn: " + modalData.linkedin}</li>{/if}
-                            {#if modalData.snapchat != undefined }<li>{"SnapChat: " + modalData.snapchat}</li>{/if}
-                            {#if modalData.instagram != undefined }<li>{"Instagram: " + modalData.instagram}</li>{/if}
-                            {#if modalData.facebook != undefined }<li>{"Facebook: " + modalData.facebook}</li>{/if}
-                            {#if modalData.twitter != undefined }<li>{"Twitter: " + modalData.twitter}</li>{/if}
-                            {#if modalData.email != undefined }<li>{"Email: " + modalData.email}</li>{/if}
-                            {#if modalData.phone != undefined }<li>{"Phone: " + modalData.phone}</li>{/if}
-                        </ul>
-                        <h4>Room Information</h4>
-                        <div class="container">
-                            <div class="columns">
-                                <div class="column col-3">
-                                    <h6>Honors</h6>
-                                    {#each modalData.honors ? modalData.honors : [] as honor}
-                                        <span class={"chip " + colorMap[honor]}
-                                            >{honor}</span
-                                        >
-                                    {/each}
-                                </div>
-                                <div class="column col-3">
-                                    <h6>Locations</h6>
-                                    {#each modalData.location ? modalData.location : [] as honor}
-                                        <span class={"chip " + colorMap[honor]}
-                                            >{honor}</span
-                                        >
-                                    {/each}
-                                </div>
-                                <div class="column col-3">
-                                    <h6>Floorplans</h6>
-                                    {#each modalData.floorplan ? modalData.floorplan : [] as honor}
-                                        <span class={"chip " + colorMap[honor]}
-                                            >{honor}</span
-                                        >
-                                    {/each}
-                                </div>
+                        <div class="columns" style="margin-bottom: 10px;">
+                            <div class="column col-4 col-sm-12">
+                                <img
+                                    class="img-responsive"
+                                    src={"./images/" + modalData.sub + ".jpeg"}
+                                    alt=""
+                                />
+                            </div>
+                            <div class="column col-8 col-sm-12">
+                                <h2 class="first-name">
+                                    {modalData.first_name}
+                                    {modalData.last_name}
+                                </h2>
+                                <h6>
+                                    {modalData.gender} | Class of {modalData.class}
+                                </h6>
+                                {#if modalData.college != "Select"}<h6>
+                                        ⛪️{modalData.college}
+                                    </h6>{/if}
+                                {#if modalData.major != ""}<h6>
+                                        📚{modalData.major}
+                                    </h6>{/if}
+                                {#if modalData.location != "Select"}<h6>
+                                        📍{modalData.location}
+                                    </h6>{/if}
+                                {#if modalData.building_preferences != ""}
+                                    <h6>
+                                        Prefers to {modalData.building_preferences}
+                                    </h6>
+                                {/if}
                             </div>
                         </div>
-                        <h4>Additional Information</h4>
-                        <p style="border: 1px solid gray; border-radius: 15px; padding: 10px;">{modalData.additional}</p>
+                        <p
+                            style="border: 1px solid gray; border-radius: 15px; padding: 10px;"
+                        >
+                            {modalData.bio}
+                        </p>
+                        <h5>Contact Information</h5>
+                        <ul>
+                            {#if modalData.discord != ""}<li>
+                                    {"Discord: " + modalData.discord}
+                                </li>{/if}
+                            {#if modalData.linkedin != ""}<li>
+                                    {"LinkedIn: " + modalData.linkedin}
+                                </li>{/if}
+                            {#if modalData.snapchat != ""}<li>
+                                    {"SnapChat: " + modalData.snapchat}
+                                </li>{/if}
+                            {#if modalData.instagram != ""}<li>
+                                    {"Instagram: " + modalData.instagram}
+                                </li>{/if}
+                            {#if modalData.facebook != ""}<li>
+                                    {"Facebook: " + modalData.facebook}
+                                </li>{/if}
+                            {#if modalData.twitter != ""}<li>
+                                    {"Twitter: " + modalData.twitter}
+                                </li>{/if}
+                            {#if modalData.email != ""}<li>
+                                    {"Email: " + modalData.email}
+                                </li>{/if}
+                            {#if modalData.phone != ""}<li>
+                                    {"Phone: " + modalData.phone}
+                                </li>{/if}
+                        </ul>
                     {/if}
                 </div>
             </div>
@@ -101,5 +117,13 @@
     .purple {
         background-color: blueviolet;
         color: white;
+    }
+    img {
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+    .first-name {
+        color: rgb(56, 165, 255);
+        font-weight: 650;
     }
 </style>

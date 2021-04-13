@@ -32,7 +32,64 @@
 	var studentData = {
 		students: [
 			{
-				sub: "",
+				sub: "100685528597008939195",
+				first_name: "Test First Name",
+				last_name: "Test Last Name",
+				gender: "Select",
+				class: 2025,
+				college: "College of Natural Science",
+				major: "Computer Science",
+				bio: "a bio...",
+				discord: "",
+				linkedin: "",
+				snapchat: "",
+				instagram: "",
+				facebook: "",
+				twitter: "",
+				email: "",
+				phone: "5555555555",
+				location: "On-Campus",
+				building_preferences: "live near the dining hall"
+			},{
+				sub: "100685528597008939195",
+				first_name: "Test First Name",
+				last_name: "Test Last Name",
+				gender: "Select",
+				class: 2025,
+				college: "Select",
+				major: "",
+				bio: "a bio...",
+				discord: "",
+				linkedin: "",
+				snapchat: "",
+				instagram: "",
+				facebook: "",
+				twitter: "",
+				email: "",
+				phone: "",
+				location: "Select",
+				building_preferences: "prefs"
+			},{
+				sub: "100685528597008939195",
+				first_name: "Test First Name",
+				last_name: "Test Last Name",
+				gender: "Select",
+				class: 2025,
+				college: "Select",
+				major: "",
+				bio: "a bio...",
+				discord: "",
+				linkedin: "",
+				snapchat: "",
+				instagram: "",
+				facebook: "",
+				twitter: "",
+				email: "",
+				phone: "",
+				location: "Select",
+				building_preferences: "prefs"
+			},{
+				sub: "100685528597008939195",
 				first_name: "Test First Name",
 				last_name: "Test Last Name",
 				gender: "Select",
@@ -97,7 +154,7 @@
 <main>
 	<div class="container">
 		<div class="columns">
-			<h1 class="column">Roomie</h1>
+			<h1 class="column col-12">Roomie</h1>
 		</div>
 		{#if page == "signin"}
 			<Login bind:signedIn bind:sessionToken bind:page />
@@ -110,7 +167,7 @@
 			/>
 		{/if}
 		{#if page == "search"}
-			<TableView {studentData} />
+			<TableView studentData={studentData} sessionToken={sessionToken} />
 		{/if}
 		{#if page != "signin"}
 			<SignOut bind:signedIn bind:page />
@@ -121,9 +178,6 @@
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
 	}
 
 	h1 {

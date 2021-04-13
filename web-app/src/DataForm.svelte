@@ -1,4 +1,6 @@
 <script>
+    import ProfileImageSelector from "./ProfileImageSelector.svelte";
+
     export var profileData;
     export var whenDone;
     export var sessionToken;
@@ -38,6 +40,9 @@
         <div class="column col-8 col-md-12 col-mx-auto">
             <h1>Edit Your Profile</h1>
         </div>
+    </div>
+    <ProfileImageSelector sessionToken={sessionToken} profileData={profileData}></ProfileImageSelector>
+    <div class="columns">
         <div class="column col-8 col-md-12 col-mx-auto">
             <p>
                 This is where you build the profile other students will see
@@ -50,7 +55,7 @@
         <div class="column col-8 col-md-12 col-mx-auto">
             <div class="form-group">
                 <div class="columns">
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="first-name"
                             >Preferred First Name</label
                         >
@@ -61,7 +66,7 @@
                             bind:value={profileData.first_name}
                         />
                     </div>
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="last-name">
                             Last Name</label
                         >
@@ -74,7 +79,7 @@
                     </div>
                 </div>
                 <div class="columns">
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="gender">Gender</label>
                         <!-- <input
                             type="text"
@@ -94,7 +99,7 @@
                             {/each}
                         </select>
                     </div>
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="class-year"
                             >Class Year</label
                         >
@@ -112,7 +117,7 @@
                     </div>
                 </div>
                 <div class="columns" style="margin-top: 20px">
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="college">College</label>
                         <select
                             class="form-select"
@@ -126,7 +131,7 @@
                             {/each}
                         </select>
                     </div>
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="Major">Major</label>
                         <input
                             type="text"
@@ -177,7 +182,7 @@
                             prospective roommate to contact you!
                         </p>
                     </div>
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="discord-contact"
                             >Discord Tag</label
                         >
@@ -189,7 +194,7 @@
                             bind:value={profileData.discord}
                         />
                     </div>
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="linkedin-contact"
                             >LinkedIn Profile</label
                         >
@@ -201,7 +206,7 @@
                             bind:value={profileData.linkedin}
                         />
                     </div>
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="snapchat-contact"
                             >Snapchat</label
                         >
@@ -213,43 +218,43 @@
                             bind:value={profileData.snapchat}
                         />
                     </div>
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="insta-contact"
                             >Instagram Profile</label
                         >
                         <input
-                            type="url"
+                            type="text"
                             class="form-input"
                             id="insta-contact"
-                            placeholder="https://www.instagram.com/elonmusk/"
+                            placeholder="elonmusk"
                             bind:value={profileData.instagram}
                         />
                     </div>
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="facebook-contact"
                             >Facebook Profile</label
                         >
                         <input
-                            type="url"
+                            type="text"
                             class="form-input"
                             id="facebook-contact"
-                            placeholder="https://www.facebook.com/zuck"
+                            placeholder="zuck"
                             bind:value={profileData.facebook}
                         />
                     </div>
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="twitter-contact"
                             >Twitter Profile</label
                         >
                         <input
-                            type="url"
+                            type="text"
                             class="form-input"
                             id="twitter-contact"
-                            placeholder="https://twitter.com/elonmusk"
+                            placeholder="elonmusk"
                             bind:value={profileData.twitter}
                         />
                     </div>
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="email-contact"
                             >Email</label
                         >
@@ -261,7 +266,7 @@
                             bind:value={profileData.email}
                         />
                     </div>
-                    <div class="column col-6 col-md-12">
+                    <div class="column col-6 col-sm-12">
                         <label class="form-label" for="phone-contact"
                             >Phone Number</label
                         >
@@ -285,7 +290,7 @@
                         <select
                             class="form-select"
                             id="location"
-                            value={profileData.location}
+                            bind:value={profileData.location}
                         >
                             {#each locationOptions as locationOption}
                                 <option value={locationOption}
@@ -297,8 +302,8 @@
                 </div>
                 <div class="columns" style="margin-top: 20px">
                     <div class="col-12">
-                        <label for="building-preferences">Building Preferences</label>
-                        <input type="text" class="form-input" bind:value={profileData.building_preferences}>
+                        <label for="building-preferences">Prefers to...</label>
+                        <input type="text" class="form-input" placeholder="live in north campus..." bind:value={profileData.building_preferences}>
                     </div>
                 </div>
                 <div class="columns" style="margin-top: 20px">

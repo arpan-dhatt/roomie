@@ -31,7 +31,7 @@
                     sessionToken = data.jwt_token;
                     signedIn = true;
                     errorMessage = null;
-                    //window.getStudentData(sessionToken);
+                    window.getStudentData(sessionToken);
                 }
             });
     };

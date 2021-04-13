@@ -28,6 +28,7 @@ fn create_filter(data: &GetStudentRequest) -> String {
     if out_string.ends_with(" AND ") {
         out_string.replace_range((out_string.len() - 5)..out_string.len(), "");
     }
+    println!("{}", out_string);
     out_string
 }
 
@@ -48,22 +49,23 @@ pub async fn get_student(
         let index = client.get_or_create("students").await.unwrap();
         let mut builder = index.search();
         let mut builder = builder
-            .with_filters(&filter)
+//            .with_filters(&filter)
             .with_limit(12)
             .with_offset(data.offset.unwrap_or(0));
         if let Some(query) = &data.query {
             builder = builder.with_query(&query);
         }
+        println!("{:?}", builder);
         let result = builder.execute::<Profile>().await;
         if let Ok(result) = result {
             let mut current_student = None;
             let mut all_students = vec![];
             for item in result.hits {
+                println!("{:?}", item);
                 if &item.result.sub == &sub {
-                    current_student = Some(item.result);
-                } else {
-                    all_students.push(item.result);
+                    current_student = Some(item.result.clone());
                 }
+                all_students.push(item.result);
             }
             HttpResponse::Ok().body(
                 serde_json::to_string(&GetStudentsResponse {

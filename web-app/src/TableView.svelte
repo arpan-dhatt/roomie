@@ -1,6 +1,8 @@
 <script>
     import MoreInfoModal from "./MoreInfoModal.svelte";
+import SearchBar from "./SearchBar.svelte";
     export var studentData;
+    export var sessionToken;
     const colorMap = {
         Honors: "green",
         "Non-Honors": "blue",
@@ -20,80 +22,39 @@
 
 <main>
     <MoreInfoModal bind:open={modalOpen} {modalData} {colorMap} />
-    <div class="column col-12 col-mx-auto">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>College Name</th>
-                    <th>Honors Housing</th>
-                    <th>Preferred Locations</th>
-                    <th>Preferred Room Floorplans</th>
-                    <th>More</th>
-                </tr>
-            </thead>
-            <tbody>
-                {#if studentData != null}
-                    {#each studentData.students as student}
-                        <tr>
-                            <td
-                                class="tooltip"
-                                data-tooltip={student.first_name +
-                                    " " +
-                                    student.last_name}
-                                >{student.first_name.slice(0, 27) +
-                                    (student.first_name.length > 27
-                                        ? "... "
-                                        : " ") +
-                                    student.last_name.slice(0, 27) +
-                                    (student.last_name.length > 27
-                                        ? "... "
-                                        : " ")}</td
-                            >
-                            <td
-                                class="tooltip"
-                                data-tooltip={student.college_name}
-                                >{student.college_name.slice(0, 27) +
-                                    (student.college_name.length > 27
-                                        ? "..."
-                                        : "")}</td
-                            >
-                            <td>
-                                {#each student.honors as honor}
-                                    <span class={"chip " + colorMap[honor]}
-                                        >{honor}</span
-                                    >
-                                {/each}
-                            </td>
-                            <td>
-                                {#each student.location as location}
-                                    <span class={"chip " + colorMap[location]}
-                                        >{location}</span
-                                    >
-                                {/each}
-                            </td>
-                            <td>
-                                {#each student.floorplan as floorplan}
-                                    <span class={"chip " + colorMap[floorplan]}
-                                        >{floorplan}</span
-                                    >
-                                {/each}
-                            </td>
-                            <td>
-                                <button
-                                    class="btn btn-primary s-circle"
-                                    on:click={() => {
-                                        modalData = student;
-                                        modalOpen = true;
-                                    }}
-                                    ><i class="icon icon-more-horiz" /></button
-                                >
-                            </td>
-                        </tr>
-                    {/each}
-                {/if}
-            </tbody>
-        </table>
+    <SearchBar bind:studentData={studentData} sessionToken={sessionToken} ></SearchBar>
+    <div class="columns col-gapless">
+        {#each studentData.students as student}
+        <div class="column col-4 col-sm-12 col-md-6 col-lg-4">
+            <div class="card" style="padding: 10px; margin: 10px;">
+                <div class="card-image">
+                    <img class="img-responsive" src={"./images/"+student.sub+".jpeg"} alt="" style="margin: 0 auto;">
+                </div>
+                <div class="card-header">
+                    <div class="card-title h2 first-name">{student.first_name}</div>
+                    <div class="card-title text-gray">{student.gender+" | Class of "+student.class}</div>
+                </div>
+                <div class="card-body">
+                    {#if student.college != "Select"}
+                    <p>🏫<strong>{student.college}</strong></p>
+                    {/if}
+                    {#if student.major != ""}
+                    <p>📚<strong>{student.major}</strong></p>
+                    {/if}
+                    {#if student.location != "Select"}
+                    <p>📍<strong>{student.location}</strong></p>
+                    {/if}
+                    <button class="btn btn-primary" style="margin-top: 10px; width: 100%;" on:click={() => {
+                        modalData = student;
+                        modalOpen = true;
+                    }}>Profile</button>
+                </div>
+            </div>
+        </div>
+        {/each}
+        {#if studentData.students.length == 0}
+        <p>Try being less specific or if you're typing things like "class year of 2025", just use "2025" instead. </p>
+        {/if}
     </div>
 </main>
 
@@ -117,5 +78,15 @@
     .purple {
         background-color: blueviolet;
         color: white;
+    }
+    img {
+        border-radius: 50% !important;
+    }
+    .first-name {
+        color: rgb(56, 165, 255);
+        font-weight: 650;
+    }
+    p {
+        margin-bottom: 0;
     }
 </style>
