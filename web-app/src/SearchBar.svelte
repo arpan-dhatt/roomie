@@ -1,8 +1,8 @@
 <script>
     export var studentData;
     export var sessionToken;
+    export var text;
 
-    let text = "";
     function filterStudents(e) {
         e.preventDefault();
         let query = "./student?token=" + sessionToken;

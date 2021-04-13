@@ -5,6 +5,7 @@
     export var whenDone;
     export var sessionToken;
 
+    let showSaved = false;
     let genderOptions = [
         "Select",
         "Male",
@@ -41,7 +42,7 @@
             <h1>Edit Your Profile</h1>
         </div>
     </div>
-    <ProfileImageSelector sessionToken={sessionToken} profileData={profileData}></ProfileImageSelector>
+    <ProfileImageSelector {sessionToken} {profileData} />
     <div class="columns">
         <div class="column col-8 col-md-12 col-mx-auto">
             <p>
@@ -284,8 +285,7 @@
                         <h3>Housing Information</h3>
                     </div>
                     <div class="column col-12">
-                        <label class="form-label" for="location"
-                            >Location</label
+                        <label class="form-label" for="location">Location</label
                         >
                         <select
                             class="form-select"
@@ -303,16 +303,27 @@
                 <div class="columns" style="margin-top: 20px">
                     <div class="col-12">
                         <label for="building-preferences">Prefers to...</label>
-                        <input type="text" class="form-input" placeholder="live in north campus..." bind:value={profileData.building_preferences}>
+                        <input
+                            type="text"
+                            class="form-input"
+                            placeholder="live in north campus..."
+                            bind:value={profileData.building_preferences}
+                        />
                     </div>
                 </div>
-                <div class="columns" style="margin-top: 20px">
+                <div
+                    class="columns"
+                    style="margin-top: 20px; margin-bottom: 250px;"
+                >
                     <div class="column col-12">
                         <button
                             class="btn btn-primary"
+                            style="width: 100%;"
                             on:click={() => {
                                 whenDone(sessionToken, profileData);
-                            }}>Save</button
+                                showSaved = true;
+                                setTimeout(() => showSaved = false, 5000);
+                            }}>{ showSaved ? "Saved" : "Save"}</button
                         >
                     </div>
                 </div>

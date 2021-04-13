@@ -24,7 +24,7 @@
 		twitter: "",
 		email: "",
 		phone: "",
-		location: "",
+		location: "Select",
 		building_preferences: "",
 	};
 

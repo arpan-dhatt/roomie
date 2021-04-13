@@ -4,7 +4,10 @@
     export var sessionToken;
     export var profileData;
     let changed = false;
-
+    let showSaved = false;
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
     let form = document.getElementById("pfp");
     function canvasLoaded() {
         var img = new Image();
@@ -12,17 +15,25 @@
         img.onerror = failed;
         if (profileData.sub == "") {
             setTimeout(() => {
-                img.src = "./images/" + profileData.sub + ".jpeg";
+                img.src =
+                    "./images/" +
+                    profileData.sub +
+                    ".jpeg?v=" +
+                    getRandomInt(10000);
             }, 500);
         } else {
-            img.src = "./images/" + profileData.sub + ".jpeg";
+            img.src =
+                "./images/" +
+                profileData.sub +
+                ".jpeg?v=" +
+                getRandomInt(10000);
         }
     }
     onMount(canvasLoaded);
     function imageUploadChange(e) {
         var img = new Image();
         img.onload = draw;
-        img.onerror = failed;
+        img.onerror = (e) => failed(e);
         img.src = URL.createObjectURL(this.files[0]);
         changed = true;
     }
@@ -43,7 +54,7 @@
             this.width >= this.height ? 0 : -0.5 * (new_height - new_width);
         ctx.drawImage(this, x_offset, y_offset, new_width, new_height);
     }
-    function failed() {
+    function failed(e) {
         console.error("The provided file couldn't be loaded as an Image media");
     }
     function sendImage(token) {
@@ -55,7 +66,12 @@
                 body: formData,
             })
                 .then((response) => response.text())
-                .then((data) => console.log(data));
+                .then((data) => {
+                    console.log(data);
+                    showSaved = true;
+                    console.log(showSaved);
+                    setTimeout(() => (showSaved = false), 3000);
+                });
         };
     }
     function formSubmit(event) {
@@ -95,6 +111,9 @@
         />
         {#if changed}
             <button class="btn button-secondary" type="submit">Save</button>
+        {/if}
+        {#if showSaved}
+            <span class="text-gray">Saved</span>
         {/if}
     </form>
 </main>
