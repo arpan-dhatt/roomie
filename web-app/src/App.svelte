@@ -49,8 +49,9 @@
 				email: "",
 				phone: "5555555555",
 				location: "On-Campus",
-				building_preferences: "live near the dining hall"
-			},{
+				building_preferences: "live near the dining hall",
+			},
+			{
 				sub: "100685528597008939195",
 				first_name: "Test First Name",
 				last_name: "Test Last Name",
@@ -68,8 +69,9 @@
 				email: "",
 				phone: "",
 				location: "Select",
-				building_preferences: "prefs"
-			},{
+				building_preferences: "prefs",
+			},
+			{
 				sub: "100685528597008939195",
 				first_name: "Test First Name",
 				last_name: "Test Last Name",
@@ -87,8 +89,9 @@
 				email: "",
 				phone: "",
 				location: "Select",
-				building_preferences: "prefs"
-			},{
+				building_preferences: "prefs",
+			},
+			{
 				sub: "100685528597008939195",
 				first_name: "Test First Name",
 				last_name: "Test Last Name",
@@ -106,7 +109,7 @@
 				email: "",
 				phone: "",
 				location: "Select",
-				building_preferences: "prefs"
+				building_preferences: "prefs",
 			},
 		],
 	};
@@ -153,8 +156,8 @@
 
 <main>
 	<div class="container">
-		<div class="columns">
-			<h1 class="column col-12">Roomie</h1>
+		<div class="columns" style="margin-top: 20px;">
+			<h1 class="column col-12">🤘🏼 Roomie</h1>
 		</div>
 		{#if page == "signin"}
 			<Login bind:signedIn bind:sessionToken bind:page />
@@ -167,7 +170,7 @@
 			/>
 		{/if}
 		{#if page == "search"}
-			<TableView studentData={studentData} sessionToken={sessionToken} />
+			<TableView {studentData} {sessionToken} />
 		{/if}
 		{#if page != "signin"}
 			<SignOut bind:signedIn bind:page />
@@ -181,10 +184,10 @@
 	}
 
 	h1 {
-		color: #ff3e00;
+		color: #bf5700;
 		text-transform: uppercase;
 		font-size: 4em;
-		font-weight: 100;
+		font-weight: 500;
 	}
 
 	@media (min-width: 0px) {

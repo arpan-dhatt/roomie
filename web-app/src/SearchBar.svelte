@@ -23,7 +23,7 @@
         <form on:submit={filterStudents} class="columns col-gapless">
             <div class="column col-10 col-sm-12">
                 <input
-                    placeholder="Search for anything like gender, class year, major college, interests, etc..."
+                    placeholder="Search for anything like gender, class year, major, college, interests, etc..."
                     style="width: 100%;"
                     type="text"
                     bind:value={text}

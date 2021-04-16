@@ -2200,7 +2200,7 @@ var app = (function () {
     const { console: console_1$3 } = globals;
     const file$5 = "src/Login.svelte";
 
-    // (58:8) {#if errorMessage != null}
+    // (57:8) {#if errorMessage != null}
     function create_if_block$3(ctx) {
     	let p;
     	let t;
@@ -2209,9 +2209,9 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(/*errorMessage*/ ctx[0]);
-    			attr_dev(p, "class", "column col-8 col-mx-auto");
+    			attr_dev(p, "class", "column col-8 col-md-12 col-mx-auto");
     			set_style(p, "color", "red");
-    			add_location(p, file$5, 58, 12, 2148);
+    			add_location(p, file$5, 57, 12, 2009);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -2229,7 +2229,7 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(58:8) {#if errorMessage != null}",
+    		source: "(57:8) {#if errorMessage != null}",
     		ctx
     	});
 
@@ -2240,22 +2240,91 @@ var app = (function () {
     	let main;
     	let div1;
     	let div0;
-    	let h3;
+    	let h2;
     	let t1;
-    	let h4;
-    	let t2;
-    	let a;
-    	let t4;
-    	let t5;
     	let div3;
-    	let t6;
     	let div2;
-    	let t7;
+    	let h30;
+    	let t3;
     	let div5;
     	let div4;
+    	let h31;
+    	let t5;
+    	let div7;
+    	let t6;
+    	let div6;
+    	let t7;
+    	let div9;
+    	let div8;
     	let p0;
-    	let t9;
+    	let t8;
+    	let a0;
+    	let t10;
+    	let t11;
+    	let div11;
+    	let div10;
+    	let h32;
+    	let t13;
+    	let div14;
+    	let div12;
+    	let h40;
+    	let t15;
     	let p1;
+    	let strong0;
+    	let t17;
+    	let div13;
+    	let img0;
+    	let img0_src_value;
+    	let t18;
+    	let div17;
+    	let div15;
+    	let h41;
+    	let t20;
+    	let p2;
+    	let strong1;
+    	let t22;
+    	let div16;
+    	let img1;
+    	let img1_src_value;
+    	let t23;
+    	let img2;
+    	let img2_src_value;
+    	let t24;
+    	let img3;
+    	let img3_src_value;
+    	let t25;
+    	let div19;
+    	let div18;
+    	let h42;
+    	let t27;
+    	let p3;
+    	let t29;
+    	let div21;
+    	let div20;
+    	let h43;
+    	let t31;
+    	let p4;
+    	let t33;
+    	let p5;
+    	let t35;
+    	let p6;
+    	let t36;
+    	let a1;
+    	let t38;
+    	let t39;
+    	let p7;
+    	let strong2;
+    	let t41;
+    	let ol;
+    	let li0;
+    	let t43;
+    	let li1;
+    	let t45;
+    	let li2;
+    	let t47;
+    	let div23;
+    	let div22;
+    	let p8;
     	let if_block = /*errorMessage*/ ctx[0] != null && create_if_block$3(ctx);
 
     	const block = {
@@ -2263,52 +2332,227 @@ var app = (function () {
     			main = element("main");
     			div1 = element("div");
     			div0 = element("div");
-    			h3 = element("h3");
-    			h3.textContent = "Welcome Longhorns! Roomie is a roommate finding service made by\n                UT students* for UT students.";
+    			h2 = element("h2");
+    			h2.textContent = "A roommate finding service by UT students* for UT students";
     			t1 = space();
-    			h4 = element("h4");
-    			t2 = text("Get started by signing in with Google! Make sure to use your\n                utexas.edu email. If you're an incoming freshman, ");
-    			a = element("a");
-    			a.textContent = "go to the UT website";
-    			t4 = text(" to get yours using your UT EID. It's the same ID you used to log\n                into MyStatus!");
-    			t5 = space();
     			div3 = element("div");
-    			if (if_block) if_block.c();
-    			t6 = space();
     			div2 = element("div");
-    			t7 = space();
+    			h30 = element("h3");
+    			h30.textContent = "Login using your UTexas Email! Longhorns only!";
+    			t3 = space();
     			div5 = element("div");
     			div4 = element("div");
+    			h31 = element("h3");
+    			h31.textContent = "👇🏼";
+    			t5 = space();
+    			div7 = element("div");
+    			if (if_block) if_block.c();
+    			t6 = space();
+    			div6 = element("div");
+    			t7 = space();
+    			div9 = element("div");
+    			div8 = element("div");
     			p0 = element("p");
-    			p0.textContent = "You can use this platform to find roommates at UT. After signing\n                in, you can make a profile for yourself (editable at any time)\n                and look at the profiles of other students to find the best\n                roommate. Try to use the search feature to narrow down who\n                you're looking for. If you want a roommate in the class of 2025,\n                make sure you add \"2025\" to your search. You can search for\n                students specific colleges, like the College of Natural Science\n                or specific majors, like Neuroscience!";
-    			t9 = space();
+    			t8 = text("If you're an incoming freshman, ");
+    			a0 = element("a");
+    			a0.textContent = "go to UT's website";
+    			t10 = text(" to get one using your UT EID.");
+    			t11 = space();
+    			div11 = element("div");
+    			div10 = element("div");
+    			h32 = element("h3");
+    			h32.textContent = "Get started in three...two...done!";
+    			t13 = space();
+    			div14 = element("div");
+    			div12 = element("div");
+    			h40 = element("h4");
+    			h40.textContent = "Step 1";
+    			t15 = space();
     			p1 = element("p");
-    			p1.textContent = "*I am a UT student but this service is NOT officially endorsed\n                by or supported by the University of Texas";
-    			add_location(h3, file$5, 42, 12, 1502);
-    			attr_dev(a, "href", "https://get.utmail.utexas.edu/");
-    			add_location(a, file$5, 48, 66, 1811);
-    			add_location(h4, file$5, 46, 12, 1663);
-    			attr_dev(div0, "class", "column col-8 col-md-12 col-mx-auto");
-    			add_location(div0, file$5, 41, 8, 1441);
-    			attr_dev(div1, "class", "columns");
-    			set_style(div1, "margin-bottom", "20px");
-    			add_location(div1, file$5, 40, 4, 1382);
-    			set_style(div2, "display", "flex");
-    			set_style(div2, "justify-content", "center");
-    			attr_dev(div2, "class", "column col-8 col-mx-auto g-signin2");
-    			attr_dev(div2, "data-onsuccess", "onSignIn");
-    			add_location(div2, file$5, 62, 8, 2275);
+    			strong0 = element("strong");
+    			strong0.textContent = "Sign in and create your profile! Add a profile picture,\n                    your major, college, bio, your living preferences and\n                    anything else you'd like to say. The more you tell a\n                    possible roommate about yourself, the more likely you are to\n                    get a good fit!";
+    			t17 = space();
+    			div13 = element("div");
+    			img0 = element("img");
+    			t18 = space();
+    			div17 = element("div");
+    			div15 = element("div");
+    			h41 = element("h4");
+    			h41.textContent = "Step 2";
+    			t20 = space();
+    			p2 = element("p");
+    			strong1 = element("strong");
+    			strong1.textContent = "Use the integrated search engine to quickly and easily find\n                    a roommate. Search by class year, gender, major, college,\n                    interests, anything. You'll receive a result in a fraction\n                    of a second!";
+    			t22 = space();
+    			div16 = element("div");
+    			img1 = element("img");
+    			t23 = space();
+    			img2 = element("img");
+    			t24 = space();
+    			img3 = element("img");
+    			t25 = space();
+    			div19 = element("div");
+    			div18 = element("div");
+    			h42 = element("h4");
+    			h42.textContent = "And That's It";
+    			t27 = space();
+    			p3 = element("p");
+    			p3.textContent = "If you want to know more about me and the motivation behind this\n                project, look below.";
+    			t29 = space();
+    			div21 = element("div");
+    			div20 = element("div");
+    			h43 = element("h4");
+    			h43.textContent = "Who and Why?";
+    			t31 = space();
+    			p4 = element("p");
+    			p4.textContent = "Hello! My name is Arpan, and I'm an incoming freshman majoring\n                in Computer Science. I'm the guy in the picture above. As you\n                can tell, I love programming and working on projects in my free\n                time.";
+    			t33 = space();
+    			p5 = element("p");
+    			p5.textContent = "I decided to make this site because I didn't like the other\n                options UT students had to find roommates, especially for people\n                who are new to the community, like me. RoomSurf looked good at\n                first, but it's not easy to narrow down the search and profiles\n                are openly visible to everyone. The Facebook group looked like\n                the other best option, especially since only students could\n                enter, but it lacked the benefits of RoomSurf. What if there was\n                something that combined the best of both worlds? Wait...Roomie\n                does...at least I hope so!";
+    			t35 = space();
+    			p6 = element("p");
+    			t36 = text("For fellow CS nerds, this project is open-source and the code is\n                available in ");
+    			a1 = element("a");
+    			a1.textContent = "this GitHub Repo";
+    			t38 = text(". If you'd like to contribute, let me know and I can catch you\n                up!");
+    			t39 = space();
+    			p7 = element("p");
+    			strong2 = element("strong");
+    			strong2.textContent = "I take user privacy very seriously, but if you're concerned about your privacy, here's a quick\n                    rundown:";
+    			t41 = space();
+    			ol = element("ol");
+    			li0 = element("li");
+    			li0.textContent = "This data is stored securely and never, ever shared with any\n                    third party.";
+    			t43 = space();
+    			li1 = element("li");
+    			li1.textContent = "We will never spam you with emails. In fact, we don't even\n                    store the email address you sign up with unless it's in the\n                    contacts which you explicitly list.";
+    			t45 = space();
+    			li2 = element("li");
+    			li2.textContent = "If you want to delete your data from the platform, you can do it instantly and easily.";
+    			t47 = space();
+    			div23 = element("div");
+    			div22 = element("div");
+    			p8 = element("p");
+    			p8.textContent = "* I am a UT student, but this website is NOT supported or\n                endorsed by the University of Texas";
+    			attr_dev(h2, "class", "svelte-15lsky4");
+    			add_location(h2, file$5, 44, 12, 1528);
+    			attr_dev(div0, "class", "column col-8 col-md-10 col-sm-12 col-mx-auto");
+    			add_location(div0, file$5, 43, 8, 1457);
+    			attr_dev(div1, "class", "columns heading svelte-15lsky4");
+    			add_location(div1, file$5, 42, 4, 1419);
+    			attr_dev(h30, "class", "svelte-15lsky4");
+    			add_location(h30, file$5, 49, 12, 1751);
+    			attr_dev(div2, "class", "column col-4 col-md-6 col-sm-8 col-mx-auto");
+    			add_location(div2, file$5, 48, 8, 1682);
     			attr_dev(div3, "class", "columns");
-    			add_location(div3, file$5, 56, 4, 2079);
-    			add_location(p0, file$5, 70, 12, 2565);
-    			attr_dev(p1, "class", "text-gray");
-    			add_location(p1, file$5, 80, 12, 3201);
-    			attr_dev(div4, "class", "column col-8 col-mx-auto");
-    			add_location(div4, file$5, 69, 8, 2514);
+    			set_style(div3, "margin-top", "25px");
+    			add_location(div3, file$5, 47, 4, 1626);
+    			attr_dev(h31, "class", "svelte-15lsky4");
+    			add_location(h31, file$5, 53, 46, 1905);
+    			attr_dev(div4, "class", "column col-3 col-mx-auto");
+    			add_location(div4, file$5, 53, 8, 1867);
     			attr_dev(div5, "class", "columns");
-    			set_style(div5, "margin-top", "40px");
-    			add_location(div5, file$5, 68, 4, 2458);
-    			add_location(main, file$5, 39, 0, 1371);
+    			add_location(div5, file$5, 52, 4, 1837);
+    			set_style(div6, "display", "flex");
+    			set_style(div6, "justify-content", "center");
+    			attr_dev(div6, "class", "column col-8 col-mx-auto g-signin2");
+    			attr_dev(div6, "data-onsuccess", "onSignIn");
+    			add_location(div6, file$5, 61, 8, 2146);
+    			attr_dev(div7, "class", "columns");
+    			add_location(div7, file$5, 55, 4, 1940);
+    			attr_dev(a0, "href", "https://get.utmail.utexas.edu/");
+    			add_location(a0, file$5, 70, 48, 2507);
+    			attr_dev(p0, "class", "text-gray");
+    			add_location(p0, file$5, 69, 12, 2437);
+    			attr_dev(div8, "class", "column col-10 col-mx-auto");
+    			add_location(div8, file$5, 68, 8, 2385);
+    			attr_dev(div9, "class", "columns");
+    			set_style(div9, "margin-top", "20px");
+    			add_location(div9, file$5, 67, 4, 2329);
+    			attr_dev(h32, "class", "svelte-15lsky4");
+    			add_location(h32, file$5, 78, 12, 2812);
+    			attr_dev(div10, "class", "column col-8 col-md-10 col-sm-12 col-mx-auto");
+    			add_location(div10, file$5, 77, 8, 2741);
+    			attr_dev(div11, "class", "columns");
+    			set_style(div11, "margin-top", "40px");
+    			add_location(div11, file$5, 76, 4, 2685);
+    			attr_dev(h40, "class", "svelte-15lsky4");
+    			add_location(h40, file$5, 83, 12, 2978);
+    			add_location(strong0, file$5, 85, 16, 3046);
+    			set_style(p1, "margin", "10%");
+    			add_location(p1, file$5, 84, 12, 3006);
+    			attr_dev(div12, "class", "column col-4  col-sm-10 col-mx-auto");
+    			add_location(div12, file$5, 82, 8, 2916);
+    			if (img0.src !== (img0_src_value = "./step-1.jpg")) attr_dev(img0, "src", img0_src_value);
+    			attr_dev(img0, "alt", "");
+    			attr_dev(img0, "class", "img-responsive");
+    			add_location(img0, file$5, 95, 12, 3523);
+    			attr_dev(div13, "class", "column col-6  col-sm-12 col-mx-auto");
+    			add_location(div13, file$5, 94, 8, 3461);
+    			attr_dev(div14, "class", "columns");
+    			add_location(div14, file$5, 81, 4, 2886);
+    			attr_dev(h41, "class", "svelte-15lsky4");
+    			add_location(h41, file$5, 100, 12, 3701);
+    			add_location(strong1, file$5, 102, 16, 3769);
+    			set_style(p2, "margin", "10%");
+    			add_location(p2, file$5, 101, 12, 3729);
+    			attr_dev(div15, "class", "column col-4 col-sm-10 col-mx-auto");
+    			add_location(div15, file$5, 99, 8, 3640);
+    			if (img1.src !== (img1_src_value = "./step-2a.jpg")) attr_dev(img1, "src", img1_src_value);
+    			attr_dev(img1, "alt", "");
+    			attr_dev(img1, "class", "img-responsive");
+    			set_style(img1, "padding", "2%");
+    			add_location(img1, file$5, 111, 12, 4176);
+    			if (img2.src !== (img2_src_value = "./step-2b.jpg")) attr_dev(img2, "src", img2_src_value);
+    			attr_dev(img2, "alt", "");
+    			attr_dev(img2, "class", "img-responsive");
+    			set_style(img2, "padding", "5%");
+    			add_location(img2, file$5, 117, 12, 4343);
+    			if (img3.src !== (img3_src_value = "./step-2c.jpg")) attr_dev(img3, "src", img3_src_value);
+    			attr_dev(img3, "alt", "");
+    			attr_dev(img3, "class", "img-responsive");
+    			add_location(img3, file$5, 123, 12, 4510);
+    			attr_dev(div16, "class", "column col-6  col-sm-12 col-mx-auto");
+    			add_location(div16, file$5, 110, 8, 4114);
+    			attr_dev(div17, "class", "columns");
+    			add_location(div17, file$5, 98, 4, 3610);
+    			attr_dev(h42, "class", "svelte-15lsky4");
+    			add_location(h42, file$5, 128, 12, 4715);
+    			add_location(p3, file$5, 129, 12, 4750);
+    			attr_dev(div18, "class", "column col-6 col-md-12 col-mx-auto");
+    			add_location(div18, file$5, 127, 8, 4654);
+    			attr_dev(div19, "class", "columns");
+    			set_style(div19, "margin-top", "20px");
+    			add_location(div19, file$5, 126, 4, 4598);
+    			attr_dev(h43, "class", "svelte-15lsky4");
+    			add_location(h43, file$5, 140, 12, 5098);
+    			add_location(p4, file$5, 141, 12, 5132);
+    			add_location(p5, file$5, 147, 12, 5424);
+    			attr_dev(a1, "href", "https://github.com/arpan-dhatt/roomie");
+    			add_location(a1, file$5, 160, 29, 6245);
+    			add_location(p6, file$5, 158, 12, 6131);
+    			add_location(strong2, file$5, 166, 16, 6483);
+    			add_location(p7, file$5, 165, 12, 6463);
+    			add_location(li0, file$5, 172, 16, 6738);
+    			add_location(li1, file$5, 176, 16, 6895);
+    			add_location(li2, file$5, 181, 16, 7153);
+    			set_style(ol, "text-align", "left");
+    			add_location(ol, file$5, 171, 12, 6691);
+    			attr_dev(div20, "class", "column col-6 col-md-12 col-mx-auto");
+    			add_location(div20, file$5, 139, 8, 5037);
+    			attr_dev(div21, "class", "columns");
+    			set_style(div21, "margin-top", "20px");
+    			set_style(div21, "padding-left", "3rem");
+    			set_style(div21, "padding-right", "3rem");
+    			add_location(div21, file$5, 135, 4, 4919);
+    			attr_dev(p8, "class", "text-gray");
+    			add_location(p8, file$5, 188, 12, 7405);
+    			attr_dev(div22, "class", "column col-10 col-mx-auto");
+    			add_location(div22, file$5, 187, 8, 7353);
+    			attr_dev(div23, "class", "columns");
+    			set_style(div23, "margin-top", "50px");
+    			add_location(div23, file$5, 186, 4, 7298);
+    			add_location(main, file$5, 41, 0, 1408);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2317,23 +2561,88 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			append_dev(main, div1);
     			append_dev(div1, div0);
-    			append_dev(div0, h3);
-    			append_dev(div0, t1);
-    			append_dev(div0, h4);
-    			append_dev(h4, t2);
-    			append_dev(h4, a);
-    			append_dev(h4, t4);
-    			append_dev(main, t5);
+    			append_dev(div0, h2);
+    			append_dev(main, t1);
     			append_dev(main, div3);
-    			if (if_block) if_block.m(div3, null);
-    			append_dev(div3, t6);
     			append_dev(div3, div2);
-    			append_dev(main, t7);
+    			append_dev(div2, h30);
+    			append_dev(main, t3);
     			append_dev(main, div5);
     			append_dev(div5, div4);
-    			append_dev(div4, p0);
-    			append_dev(div4, t9);
-    			append_dev(div4, p1);
+    			append_dev(div4, h31);
+    			append_dev(main, t5);
+    			append_dev(main, div7);
+    			if (if_block) if_block.m(div7, null);
+    			append_dev(div7, t6);
+    			append_dev(div7, div6);
+    			append_dev(main, t7);
+    			append_dev(main, div9);
+    			append_dev(div9, div8);
+    			append_dev(div8, p0);
+    			append_dev(p0, t8);
+    			append_dev(p0, a0);
+    			append_dev(p0, t10);
+    			append_dev(main, t11);
+    			append_dev(main, div11);
+    			append_dev(div11, div10);
+    			append_dev(div10, h32);
+    			append_dev(main, t13);
+    			append_dev(main, div14);
+    			append_dev(div14, div12);
+    			append_dev(div12, h40);
+    			append_dev(div12, t15);
+    			append_dev(div12, p1);
+    			append_dev(p1, strong0);
+    			append_dev(div14, t17);
+    			append_dev(div14, div13);
+    			append_dev(div13, img0);
+    			append_dev(main, t18);
+    			append_dev(main, div17);
+    			append_dev(div17, div15);
+    			append_dev(div15, h41);
+    			append_dev(div15, t20);
+    			append_dev(div15, p2);
+    			append_dev(p2, strong1);
+    			append_dev(div17, t22);
+    			append_dev(div17, div16);
+    			append_dev(div16, img1);
+    			append_dev(div16, t23);
+    			append_dev(div16, img2);
+    			append_dev(div16, t24);
+    			append_dev(div16, img3);
+    			append_dev(main, t25);
+    			append_dev(main, div19);
+    			append_dev(div19, div18);
+    			append_dev(div18, h42);
+    			append_dev(div18, t27);
+    			append_dev(div18, p3);
+    			append_dev(main, t29);
+    			append_dev(main, div21);
+    			append_dev(div21, div20);
+    			append_dev(div20, h43);
+    			append_dev(div20, t31);
+    			append_dev(div20, p4);
+    			append_dev(div20, t33);
+    			append_dev(div20, p5);
+    			append_dev(div20, t35);
+    			append_dev(div20, p6);
+    			append_dev(p6, t36);
+    			append_dev(p6, a1);
+    			append_dev(p6, t38);
+    			append_dev(div20, t39);
+    			append_dev(div20, p7);
+    			append_dev(p7, strong2);
+    			append_dev(div20, t41);
+    			append_dev(div20, ol);
+    			append_dev(ol, li0);
+    			append_dev(ol, t43);
+    			append_dev(ol, li1);
+    			append_dev(ol, t45);
+    			append_dev(ol, li2);
+    			append_dev(main, t47);
+    			append_dev(main, div23);
+    			append_dev(div23, div22);
+    			append_dev(div22, p8);
     		},
     		p: function update(ctx, [dirty]) {
     			if (/*errorMessage*/ ctx[0] != null) {
@@ -2342,7 +2651,7 @@ var app = (function () {
     				} else {
     					if_block = create_if_block$3(ctx);
     					if_block.c();
-    					if_block.m(div3, t6);
+    					if_block.m(div7, t6);
     				}
     			} else if (if_block) {
     				if_block.d(1);
@@ -2421,6 +2730,7 @@ var app = (function () {
     	};
 
     	$$self.$capture_state = () => ({
+    		App,
     		signedIn,
     		page,
     		sessionToken,
@@ -3705,7 +4015,7 @@ var app = (function () {
     			div1 = element("div");
     			button = element("button");
     			button.textContent = "Search";
-    			attr_dev(input, "placeholder", "Search for anything like gender, class year, major college, interests, etc...");
+    			attr_dev(input, "placeholder", "Search for anything like gender, class year, major, college, interests, etc...");
     			set_style(input, "width", "100%");
     			attr_dev(input, "type", "text");
     			add_location(input, file$2, 24, 16, 649);
@@ -3713,9 +4023,9 @@ var app = (function () {
     			add_location(div0, file$2, 23, 12, 595);
     			set_style(button, "width", "100%");
     			attr_dev(button, "class", "btn btn-primary");
-    			add_location(button, file$2, 32, 16, 982);
+    			add_location(button, file$2, 32, 16, 983);
     			attr_dev(div1, "class", "column col-2 col-sm-12 svelte-1mtlzjw");
-    			add_location(div1, file$2, 31, 12, 929);
+    			add_location(div1, file$2, 31, 12, 930);
     			attr_dev(form, "class", "columns col-gapless");
     			add_location(form, file$2, 22, 8, 521);
     			add_location(main, file$2, 21, 0, 506);
@@ -4671,7 +4981,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file = "src/App.svelte";
 
-    // (159:2) {#if page == "signin"}
+    // (162:2) {#if page == "signin"}
     function create_if_block_3(ctx) {
     	let login;
     	let updating_signedIn;
@@ -4759,14 +5069,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(159:2) {#if page == \\\"signin\\\"}",
+    		source: "(162:2) {#if page == \\\"signin\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (162:2) {#if page == "profile"}
+    // (165:2) {#if page == "profile"}
     function create_if_block_2(ctx) {
     	let dataform;
     	let updating_profileData;
@@ -4826,14 +5136,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(162:2) {#if page == \\\"profile\\\"}",
+    		source: "(165:2) {#if page == \\\"profile\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (169:2) {#if page == "search"}
+    // (172:2) {#if page == "search"}
     function create_if_block_1(ctx) {
     	let tableview;
     	let current;
@@ -4878,14 +5188,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(169:2) {#if page == \\\"search\\\"}",
+    		source: "(172:2) {#if page == \\\"search\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (172:2) {#if page != "signin"}
+    // (175:2) {#if page != "signin"}
     function create_if_block(ctx) {
     	let signout;
     	let updating_signedIn;
@@ -4957,7 +5267,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(172:2) {#if page != \\\"signin\\\"}",
+    		source: "(175:2) {#if page != \\\"signin\\\"}",
     		ctx
     	});
 
@@ -4985,7 +5295,7 @@ var app = (function () {
     			div1 = element("div");
     			div0 = element("div");
     			h1 = element("h1");
-    			h1.textContent = "Roomie";
+    			h1.textContent = "🤘🏼 Roomie";
     			t1 = space();
     			if (if_block0) if_block0.c();
     			t2 = space();
@@ -4994,14 +5304,15 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			t4 = space();
     			if (if_block3) if_block3.c();
-    			attr_dev(h1, "class", "column col-12 svelte-v3letq");
-    			add_location(h1, file, 156, 3, 3319);
+    			attr_dev(h1, "class", "column col-12 svelte-1gqvaz2");
+    			add_location(h1, file, 159, 3, 3361);
     			attr_dev(div0, "class", "columns");
-    			add_location(div0, file, 155, 2, 3294);
+    			set_style(div0, "margin-top", "20px");
+    			add_location(div0, file, 158, 2, 3310);
     			attr_dev(div1, "class", "container");
-    			add_location(div1, file, 154, 1, 3268);
-    			attr_dev(main, "class", "svelte-v3letq");
-    			add_location(main, file, 153, 0, 3260);
+    			add_location(div1, file, 157, 1, 3284);
+    			attr_dev(main, "class", "svelte-1gqvaz2");
+    			add_location(main, file, 156, 0, 3276);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
